@@ -22,13 +22,11 @@ public struct JiraClient {
         let transport = URLSessionTransport(configuration: transportConfig)
         self.init(underlyingClient: Client(serverURL: URL(string: url)!, transport: transport))
     }
-//        let config = URLSessionConfiguration.default
-//        config.httpAdditionalHeaders = ["Authorization": "Basic \(BasicAuth(username: user, apiKey: password).encode()!)"]
-//        let customSession = URLSession(configuration: config)
     
-    public func getIssue(key: String) async throws -> Components.Schemas.IssueBean {
+    public func getIssue(key: String, fields: [String]? = nil, fieldsByKeys: Bool? = nil, expand: String? = nil, properties: [String]? = nil, updateHistory: Bool? = nil, failFast: Bool? = nil) async throws -> Components.Schemas.IssueBean {
         let path = Operations.getIssue.Input.Path(issueIdOrKey: key)
-        let input = Operations.getIssue.Input(path: path)
+        let query = Operations.getIssue.Input.Query(fields: fields, fieldsByKeys: fieldsByKeys, expand: expand, properties: properties, updateHistory: updateHistory, failFast: failFast)
+        let input = Operations.getIssue.Input(path: path, query: query)
         let response = try await underlyingClient.getIssue(input)
         return try response.ok.body.json
     }
