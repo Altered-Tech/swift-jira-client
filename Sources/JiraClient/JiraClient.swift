@@ -203,7 +203,7 @@ Returned if the per-issue limit has been breached for one of the following field
 
         var fieldsContainer: [String: OpenAPIValueContainer] = [:]
         if let fields {
-            fieldsContainer = createContainer(values: fields)
+            fieldsContainer = try createContainer(values: fields)
         }
         
         let fieldsUpdate: Components.Schemas.IssueUpdateDetails.fieldsPayload? = fieldsContainer.isEmpty ? nil : .init(additionalProperties: fieldsContainer)
@@ -338,7 +338,7 @@ Returned if a per-issue limit has been breached for one of the following fields:
 //    }
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
-        let fieldsContainer = createContainer(values: fields)
+        let fieldsContainer = try createContainer(values: fields)
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
