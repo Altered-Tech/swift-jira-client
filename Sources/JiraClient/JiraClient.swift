@@ -191,7 +191,7 @@ Returned if the per-issue limit has been breached for one of the following field
         }
     }
     
-    public func transition(key: String, to: String, fields: [String: Any]? = nil, comment: String? = nil, worklog: String? = nil) async throws -> Void{
+    public func transition(key: String, to: String, fields: [String: Any]? = nil, comment: String? = nil, worklog: String? = nil) async throws -> Bool {
         var update: [String: [Components.Schemas.FieldUpdateOperation]] = [:]
         if let comment {
             update["comment"] = [.init(add: try .init(unvalidatedValue: ["body": comment]))]
@@ -212,25 +212,19 @@ Returned if the per-issue limit has been breached for one of the following field
         if let _ = Int(to) {
             transitionId = to
         } else {
-            guard let id = try await self.getTransitionId(with: to, for: key) else { return }
+            guard let id = try await self.getTransitionId(with: to, for: key) else { return false }
             transitionId = id
         }
-        print(transitionId ?? "no transition id")
+        
         let issueDetails = Components.Schemas.IssueUpdateDetails(fields: fieldsUpdate,
                                                                  transition: .init(value1: .init(id: transitionId)),
                                                                  update: updates)
-        print(issueDetails.fields.debugDescription)
-        print(issueDetails.transition.debugDescription)
-        print(issueDetails.update.debugDescription)
-        let headerAccept: [AcceptHeaderContentType<Operations.doTransition.AcceptableContentType>] = [.init(contentType: .json)]
-        let headers: Operations.doTransition.Input.Headers = .init(accept: headerAccept)
-        
-        
-        let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), headers: headers, body: .json(issueDetails))
+
+        let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
         switch result {
             
         case .noContent(_):
-            return
+            return true
         case .badRequest(_):
             throw JiraErrors.badRequest(message: """
 Returned if:

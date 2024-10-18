@@ -35889,8 +35889,8 @@ paths:
       responses:
         '204':
           content:
-            application/json:
-              schema: {}
+            text/plain:
+              schema: string
           description: Returned if the request is successful.
         '400':
           description: |-
