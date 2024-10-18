@@ -209,16 +209,19 @@ Returned if the per-issue limit has been breached for one of the following field
         let fieldsUpdate: Components.Schemas.IssueUpdateDetails.fieldsPayload? = fieldsContainer.isEmpty ? nil : .init(additionalProperties: fieldsContainer)
         
         var transitionId: String? = nil
-        if let id = Int(to) {
+        if let _ = Int(to) {
             transitionId = to
         } else {
             guard let id = try await self.getTransitionId(with: to, for: key) else { return }
             transitionId = id
         }
-        
+        print(transitionId ?? "no transition id")
         let issueDetails = Components.Schemas.IssueUpdateDetails(fields: fieldsUpdate,
                                                                  transition: .init(value1: .init(id: transitionId)),
                                                                  update: updates)
+        print(issueDetails.fields.debugDescription)
+        print(issueDetails.transition.debugDescription)
+        print(issueDetails.update.debugDescription)
         
         
         let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
@@ -227,7 +230,16 @@ Returned if the per-issue limit has been breached for one of the following field
         case .noContent(_):
             return
         case .badRequest(_):
-            throw JiraErrors.badRequest()
+            throw JiraErrors.badRequest(message: """
+Returned if:
+
+    no transition is specified.
+    the user does not have permission to transition the issue.
+    a field that isn't included on the transition screen is defined in fields or update.
+    a field is specified in both fields and update.
+    the request is invalid for any other reason.
+
+""")
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
