@@ -35894,6 +35894,9 @@ paths:
             text/plain:
               schema:
                 type: string
+            text/html:
+              schema:
+                type: string
           description: Returned if the request is successful.
         '400':
           description: |-
