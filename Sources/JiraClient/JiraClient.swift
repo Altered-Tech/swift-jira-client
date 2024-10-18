@@ -191,7 +191,7 @@ Returned if the per-issue limit has been breached for one of the following field
         }
     }
     
-    public func transition(key: String, to: String, fields: [String: Any]? = nil, comment: String? = nil, worklog: String? = nil) async throws {
+    public func transition(key: String, to: String, fields: [String: Any]? = nil, comment: String? = nil, worklog: String? = nil) async throws -> Void{
         var update: [String: [Components.Schemas.FieldUpdateOperation]] = [:]
         if let comment {
             update["comment"] = [.init(add: try .init(unvalidatedValue: ["body": comment]))]
@@ -222,6 +222,33 @@ Returned if the per-issue limit has been breached for one of the following field
         
         
         let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
+        switch result {
+            
+        case .noContent(_):
+            return
+        case .badRequest(_):
+            throw JiraErrors.badRequest()
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if the issue is not found or the user does not have permission to view it.")
+        case .conflict(_):
+            throw JiraErrors.conflict(message: "Returned if the issue could not be updated due to a conflicting update.")
+        case .contentTooLarge(_):
+            throw JiraErrors.contentTooLarge(message: """
+Returned if a per-issue limit has been breached for one of the following fields:
+
+    comments
+    worklogs
+    attachments
+    issue links
+    remote issue links
+""")
+        case .unprocessableContent(_):
+            throw JiraErrors.unprocessableContent(message: "Returned if a configuration problem prevents the creation of the issue.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
     }
     
     func createContainer(values: [String: Any]) -> [String: OpenAPIValueContainer] {
