@@ -191,40 +191,111 @@ Returned if the per-issue limit has been breached for one of the following field
         }
     }
     
-//    public func transition(key: String, to: String) async throws {
-//        let fields = try Components.Schemas.IssueUpdateDetails.fieldsPayload.init(additionalProperties: <#T##[String : OpenAPIValueContainer]#>)
-//        let issueDetails = Components.Schemas.IssueUpdateDetails(fields: <#T##Components.Schemas.IssueUpdateDetails.fieldsPayload?#>, transition: .init(value1: .init(id: to)), update: <#T##Components.Schemas.IssueUpdateDetails.updatePayload?#>)
-//        let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
-//    }
-//    
-//    func createContainer(values: [String: Any]) -> [String: OpenAPIValueContainer] {
-//        var container = [String: OpenAPIValueContainer]()
-//        
-//        for (key, value) in values {
-//            switch value {
-//            case let stringValue as String:
-//                container[key] = .init(stringLiteral: stringValue)
-//            case let intValue as Int:
-//                container[key] = .init(integerLiteral: intValue)
-//            case let doubleValue as Double:
-//                container[key] = .init(floatLiteral: doubleValue)
-//            case let boolValue as Bool:
-//                container[key] = .init(booleanLiteral: boolValue)
-//            case let arrayValue as [Any?]:
-//                // Handle arrays if needed
-//                // container[key] = .init(arrayContainer: arrayValue)
-//                print("Array handling needs custom implementation")
-//            case let dictValue as [String: Any?]:
-//                // Handle dictionaries if needed
-//                // container[key] = .init(objectContainer: dictValue)
-//                print("Dictionary handling needs custom implementation")
-//            default:
-//                container[key] = .init(nilLiteral: ())
-//            }
-//        }
-//
-//        return container
-//    }
+    public func transition(key: String, to: String, fields: [String: Any]? = nil, comment: String? = nil, worklog: String? = nil) async throws {
+        var update: [String: [Components.Schemas.FieldUpdateOperation]] = [:]
+        if let comment {
+            update["comment"] = [.init(add: try .init(unvalidatedValue: ["body": comment]))]
+        }
+        if let worklog {
+            update["worklog"] = [.init(add: try .init(unvalidatedValue: ["worklog": worklog]))]
+        }
+        let updates: Components.Schemas.IssueUpdateDetails.updatePayload? = update.isEmpty ? nil : .init(additionalProperties: update)
+
+        var fieldsContainer: [String: OpenAPIValueContainer] = [:]
+        if let fields {
+            fieldsContainer = createContainer(values: fields)
+        }
+        
+        let fieldsUpdate: Components.Schemas.IssueUpdateDetails.fieldsPayload? = fieldsContainer.isEmpty ? nil : .init(additionalProperties: fieldsContainer)
+        
+        var transitionId: String? = nil
+        if let id = Int(to) {
+            transitionId = to
+        } else {
+            guard let id = try await self.getTransitionId(with: to, for: key) else { return }
+            transitionId = id
+        }
+        
+        let issueDetails = Components.Schemas.IssueUpdateDetails(fields: fieldsUpdate,
+                                                                 transition: .init(value1: .init(id: transitionId)),
+                                                                 update: updates)
+        
+        
+        let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
+    }
+    
+    func createContainer(values: [String: Any]) -> [String: OpenAPIValueContainer] {
+        var container = [String: OpenAPIValueContainer]()
+        
+        for (key, value) in values {
+            switch value {
+            case let stringValue as String:
+                container[key] = .init(stringLiteral: stringValue)
+            case let intValue as Int:
+                container[key] = .init(integerLiteral: intValue)
+            case let doubleValue as Double:
+                container[key] = .init(floatLiteral: doubleValue)
+            case let boolValue as Bool:
+                container[key] = .init(booleanLiteral: boolValue)
+            case let arrayValue as [Any?]:
+                print("Array handling needs custom implementation")
+                do {
+                    container[key] = try .init(unvalidatedValue: createArrayContainer(values: arrayValue))
+                } catch {
+                    container[key] = .init(nilLiteral: ())
+                }
+            case let dictValue as [String: Any]:
+                // Recursive call for nested dictionary
+                do {
+                    container[key] = try .init(unvalidatedValue: createContainer(values: dictValue))
+                } catch {
+                    container[key] = .init(nilLiteral: ())
+                }
+            default:
+                container[key] = .init(nilLiteral: ())
+            }
+        }
+        
+        return container
+    }
+    
+    func createArrayContainer(values: [Any?]) -> [OpenAPIValueContainer] {
+        var arrayContainer = [OpenAPIValueContainer]()
+        for element in values {
+            if let element = element {
+                switch element {
+                case let stringValue as String:
+                    arrayContainer.append(.init(stringLiteral: stringValue))
+                case let intValue as Int:
+                    arrayContainer.append(.init(integerLiteral: intValue))
+                case let doubleValue as Double:
+                    arrayContainer.append(.init(floatLiteral: doubleValue))
+                case let boolValue as Bool:
+                    arrayContainer.append(.init(booleanLiteral: boolValue))
+                case let dictValue as [String: Any]:
+                    // Recursive call for dictionary elements in the array
+                    let nestedContainer = createContainer(values: dictValue)
+                    do {
+                        arrayContainer.append(try .init(unvalidatedValue: nestedContainer))
+                    } catch {
+                        arrayContainer.append(.init(nilLiteral: ()))
+                    }
+                case let arrayValue as [Any?]:
+                    // Recursive call for array elements in the array
+                    do {
+                        arrayContainer.append(try .init(unvalidatedValue: createArrayContainer(values: values)))
+                    } catch {
+                        arrayContainer.append(.init(nilLiteral: ()))
+                    }
+                default:
+                    arrayContainer.append(.init(nilLiteral: ()))
+                }
+            } else {
+                arrayContainer.append(.init(nilLiteral: ()))
+            }
+        }
+        return arrayContainer
+    }
         
 //    public func createIssue(fields: [String: Any]) async throws -> Operations.createIssue.Output {
 //        let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(from: fields)
