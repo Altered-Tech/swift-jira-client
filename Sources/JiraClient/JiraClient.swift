@@ -405,13 +405,19 @@ Returned if:
         guard let issueType = fields["issuetype"] else {
             throw JiraDataIssue.missingData(message: "Issue type field is missing")
         }
-        
+        print("processing fields")
+        print(project)
+        print(issueType)
+        print("project")
         let projectKey = try await handleField(project, fieldType: .project)
+        print("issuetype")
         let issueTypeKey = try await handleField(issueType, fieldType: .issueType)
+        print("done processing")
         
         var newFields = fields
         newFields["project"] = projectKey
         newFields["issuetype"] = issueTypeKey
+        print(newFields)
         
         return newFields
     }
