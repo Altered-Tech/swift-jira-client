@@ -265,11 +265,43 @@ Returned if a per-issue limit has been breached for one of the following fields:
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
-        let updateFields = try await processFields(fields: fields)
-        print(updateFields)
+        guard let project = fields["project"] else { throw JiraDataIssue.missingData(message: "Project field is missing") }
+        var projectKey: [String: String] = [:]
+        switch project {
+        case let p as String:
+            guard let projectId = try await self.project(with: p).id else { throw JiraDataIssue.missingData(message: "Project with key \(p) does not exist") }
+            projectKey["id"] = String(projectId)
+        case let p as Int:
+            projectKey["id"] = String(p)
+        case let p as [String: String]:
+            projectKey = p
+        case let p as [String: Int]:
+            projectKey = p.mapValues{ String($0) }
+        default:
+            throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
+        }
         
-        let fieldsContainer = try createContainer(values: ["fields": updateFields])
-        print(fieldsContainer)
+        var issueTypeKey: [String: String] = [:]
+        guard let issueType = fields["issuetype"] else { throw JiraDataIssue.missingData(message: "Issue type field is missing") }
+        switch issueType {
+        case let i as String:
+            guard let issueTypeId = try await self.issueType(name: i)?.id else { throw JiraDataIssue.missingData(message: "Issue type with name \(i) does not exist")}
+            issueTypeKey["id"] = String(issueTypeId)
+        case let i as Int:
+            issueTypeKey["id"] = String(i)
+        case let i as [String: String]:
+            issueTypeKey = i
+        case let i as [String: Int]:
+            issueTypeKey = i.mapValues{ String($0) }
+        default:
+            throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
+        }
+        
+        var newFields: [String: Any] = fields
+        newFields["project"] = projectKey
+        newFields["issuetype"] = issueTypeKey
+        
+        let fieldsContainer = try createContainer(values: ["fields": newFields])
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
