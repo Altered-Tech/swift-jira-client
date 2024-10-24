@@ -22,3 +22,8 @@ enum JiraErrors: Error {
     case unprocessableContent(message: String, details: [String]? = nil)
     case undocumented(code: Int, message: String = "Undocumented status code. Please check the Jira documentation for more information.")
 }
+
+enum JiraDataIssue: Error {
+    case missingData(message: String)
+    case invalidData(message: String)
+}

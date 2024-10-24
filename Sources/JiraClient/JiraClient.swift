@@ -258,12 +258,16 @@ Returned if a per-issue limit has been breached for one of the following fields:
             throw JiraErrors.undocumented(code: statusCode)
         }
     }
+    
     func createContainer(values: [String: Any]) throws -> [String: OpenAPIValueContainer] {
-        try values.mapValues { try OpenAPIValueContainer(unvalidatedValue: $0 as! Sendable) }
+        try values.mapValues { try OpenAPIValueContainer(unvalidatedValue: ($0 as! Sendable)) }
     }
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
-        let fieldsContainer = try createContainer(values: fields)
+        
+        let updateFields = try await processFields(fields: fields)
+        
+        let fieldsContainer = try createContainer(values: ["fields": updateFields])
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
@@ -294,5 +298,119 @@ Returned if the request:
         case .undocumented(statusCode: let statusCode, _):
             throw JiraErrors.undocumented(code: statusCode)
         }
+    }
+    
+    public func issueTypes() async throws -> [Components.Schemas.IssueTypeDetails] {
+        let result = try await underlyingClient.getIssueAllTypes(.init())
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func issueType(with id: Int) async throws -> Components.Schemas.IssueTypeDetails {
+        let result = try await underlyingClient.getIssueType(.init(path: .init(id: String(id))))
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .badRequest(_):
+            throw JiraErrors.badRequest(message: "Returned if the issue type ID is invalid.")
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: """
+Returned if:
+
+    the issue type is not found.
+    the user does not have the required permissions.
+""")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func issueType(name: String) async throws -> Components.Schemas.IssueTypeDetails? {
+        let issueTypes = try await self.issueTypes()
+        let issueType = issueTypes.first(where: { $0.name == name })
+        guard let issueType else { return nil }
+        return issueType
+    }
+    
+    public func project(with name: String) async throws -> Components.Schemas.Project {
+        let result = try await underlyingClient.getProject(.init(path: .init(projectIdOrKey: name)))
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if the project is not found or the user does not have permission to view it.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    enum JiraFieldType {
+        case project, issueType
+    }
+
+    func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
+        var resultKey: [String: String] = [:]
+        
+        switch field {
+        case let fieldStr as String:
+            let id: String?
+            switch fieldType {
+            case .project:
+                id = try await self.project(with: fieldStr).id
+            case .issueType:
+                id = try await self.issueType(name: fieldStr)?.id
+            }
+            
+            guard let unwrappedId = id else {
+                throw JiraDataIssue.missingData(message: "\(fieldType) with key \(fieldStr) does not exist")
+            }
+            resultKey["id"] = String(unwrappedId)
+        
+        case let fieldInt as Int:
+            resultKey["id"] = String(fieldInt)
+        
+        case let fieldDict as [String: String]:
+            resultKey = fieldDict
+        
+        case let fieldDict as [String: Int]:
+            resultKey = fieldDict.mapValues { String($0) }
+        
+        default:
+            throw JiraDataIssue.invalidData(message: "\(fieldType) field is not of type String, Int, or [String: String]")
+        }
+        
+        return resultKey
+    }
+
+    func processFields(fields: [String: Any]) async throws -> [String: Any] {
+        guard let project = fields["project"] else {
+            throw JiraDataIssue.missingData(message: "Project field is missing")
+        }
+        
+        guard let issueType = fields["issuetype"] else {
+            throw JiraDataIssue.missingData(message: "Issue type field is missing")
+        }
+        
+        let projectKey = try await handleField(project, fieldType: .project)
+        let issueTypeKey = try await handleField(issueType, fieldType: .issueType)
+        
+        var newFields = fields
+        newFields["project"] = projectKey
+        newFields["issuetype"] = issueTypeKey
+        
+        return newFields
     }
 }
