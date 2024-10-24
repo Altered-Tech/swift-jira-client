@@ -377,7 +377,7 @@ Returned if:
     }
     
     public func project(with name: String) async throws -> Components.Schemas.Project {
-        let result = try await underlyingClient.getProject(.init(path: .init(projectIdOrKey: name)))
+        let result = try await underlyingClient.getProject(path: .init(projectIdOrKey: name))
         switch result {
             
         case .ok(let value):
