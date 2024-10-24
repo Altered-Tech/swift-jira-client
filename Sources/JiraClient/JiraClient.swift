@@ -266,8 +266,10 @@ Returned if a per-issue limit has been breached for one of the following fields:
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
         let updateFields = try await processFields(fields: fields)
+        print(updateFields)
         
         let fieldsContainer = try createContainer(values: ["fields": updateFields])
+        print(fieldsContainer)
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
