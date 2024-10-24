@@ -291,7 +291,7 @@ Returned if a per-issue limit has been breached for one of the following fields:
         switch issueType {
         case let i as String:
             print(i)
-            guard let issueTypeId = try await self.issueType(with: i).id else { throw JiraDataIssue.missingData(message: "Issue type with name \(i) does not exist")}
+            guard let issueTypeId = try await self.issueType(with: i)?.id else { throw JiraDataIssue.missingData(message: "Issue type with name \(i) does not exist")}
             print(issueTypeId)
             issueTypeKey["id"] = issueTypeId
         case let i as Int:
@@ -357,26 +357,11 @@ Returned if the request:
         }
     }
     
-    public func issueType(with name: String) async throws -> Components.Schemas.IssueTypeDetails {
-        let result = try await underlyingClient.getIssueType(.init(path: .init(id: name)))
-        switch result {
-            
-        case .ok(let value):
-            return try value.body.json
-        case .badRequest(_):
-            throw JiraErrors.badRequest(message: "Returned if the issue type ID is invalid.")
-        case .unauthorized(_):
-            throw JiraErrors.unauthorized()
-        case .notFound(_):
-            throw JiraErrors.notFound(message: """
-Returned if:
-
-    the issue type is not found.
-    the user does not have the required permissions.
-""")
-        case .undocumented(statusCode: let statusCode, _):
-            throw JiraErrors.undocumented(code: statusCode)
-        }
+    public func issueType(with name: String) async throws -> Components.Schemas.IssueTypeDetails? {
+        let issueTypes = try await self.issueTypes()
+        let issueType = issueTypes.first(where: { $0.name == name })
+        guard let issueType else { return nil }
+        return issueType
     }
     
     public func issueType(with id: Int) async throws -> Components.Schemas.IssueTypeDetails {
