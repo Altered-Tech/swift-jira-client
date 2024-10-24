@@ -269,13 +269,17 @@ Returned if a per-issue limit has been breached for one of the following fields:
         var projectKey: [String: String] = [:]
         switch project {
         case let p as String:
+            print(p)
             guard let projectId = try await self.project(with: p).id else { throw JiraDataIssue.missingData(message: "Project with key \(p) does not exist") }
             projectKey["id"] = String(projectId)
         case let p as Int:
+            print(p)
             projectKey["id"] = String(p)
         case let p as [String: String]:
+            print(p)
             projectKey = p
         case let p as [String: Int]:
+            print(p)
             projectKey = p.mapValues{ String($0) }
         default:
             throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
@@ -285,13 +289,17 @@ Returned if a per-issue limit has been breached for one of the following fields:
         guard let issueType = fields["issuetype"] else { throw JiraDataIssue.missingData(message: "Issue type field is missing") }
         switch issueType {
         case let i as String:
+            print(i)
             guard let issueTypeId = try await self.issueType(name: i)?.id else { throw JiraDataIssue.missingData(message: "Issue type with name \(i) does not exist")}
             issueTypeKey["id"] = String(issueTypeId)
         case let i as Int:
+            print(i)
             issueTypeKey["id"] = String(i)
         case let i as [String: String]:
+            print(i)
             issueTypeKey = i
         case let i as [String: Int]:
+            print(i)
             issueTypeKey = i.mapValues{ String($0) }
         default:
             throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
