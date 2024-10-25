@@ -265,53 +265,9 @@ Returned if a per-issue limit has been breached for one of the following fields:
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
-        guard let project = fields["project"] else { throw JiraDataIssue.missingData(message: "Project field is missing") }
-        var projectKey: [String: String] = [:]
-        switch project {
-        case let p as String:
-            print(p)
-            guard let projectId = try await self.project(with: p).id else { throw JiraDataIssue.missingData(message: "Project with key \(p) does not exist") }
-            projectKey["id"] = String(projectId)
-        case let p as Int:
-            print(p)
-            projectKey["id"] = String(p)
-        case let p as [String: String]:
-            print(p)
-            projectKey = p
-        case let p as [String: Int]:
-            print(p)
-            projectKey = p.mapValues{ String($0) }
-        default:
-            throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
-        }
-        print("Project \(projectKey)")
+        let updatedFields = try await processFields(fields: fields)
         
-        var issueTypeKey: [String: String] = [:]
-        guard let issueType = fields["issuetype"] else { throw JiraDataIssue.missingData(message: "Issue type field is missing") }
-        switch issueType {
-        case let i as String:
-            print(i)
-            guard let issueTypeId = try await self.issueType(with: i)?.id else { throw JiraDataIssue.missingData(message: "Issue type with name \(i) does not exist")}
-            print(issueTypeId)
-            issueTypeKey["id"] = issueTypeId
-        case let i as Int:
-            print(i)
-            issueTypeKey["id"] = String(i)
-        case let i as [String: String]:
-            print(i)
-            issueTypeKey = i
-        case let i as [String: Int]:
-            print(i)
-            issueTypeKey = i.mapValues{ String($0) }
-        default:
-            throw JiraDataIssue.invalidData(message: "Project field is not of type String, Int or [String: String]")
-        }
-        print("issueType \(issueTypeKey)")
-        var newFields: [String: Any] = fields
-        newFields["project"] = projectKey
-        newFields["issuetype"] = issueTypeKey
-        
-        let fieldsContainer = try createContainer(values: ["fields": newFields])
+        let fieldsContainer = try createContainer(values: ["fields": updatedFields])
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
@@ -420,62 +376,62 @@ Returned if:
         case project, issueType
     }
 
-//    func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
-//        var resultKey: [String: String] = [:]
-//        
-//        switch field {
-//        case let fieldStr as String:
-//            let id: String?
-//            switch fieldType {
-//            case .project:
-//                id = try await self.project(with: fieldStr).id
-//            case .issueType:
-//                id = try await self.issueType(name: fieldStr)?.id
-//            }
-//            
-//            guard let unwrappedId = id else {
-//                throw JiraDataIssue.missingData(message: "\(fieldType) with key \(fieldStr) does not exist")
-//            }
-//            resultKey["id"] = String(unwrappedId)
-//        
-//        case let fieldInt as Int:
-//            resultKey["id"] = String(fieldInt)
-//        
-//        case let fieldDict as [String: String]:
-//            resultKey = fieldDict
-//        
-//        case let fieldDict as [String: Int]:
-//            resultKey = fieldDict.mapValues { String($0) }
-//        
-//        default:
-//            throw JiraDataIssue.invalidData(message: "\(fieldType) field is not of type String, Int, or [String: String]")
-//        }
-//        
-//        return resultKey
-//    }
-//
-//    func processFields(fields: [String: Any]) async throws -> [String: Any] {
-//        guard let project = fields["project"] else {
-//            throw JiraDataIssue.missingData(message: "Project field is missing")
-//        }
-//        
-//        guard let issueType = fields["issuetype"] else {
-//            throw JiraDataIssue.missingData(message: "Issue type field is missing")
-//        }
-//        print("processing fields")
-//        print(project)
-//        print(issueType)
-//        print("project")
-//        let projectKey = try await handleField(project, fieldType: .project)
-//        print("issuetype")
-//        let issueTypeKey = try await handleField(issueType, fieldType: .issueType)
-//        print("done processing")
-//        
-//        var newFields = fields
-//        newFields["project"] = projectKey
-//        newFields["issuetype"] = issueTypeKey
-//        print(newFields)
-//        
-//        return newFields
-//    }
+    func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
+        var resultKey: [String: String] = [:]
+        
+        switch field {
+        case let fieldStr as String:
+            let id: String?
+            switch fieldType {
+            case .project:
+                id = try await self.project(with: fieldStr).id
+            case .issueType:
+                id = try await self.issueType(name: fieldStr)?.id
+            }
+            
+            guard let unwrappedId = id else {
+                throw JiraDataIssue.missingData(message: "\(fieldType) with key \(fieldStr) does not exist")
+            }
+            resultKey["id"] = String(unwrappedId)
+        
+        case let fieldInt as Int:
+            resultKey["id"] = String(fieldInt)
+        
+        case let fieldDict as [String: String]:
+            resultKey = fieldDict
+        
+        case let fieldDict as [String: Int]:
+            resultKey = fieldDict.mapValues { String($0) }
+        
+        default:
+            throw JiraDataIssue.invalidData(message: "\(fieldType) field is not of type String, Int, or [String: String]")
+        }
+        
+        return resultKey
+    }
+
+    func processFields(fields: [String: Any]) async throws -> [String: Any] {
+        guard let project = fields["project"] else {
+            throw JiraDataIssue.missingData(message: "Project field is missing")
+        }
+        
+        guard let issueType = fields["issuetype"] else {
+            throw JiraDataIssue.missingData(message: "Issue type field is missing")
+        }
+        print("processing fields")
+        print(project)
+        print(issueType)
+        print("project")
+        let projectKey = try await handleField(project, fieldType: .project)
+        print("issuetype")
+        let issueTypeKey = try await handleField(issueType, fieldType: .issueType)
+        print("done processing")
+        
+        var newFields = fields
+        newFields["project"] = projectKey
+        newFields["issuetype"] = issueTypeKey
+        print(newFields)
+        
+        return newFields
+    }
 }
