@@ -6699,6 +6699,10 @@ components:
           description: Whether this issue type is used to create subtasks.
           readOnly: true
           type: boolean
+        untranslatedName:
+          type: String
+          description: Untranslated name of the issue from original creator
+          readOnly: true
       type: object
     IssueTypeIds:
       additionalProperties: false
