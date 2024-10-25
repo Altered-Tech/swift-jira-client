@@ -386,7 +386,7 @@ Returned if:
             case .project:
                 id = try await self.project(with: fieldStr).id
             case .issueType:
-                id = try await self.issueType(name: fieldStr)?.id
+                id = try await self.issueType(with: fieldStr)?.id
             }
             
             guard let unwrappedId = id else {
