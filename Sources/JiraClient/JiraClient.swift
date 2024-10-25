@@ -345,7 +345,7 @@ Returned if the request:
     }
     
     public func issueTypes() async throws -> [Components.Schemas.IssueTypeDetails] {
-        let result = try await underlyingClient.getIssueAllTypes(.init())
+        let result = try await underlyingClient.getIssueAllTypes()
         switch result {
             
         case .ok(let value):
