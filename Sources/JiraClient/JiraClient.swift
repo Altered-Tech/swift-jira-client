@@ -413,30 +413,22 @@ Returned if:
         let outwardIssue: Components.Schemas.IssueBean = try await self.findIssue(key: outward)
         
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
-        guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
+        guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType || $0.inward == linkType || $0.outward == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
         
         let body: Operations.linkIssues.Input.Body
         
-        if issueLinkType.outward == linkType {
-            body = .json(.init(
-                comment: .init(body: comment),
-                inwardIssue: .init(id: inwardIssue.id),
-                outwardIssue: .init(id: outwardIssue.id),
-                _type: issueLinkType))
-        } else if issueLinkType.inward == linkType {
+        if issueLinkType.inward == linkType {
             body = .json(.init(
                 comment: .init(body: comment),
                 inwardIssue: .init(id: outwardIssue.id),
                 outwardIssue: .init(id: inwardIssue.id),
                 _type: issueLinkType))
-        } else if issueLinkType.id == linkType {
+        } else {
             body = .json(.init(
                 comment: .init(body: comment),
                 inwardIssue: .init(id: inwardIssue.id),
                 outwardIssue: .init(id: outwardIssue.id),
                 _type: issueLinkType))
-        } else {
-            throw JiraDataIssue.missingData(message: "Invalid issue link type: \(linkType)")
         }
         
         let result = try await underlyingClient.linkIssues(body: body)
