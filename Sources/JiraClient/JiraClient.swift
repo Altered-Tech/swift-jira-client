@@ -407,7 +407,7 @@ Returned if:
         }
     }
     
-    public func linkIssues(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
+    public func issueLink(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
         let inwardIssue = try await self.getIssue(key: inward).id
         let outwardIssue = try await self.getIssue(key: outward).id
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
