@@ -23,7 +23,7 @@ public struct JiraClient {
         self.init(underlyingClient: Client(serverURL: URL(string: url)!, transport: transport))
     }
     
-    public func getIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Components.Schemas.IssueBean {
+    public func findIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Components.Schemas.IssueBean {
         
         let path = Operations.getIssue.Input.Path(issueIdOrKey: key)
         let query = Operations.getIssue.Input.Query(fields: fields, expand: expand, properties: properties)
@@ -408,11 +408,15 @@ Returned if:
     }
     
     public func issueLink(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
-        let inwardIssue: Components.Schemas.IssueBean = try await self.getIssue(key: inward)
-        let outwardIssue: Components.Schemas.IssueBean = try await self.getIssue(key: outward)
+        
+        let inwardIssue: Components.Schemas.IssueBean = try await self.findIssue(key: inward)
+        let outwardIssue: Components.Schemas.IssueBean = try await self.findIssue(key: outward)
+        
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
         guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
+        
         let body: Operations.linkIssues.Input.Body
+        
         if issueLinkType.outward == linkType {
             body = .json(.init(
                 comment: .init(body: comment),
@@ -434,6 +438,7 @@ Returned if:
         } else {
             throw JiraDataIssue.missingData(message: "Invalid issue link type: \(linkType)")
         }
+        
         let result = try await underlyingClient.linkIssues(body: body)
         switch result {
             
