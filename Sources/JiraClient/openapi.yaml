@@ -4244,7 +4244,7 @@ components:
       additionalProperties: false
       properties:
         details:
-          additionalProperties: {}
+          additionalProperties: true
           description: Map of objects representing additional details for an error
           type: object
         errorMessages:
@@ -5945,7 +5945,7 @@ components:
           xml:
             attribute: true
         fields:
-          additionalProperties: {}
+          additionalProperties: true
           type: object
         fieldsToInclude:
           $ref: '#/components/schemas/IncludedFields'
@@ -6165,7 +6165,7 @@ components:
           format: int64
           type: integer
         properties:
-          additionalProperties: {}
+          additionalProperties: true
           description: >-
             The properties of the object, as arbitrary key-value pairs. These
             properties can be searched using JQL, if the extractions (see [Issue
@@ -6206,7 +6206,7 @@ components:
         config:
           $ref: '#/components/schemas/IssueFieldOptionConfiguration'
         properties:
-          additionalProperties: {}
+          additionalProperties: true
           description: >-
             The properties of the option as arbitrary key-value pairs. These
             properties can be searched using JQL, if the extractions (see
@@ -7239,7 +7239,7 @@ components:
       description: Details of an issue update request.
       properties:
         fields:
-          additionalProperties: {}
+          additionalProperties: true
           description: >-
             List of issue screen fields to update, specifying the sub-field to
             update and its value for each field. This field provides a
