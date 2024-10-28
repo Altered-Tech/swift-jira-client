@@ -84,7 +84,7 @@ Returned if:
     the issue is not found.
 
 """)
-        case .undocumented(statusCode: let statusCode, let error):
+        case .undocumented(statusCode: let statusCode, _):
             throw JiraErrors.undocumented(code: statusCode)
         }
     }
@@ -203,7 +203,7 @@ Returned if the per-issue limit has been breached for one of the following field
 
         var fieldsContainer: [String: Sendable] = [:]
         if let fields {
-            fieldsContainer = try fields.mapValues { $0 as! Sendable }
+            fieldsContainer = fields.mapValues { $0 as! Sendable }
         }
         
         let fieldsUpdate: Components.Schemas.IssueUpdateDetails.fieldsPayload? = fieldsContainer.isEmpty ? nil : .init(additionalProperties: try .init(unvalidatedValue: fieldsContainer))
@@ -258,91 +258,11 @@ Returned if a per-issue limit has been breached for one of the following fields:
             throw JiraErrors.undocumented(code: statusCode)
         }
     }
-    
-//    func createContainer(values: [String: Any]) throws -> [String: OpenAPIValueContainer] {
-//        try values.mapValues { try OpenAPIValueContainer(unvalidatedValue: ($0 as! Sendable)) }
-//    }
-    
-//    func createContainer(values: [String: Any]) -> [String: OpenAPIValueContainer] {
-//        var container = [String: OpenAPIValueContainer]()
-//        
-//        for (key, value) in values {
-//            switch value {
-//            case let stringValue as String:
-//                container[key] = .init(stringLiteral: stringValue)
-//            case let intValue as Int:
-//                container[key] = .init(integerLiteral: intValue)
-//            case let doubleValue as Double:
-//                container[key] = .init(floatLiteral: doubleValue)
-//            case let boolValue as Bool:
-//                container[key] = .init(booleanLiteral: boolValue)
-//            case let arrayValue as [Any?]:
-//                let nestedContainer = createArrayContainer(values: arrayValue)
-//                do {
-//                    container[key] = try .init(unvalidatedValue: nestedContainer)
-//                } catch {
-//                    container[key] = .init(nilLiteral: ())
-//                }
-//            case let dictValue as [String: Any]:
-//                // Recursive call for nested dictionary
-//                let nestedContainer = createContainer(values: dictValue)
-//                do {
-//                    container[key] = try nestedContainer.map { try OpenAPIValueContainer(unvalidatedValue: ($0 as Sendable)) }
-//                } catch {
-//                    container[key] = .init(nilLiteral: ())
-//                }
-//            default:
-//                container[key] = .init(nilLiteral: ())
-//            }
-//        }
-//        
-//        return container
-//    }
-//    
-//    func createArrayContainer(values: [Any?]) -> [OpenAPIValueContainer] {
-//        var arrayContainer = [OpenAPIValueContainer]()
-//        for element in values {
-//            if let element = element {
-//                switch element {
-//                case let stringValue as String:
-//                    arrayContainer.append(.init(stringLiteral: stringValue))
-//                case let intValue as Int:
-//                    arrayContainer.append(.init(integerLiteral: intValue))
-//                case let doubleValue as Double:
-//                    arrayContainer.append(.init(floatLiteral: doubleValue))
-//                case let boolValue as Bool:
-//                    arrayContainer.append(.init(booleanLiteral: boolValue))
-//                case let dictValue as [String: Any]:
-//                    // Recursive call for dictionary elements in the array
-//                    let nestedContainer = createContainer(values: dictValue)
-//                    do {
-//                        arrayContainer.append(try .init(unvalidatedValue: nestedContainer))
-//                    } catch {
-//                        arrayContainer.append(.init(nilLiteral: ()))
-//                    }
-//                case let arrayValue as [Any?]:
-//                    // Recursive call for array elements in the array
-//                    do {
-//                        arrayContainer.append(try .init(unvalidatedValue: createArrayContainer(values: values)))
-//                    } catch {
-//                        arrayContainer.append(.init(nilLiteral: ()))
-//                    }
-//                default:
-//                    arrayContainer.append(.init(nilLiteral: ()))
-//                }
-//            } else {
-//                arrayContainer.append(.init(nilLiteral: ()))
-//            }
-//        }
-//        return arrayContainer
-//    }
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
         let updatedFields: [String: Sendable] = try await processFields(fields: fields)
         
-//        let fieldsContainer = createContainer(values: ["fields": updatedFields])
-//        print(fieldsContainer)
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload.init(additionalProperties: try .init(unvalidatedValue: updatedFields))
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
         
@@ -442,6 +362,88 @@ Returned if:
             throw JiraErrors.unauthorized()
         case .notFound(_):
             throw JiraErrors.notFound(message: "Returned if the project is not found or the user does not have permission to view it.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func issueLinkTypes() async throws -> [Components.Schemas.IssueLinkType]? {
+        let result = try await underlyingClient.getIssueLinkTypes(.init())
+        
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json.issueLinkTypes
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if issue linking is disabled.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func issueLinkType(with id: String) async throws -> Components.Schemas.IssueLinkType {
+        let result = try await underlyingClient.getIssueLinkType(.init(path: .init(issueLinkTypeId: id)))
+        
+        switch result {
+
+        case .ok(let value):
+            return try value.body.json
+        case .badRequest(_):
+            throw JiraErrors.badRequest()
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: """
+Returned if:
+
+    issue linking is disabled.
+    the issue link type is not found.
+    the user does not have the required permissions.
+""")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func linkIssues(with linkType: String, for inward: String, and outward: String) async throws -> Components.Schemas.IssueLinkType {
+        var data: [String: String] = [:]
+        guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
+        var lt: Components.Schemas.IssueLinkType
+        if let ltFind = issueLinks.first(where: { $0.name == linkType }) {
+            lt = ltFind
+        } else if let ltFind = issueLinks.first(where: { $0.id == linkType }) {
+            lt = ltFind
+        } else {
+            throw JiraDataIssue.missingData(message: "Missing issue link type \(linkType)")
+        }
+        if lt.outward == linkType {
+            data["id"] = lt.id!
+            data["inwardIssue"] = inward
+            data["outwardIssue"] = outward
+        } else if lt.inward == linkType {
+            data["id"] = lt.id!
+            data["outwardIssue"] = inward
+            data["inwardIssue"] = outward
+        }
+        let result = try await underlyingClient.createIssueLinkType(.init(body: .json(.init(id: data["id"], inward: data["inwardIssue"], outward: data["outwardIssue"]))))
+        switch result {
+            
+        case .created(let value):
+            return try value.body.json
+        case .badRequest(_):
+            throw JiraErrors.badRequest()
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .notFound(_):
+            throw JiraErrors.notFound(message: """
+Returned if:
+
+    issue linking is disabled.
+    the issue link type name is in use.
+    the user does not have the required permissions.
+""")
         case .undocumented(statusCode: let statusCode, _):
             throw JiraErrors.undocumented(code: statusCode)
         }
