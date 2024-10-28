@@ -23,10 +23,10 @@ public struct JiraClient {
         self.init(underlyingClient: Client(serverURL: URL(string: url)!, transport: transport))
     }
     
-    public func getIssue(key: String, fields: [String]? = nil, fieldsByKeys: Bool? = nil, expand: String? = nil, properties: [String]? = nil, updateHistory: Bool? = nil, failFast: Bool? = nil) async throws -> Components.Schemas.IssueBean {
+    public func getIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Components.Schemas.IssueBean {
         
         let path = Operations.getIssue.Input.Path(issueIdOrKey: key)
-        let query = Operations.getIssue.Input.Query(fields: fields, fieldsByKeys: fieldsByKeys, expand: expand, properties: properties, updateHistory: updateHistory, failFast: failFast)
+        let query = Operations.getIssue.Input.Query(fields: fields, expand: expand, properties: properties)
         
         let input = Operations.getIssue.Input(path: path, query: query)
         let result = try await underlyingClient.getIssue(input)
@@ -408,28 +408,28 @@ Returned if:
     }
     
     public func issueLink(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
-        let inwardIssue = try await self.getIssue(key: inward).id
-        let outwardIssue = try await self.getIssue(key: outward).id
+        let inwardIssue: Components.Schemas.IssueBean = try await self.getIssue(key: inward)
+        let outwardIssue: Components.Schemas.IssueBean = try await self.getIssue(key: outward)
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
         guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
         let body: Operations.linkIssues.Input.Body
         if issueLinkType.outward == linkType {
             body = .json(.init(
                 comment: .init(body: comment),
-                inwardIssue: .init(id: inwardIssue),
-                outwardIssue: .init(id: outwardIssue),
+                inwardIssue: .init(id: inwardIssue.id),
+                outwardIssue: .init(id: outwardIssue.id),
                 _type: issueLinkType))
         } else if issueLinkType.inward == linkType {
             body = .json(.init(
                 comment: .init(body: comment),
-                inwardIssue: .init(id: outwardIssue),
-                outwardIssue: .init(id: inwardIssue),
+                inwardIssue: .init(id: outwardIssue.id),
+                outwardIssue: .init(id: inwardIssue.id),
                 _type: issueLinkType))
         } else if issueLinkType.id == linkType {
             body = .json(.init(
                 comment: .init(body: comment),
-                inwardIssue: .init(id: inwardIssue),
-                outwardIssue: .init(id: outwardIssue),
+                inwardIssue: .init(id: inwardIssue.id),
+                outwardIssue: .init(id: outwardIssue.id),
                 _type: issueLinkType))
         } else {
             throw JiraDataIssue.missingData(message: "Invalid issue link type: \(linkType)")
@@ -437,7 +437,7 @@ Returned if:
         let result = try await underlyingClient.linkIssues(body: body)
         switch result {
             
-        case .created(let value):
+        case .created(_):
             return
         case .badRequest(_):
             throw JiraErrors.badRequest(message: "Returned if the comment is not created. The response contains an error message indicating why the comment wasn't created. The issue link is also not created.")
