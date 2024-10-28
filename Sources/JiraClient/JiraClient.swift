@@ -259,15 +259,87 @@ Returned if a per-issue limit has been breached for one of the following fields:
         }
     }
     
-    func createContainer(values: [String: Any]) throws -> [String: OpenAPIValueContainer] {
-        try values.mapValues { try OpenAPIValueContainer(unvalidatedValue: ($0 as! Sendable)) }
+//    func createContainer(values: [String: Any]) throws -> [String: OpenAPIValueContainer] {
+//        try values.mapValues { try OpenAPIValueContainer(unvalidatedValue: ($0 as! Sendable)) }
+//    }
+    
+    func createContainer(values: [String: Any]) -> [String: OpenAPIValueContainer] {
+        var container = [String: OpenAPIValueContainer]()
+        
+        for (key, value) in values {
+            switch value {
+            case let stringValue as String:
+                container[key] = .init(stringLiteral: stringValue)
+            case let intValue as Int:
+                container[key] = .init(integerLiteral: intValue)
+            case let doubleValue as Double:
+                container[key] = .init(floatLiteral: doubleValue)
+            case let boolValue as Bool:
+                container[key] = .init(booleanLiteral: boolValue)
+            case let arrayValue as [Any?]:
+                do {
+                    container[key] = try .init(unvalidatedValue: createArrayContainer(values: arrayValue))
+                } catch {
+                    container[key] = .init(nilLiteral: ())
+                }
+            case let dictValue as [String: Any]:
+                // Recursive call for nested dictionary
+                do {
+                    container[key] = try .init(unvalidatedValue: createContainer(values: dictValue))
+                } catch {
+                    container[key] = .init(nilLiteral: ())
+                }
+            default:
+                container[key] = .init(nilLiteral: ())
+            }
+        }
+        
+        return container
+    }
+    
+    func createArrayContainer(values: [Any?]) -> [OpenAPIValueContainer] {
+        var arrayContainer = [OpenAPIValueContainer]()
+        for element in values {
+            if let element = element {
+                switch element {
+                case let stringValue as String:
+                    arrayContainer.append(.init(stringLiteral: stringValue))
+                case let intValue as Int:
+                    arrayContainer.append(.init(integerLiteral: intValue))
+                case let doubleValue as Double:
+                    arrayContainer.append(.init(floatLiteral: doubleValue))
+                case let boolValue as Bool:
+                    arrayContainer.append(.init(booleanLiteral: boolValue))
+                case let dictValue as [String: Any]:
+                    // Recursive call for dictionary elements in the array
+                    let nestedContainer = createContainer(values: dictValue)
+                    do {
+                        arrayContainer.append(try .init(unvalidatedValue: nestedContainer))
+                    } catch {
+                        arrayContainer.append(.init(nilLiteral: ()))
+                    }
+                case let arrayValue as [Any?]:
+                    // Recursive call for array elements in the array
+                    do {
+                        arrayContainer.append(try .init(unvalidatedValue: createArrayContainer(values: values)))
+                    } catch {
+                        arrayContainer.append(.init(nilLiteral: ()))
+                    }
+                default:
+                    arrayContainer.append(.init(nilLiteral: ()))
+                }
+            } else {
+                arrayContainer.append(.init(nilLiteral: ()))
+            }
+        }
+        return arrayContainer
     }
         
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
         let updatedFields = try await processFields(fields: fields)
         
-        let fieldsContainer = try createContainer(values: ["fields": updatedFields])
+        let fieldsContainer = createContainer(values: ["fields": updatedFields])
         print(fieldsContainer)
         let fieldPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: fieldsContainer)
         let issueUpdate: Components.Schemas.IssueUpdateDetails = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
