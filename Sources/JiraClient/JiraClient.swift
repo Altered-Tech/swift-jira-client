@@ -407,33 +407,40 @@ Returned if:
         }
     }
     
-    public func linkIssues(with linkType: String, for inward: String, and outward: String) async throws -> Components.Schemas.IssueLinkType {
-        var data: [String: String] = [:]
+    public func linkIssues(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
+        let inwardIssue = try await self.getIssue(key: inward).id
+        let outwardIssue = try await self.getIssue(key: outward).id
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
-        var lt: Components.Schemas.IssueLinkType
-        if let ltFind = issueLinks.first(where: { $0.name == linkType }) {
-            lt = ltFind
-        } else if let ltFind = issueLinks.first(where: { $0.id == linkType }) {
-            lt = ltFind
+        guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
+        let body: Operations.linkIssues.Input.Body
+        if issueLinkType.outward == linkType {
+            body = .json(.init(
+                comment: .init(body: comment),
+                inwardIssue: .init(id: inwardIssue),
+                outwardIssue: .init(id: outwardIssue),
+                _type: issueLinkType))
+        } else if issueLinkType.inward == linkType {
+            body = .json(.init(
+                comment: .init(body: comment),
+                inwardIssue: .init(id: outwardIssue),
+                outwardIssue: .init(id: inwardIssue),
+                _type: issueLinkType))
+        } else if issueLinkType.id == linkType {
+            body = .json(.init(
+                comment: .init(body: comment),
+                inwardIssue: .init(id: inwardIssue),
+                outwardIssue: .init(id: outwardIssue),
+                _type: issueLinkType))
         } else {
-            throw JiraDataIssue.missingData(message: "Missing issue link type \(linkType)")
+            throw JiraDataIssue.missingData(message: "Invalid issue link type: \(linkType)")
         }
-        if lt.outward == linkType {
-            data["id"] = lt.id!
-            data["inwardIssue"] = inward
-            data["outwardIssue"] = outward
-        } else if lt.inward == linkType {
-            data["id"] = lt.id!
-            data["outwardIssue"] = inward
-            data["inwardIssue"] = outward
-        }
-        let result = try await underlyingClient.createIssueLinkType(.init(body: .json(.init(id: data["id"], inward: data["inwardIssue"], outward: data["outwardIssue"]))))
+        let result = try await underlyingClient.linkIssues(body: body)
         switch result {
             
         case .created(let value):
-            return try value.body.json
+            return
         case .badRequest(_):
-            throw JiraErrors.badRequest()
+            throw JiraErrors.badRequest(message: "Returned if the comment is not created. The response contains an error message indicating why the comment wasn't created. The issue link is also not created.")
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -441,9 +448,13 @@ Returned if:
 Returned if:
 
     issue linking is disabled.
-    the issue link type name is in use.
-    the user does not have the required permissions.
+    the user cannot view one or both of the issues. For example, the user doesn't have Browse project project permission for a project containing one of the issues.
+    the user does not have link issues project permission.
+    either of the link issues are not found.
+    the issue link type is not found.
 """)
+        case .contentTooLarge(_):
+            throw JiraErrors.contentTooLarge(message: "Returned if the per-issue limit for issue links has been breached.")
         case .undocumented(statusCode: let statusCode, _):
             throw JiraErrors.undocumented(code: statusCode)
         }
