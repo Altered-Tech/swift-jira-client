@@ -513,6 +513,19 @@ Returned if:\n
         }
     }
     
+    public func myself(expand: [String]? = nil) async throws -> Components.Schemas.User {
+        let result = try await underlyingClient.getCurrentUser(.init(query: .init(expand: expand?.joined(separator: ","))))
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
     enum JiraFieldType {
         case project, issueType
     }
