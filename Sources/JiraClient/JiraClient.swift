@@ -526,6 +526,28 @@ Returned if:\n
         }
     }
     
+    public func assign(issue: String, to user: String? = nil) async throws {
+        let result = try await underlyingClient.assignIssue(.init(path: .init(issueIdOrKey: issue), body: .json(.init(accountId: user))))
+        switch result {
+            
+        case .noContent(_):
+            return
+        case .badRequest(_):
+            throw JiraErrors.badRequest(message: """
+Returned if:
+
+    the user is not found.
+    accountId is missing.
+""")
+        case .forbidden(_):
+            throw JiraErrors.forbidden(message: "Returned if the user does not have the necessary permission.")
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if the issue is not found.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
     enum JiraFieldType {
         case project, issueType
     }
