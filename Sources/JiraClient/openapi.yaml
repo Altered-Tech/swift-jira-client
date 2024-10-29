@@ -19227,9 +19227,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -19453,9 +19450,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -19661,9 +19655,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -19743,9 +19734,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -21318,14 +21306,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the comment property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the comment property is created.
         '400':
           description: Returned if the request is invalid.
@@ -21900,9 +21882,6 @@ paths:
                 $ref: '#/components/schemas/TimeTrackingProvider'
           description: Returned if the request is successful and time tracking is enabled.
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful but time tracking is disabled.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -21947,9 +21926,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the time tracking provider is not found.
@@ -22956,9 +22932,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -23027,9 +23000,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -23183,9 +23153,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the dashboard item property is deleted.
         '400':
           content:
@@ -23415,14 +23382,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the dashboard item property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the dashboard item property is created.
         '400':
           content:
@@ -24888,9 +24849,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -25319,9 +25277,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if operation is successful.
         '400':
           content:
@@ -25682,9 +25637,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the context is deleted.
         '400':
           content:
@@ -25761,9 +25713,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the context is updated.
         '400':
           content:
@@ -25852,9 +25801,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if operation is successful.
         '400':
           content:
@@ -25948,9 +25894,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if operation is successful.
         '400':
           content:
@@ -26361,9 +26304,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if options are reordered.
         '400':
           content:
@@ -26637,9 +26577,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if operation is successful.
         '400':
           content:
@@ -26728,9 +26665,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the custom field context is removed from the projects.
         '400':
           content:
@@ -27333,9 +27267,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the field option is deleted.
         '403':
           description: >-
@@ -27790,9 +27721,6 @@ paths:
             type: string
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -27858,9 +27786,6 @@ paths:
             type: string
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -28089,9 +28014,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -28153,9 +28075,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -28308,9 +28227,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -28686,9 +28602,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -28754,9 +28667,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -28818,9 +28728,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -28904,9 +28811,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -28974,9 +28878,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -30051,9 +29952,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: |-
@@ -30280,9 +30178,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: |-
@@ -33690,16 +33585,10 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: >-
             Returned if the request is successful and the `returnIssue`
             parameter is `true`
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: |-
@@ -33787,9 +33676,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: |-
@@ -34874,9 +34760,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the email is queued for sending.
         '400':
           description: |-
@@ -35129,14 +35012,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue property is created.
         '400':
           description: Returned if the request is invalid.
@@ -35657,9 +35534,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -35893,8 +35767,6 @@ paths:
       responses:
         '204':
           content:
-            application/json:
-              schema: {}
             text/plain:
               schema:
                 type: string
@@ -36115,9 +35987,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -36333,9 +36202,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -37515,14 +37381,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the worklog property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the worklog property is created.
         '400':
           description: Returned if the worklog ID is invalid.
@@ -37610,9 +37470,6 @@ paths:
         required: true
       responses:
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: >-
@@ -38504,9 +38361,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39040,9 +38894,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39212,9 +39063,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39295,9 +39143,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39471,9 +39316,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39556,9 +39398,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -39636,9 +39475,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -40503,14 +40339,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue type property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue type property is created.
         '400':
           description: |-
@@ -40946,9 +40776,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41023,9 +40850,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue type scheme is deleted.
         '400':
           content:
@@ -41101,9 +40925,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41185,9 +41006,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41270,9 +41088,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41350,9 +41165,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41781,9 +41593,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -41852,9 +41661,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the issue type screen scheme is deleted.
         '400':
           content:
@@ -41922,9 +41728,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -42002,9 +41805,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -42082,9 +41882,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -42161,9 +41958,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: >-
             Returned if the screen scheme mappings are removed from the issue
             type screen scheme.
@@ -42643,9 +42437,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -43536,9 +43327,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -43580,9 +43368,6 @@ paths:
       parameters: []
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -43669,9 +43454,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if request is invalid.
@@ -44200,9 +43982,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -44287,9 +44066,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -44353,9 +44129,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -44426,9 +44199,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -45616,9 +45386,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -45685,9 +45452,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -46006,9 +45770,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -46408,9 +46169,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request isn't valid.
@@ -47754,9 +47512,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is not valid.
@@ -47819,9 +47574,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -48119,9 +47871,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -48232,9 +47981,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -48931,14 +48677,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the project property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the project property is created.
         '400':
           description: Returned if the project key or id is invalid.
@@ -49958,9 +49698,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the project's sender email address is successfully set.
         '400':
           description: >-
@@ -51001,9 +50738,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -51071,9 +50805,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -51364,9 +51095,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -52294,9 +52022,6 @@ paths:
             type: string
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -53099,9 +52824,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -53167,9 +52889,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
@@ -53489,9 +53208,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -54600,9 +54316,6 @@ paths:
             type: array
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -54804,9 +54517,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -55026,9 +54736,6 @@ paths:
             type: string
       responses:
         '202':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -55287,9 +54994,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the UI modification is deleted.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -55363,9 +55067,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the UI modification is updated.
         '400':
           description: Returned if the request is not valid.
@@ -56961,9 +56662,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '401':
           description: Returned if the authentication credentials are incorrect or missing.
@@ -57836,14 +57534,8 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the user property is updated.
         '201':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the user property is created.
         '400':
           description: Returned if `accountId` is missing.
@@ -58910,9 +58602,6 @@ paths:
             type: string
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the version is deleted.
         '400':
           description: Returned if the request is invalid.
@@ -59332,9 +59021,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the version is deleted.
         '400':
           description: Returned if the request is invalid.
@@ -63468,9 +63154,6 @@ paths:
         required: true
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           content:
@@ -63662,9 +63345,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: >-
             Returned if the request is successful and there is no asynchronous
             task.
@@ -63793,9 +63473,6 @@ paths:
             type: integer
       responses:
         '204':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the scheme is active.
@@ -66485,9 +66162,6 @@ paths:
         required: true
       responses:
         '200':
-          content:
-            application/json:
-              schema: {}
           description: Returned if the request is successful.
         '400':
           description: Returned if the request is invalid.
