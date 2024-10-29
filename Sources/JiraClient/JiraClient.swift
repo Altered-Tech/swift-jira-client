@@ -200,7 +200,7 @@ Returned if the per-issue limit has been breached for one of the following field
             update["worklog"] = [.init(add: try .init(unvalidatedValue: ["worklog": worklog]))]
         }
         let updates: Components.Schemas.IssueUpdateDetails.updatePayload? = update.isEmpty ? nil : .init(additionalProperties: update)
-
+        
         var fieldsContainer: [String: Sendable] = [:]
         if let fields {
             fieldsContainer = fields.mapValues { $0 as! Sendable }
@@ -219,7 +219,7 @@ Returned if the per-issue limit has been breached for one of the following field
         let issueDetails = Components.Schemas.IssueUpdateDetails(fields: fieldsUpdate,
                                                                  transition: .init(value1: .init(id: transitionId)),
                                                                  update: updates)
-
+        
         let result = try await underlyingClient.doTransition(path: .init(issueIdOrKey: key), body: .json(issueDetails))
         switch result {
             
@@ -258,7 +258,7 @@ Returned if a per-issue limit has been breached for one of the following fields:
             throw JiraErrors.undocumented(code: statusCode)
         }
     }
-        
+    
     public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
         
         let updatedFields: [String: Sendable] = try await processFields(fields: fields)
@@ -387,7 +387,7 @@ Returned if:
         let result = try await underlyingClient.getIssueLinkType(.init(path: .init(issueLinkTypeId: id)))
         
         switch result {
-
+            
         case .ok(let value):
             return try value.body.json
         case .badRequest(_):
@@ -457,10 +457,20 @@ Returned if:
         }
     }
     
+    public func update(issue: String, fields: [String: Any], notify: Bool = true) async throws {
+        let updatedFields: [String: Sendable] = fields.mapValues { $0 as! Sendable }
+        let fieldPayload: Components.Schemas.IssueUpdateDetails.fieldsPayload = Components.Schemas.IssueUpdateDetails.fieldsPayload(additionalProperties: try .init(unvalidatedValue: updatedFields))
+        let input = Components.Schemas.IssueUpdateDetails(fields: fieldPayload)
+        let body = Operations.editIssue.Input.Body.json(input)
+        let path = Operations.editIssue.Input.Path(issueIdOrKey: issue)
+        let query = Operations.editIssue.Input.Query(notifyUsers: notify)
+        let result = try await underlyingClient.editIssue(path: path, query: query, body: body)
+    }
+    
     enum JiraFieldType {
         case project, issueType
     }
-
+    
     func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
         var resultKey: [String: String] = [:]
         
@@ -478,23 +488,23 @@ Returned if:
                 throw JiraDataIssue.missingData(message: "\(fieldType) with key \(fieldStr) does not exist")
             }
             resultKey["id"] = String(unwrappedId)
-        
+            
         case let fieldInt as Int:
             resultKey["id"] = String(fieldInt)
-        
+            
         case let fieldDict as [String: String]:
             resultKey = fieldDict
-        
+            
         case let fieldDict as [String: Int]:
             resultKey = fieldDict.mapValues { String($0) }
-        
+            
         default:
             throw JiraDataIssue.invalidData(message: "\(fieldType) field is not of type String, Int, or [String: String]")
         }
         
         return resultKey
     }
-
+    
     func processFields(fields: [String: Any]) async throws -> [String: Sendable] {
         guard let project = fields["project"] else {
             throw JiraDataIssue.missingData(message: "Project field is missing")
