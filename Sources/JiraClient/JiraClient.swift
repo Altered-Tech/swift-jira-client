@@ -465,6 +465,35 @@ Returned if:
         let path = Operations.editIssue.Input.Path(issueIdOrKey: issue)
         let query = Operations.editIssue.Input.Query(notifyUsers: notify)
         let result = try await underlyingClient.editIssue(path: path, query: query, body: body)
+        
+        switch result {
+            
+        case .ok(_):
+            return
+        case .noContent(_):
+            return
+        case .badRequest(let error):
+            throw JiraErrors.badRequest(message: """
+Returned if:
+
+    the request body is missing.
+    the user does not have the necessary permission to edit one or more fields.
+    the request includes one or more fields that are not found or are not associated with the issue's edit screen.
+    the request includes an invalid transition.
+""")
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .forbidden(_):
+            throw JiraErrors.forbidden(message: "Returned if the user uses overrideScreenSecurity or overrideEditableFlag but doesn't have the necessary permission.")
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if the issue is not found or the user does not have permission to view it.")
+        case .conflict(_):
+            throw JiraErrors.conflict(message: "Returned if the issue could not be updated due to a conflicting update.")
+        case .unprocessableContent(_):
+            throw JiraErrors.unprocessableContent(message: "Returned if a configuration problem prevents the issue being updated.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
     }
     
     enum JiraFieldType {
