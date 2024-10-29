@@ -548,6 +548,24 @@ Returned if:
         }
     }
     
+    public func search(query jql: String, startAt: Int32 = 0, maxResults: Int32 = 50, fields: [String] = ["*all"], expand: [String]? = nil, properties: [String]? = nil) async throws -> Components.Schemas.SearchResults {
+        let validateQuery = Operations.searchForIssuesUsingJql.Input.Query.validateQueryPayload._true
+        let query = Operations.searchForIssuesUsingJql.Input.Query(jql: jql, startAt: startAt, maxResults: maxResults, validateQuery: validateQuery, fields: fields, expand: expand?.joined(separator: ","), properties: properties)
+        let result = try await underlyingClient.searchForIssuesUsingJql(.init(query: query))
+        
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .badRequest(_):
+            throw JiraErrors.badRequest(message: "Returned if the JQL query is invalid.")
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
     enum JiraFieldType {
         case project, issueType
     }
