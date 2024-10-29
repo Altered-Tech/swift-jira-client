@@ -472,14 +472,14 @@ Returned if:
             return
         case .noContent(_):
             return
-        case .badRequest(let error):
+        case .badRequest(_):
             throw JiraErrors.badRequest(message: """
-Returned if:
-
-    the request body is missing.
-    the user does not have the necessary permission to edit one or more fields.
-    the request includes one or more fields that are not found or are not associated with the issue's edit screen.
-    the request includes an invalid transition.
+Returned if:\n
+\n
+\n  the request body is missing.
+\n  the user does not have the necessary permission to edit one or more fields.
+\n  the request includes one or more fields that are not found or are not associated with the issue's edit screen.
+\n  the request includes an invalid transition.
 """)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
@@ -491,6 +491,23 @@ Returned if:
             throw JiraErrors.conflict(message: "Returned if the issue could not be updated due to a conflicting update.")
         case .unprocessableContent(_):
             throw JiraErrors.unprocessableContent(message: "Returned if a configuration problem prevents the issue being updated.")
+        case .undocumented(statusCode: let statusCode, _):
+            throw JiraErrors.undocumented(code: statusCode)
+        }
+    }
+    
+    public func getEditabelFields(for issue: String) async throws -> Components.Schemas.IssueUpdateMetadata {
+        let result = try await underlyingClient.getEditIssueMeta(.init(path: .init(issueIdOrKey: issue)))
+        switch result {
+            
+        case .ok(let value):
+            return try value.body.json
+        case .unauthorized(_):
+            throw JiraErrors.unauthorized()
+        case .forbidden(_):
+            throw JiraErrors.forbidden(message: "Returned if the user uses an override parameter but doesn't have permission to do so.")
+        case .notFound(_):
+            throw JiraErrors.notFound(message: "Returned if the issue is not found or the user does not have permission to view it.")
         case .undocumented(statusCode: let statusCode, _):
             throw JiraErrors.undocumented(code: statusCode)
         }
