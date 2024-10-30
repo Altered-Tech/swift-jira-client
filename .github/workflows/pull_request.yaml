@@ -8,7 +8,7 @@ jobs:
     buildAndTest:
       strategy:
         matrix:
-          os: [mac-os]
+          os: [macos-14]
           swift: ["6.0"]
       runs-on: ${{ matrix.os }}
       container:
