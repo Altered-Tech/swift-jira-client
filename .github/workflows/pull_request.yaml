@@ -1,0 +1,21 @@
+name: PR
+
+on:
+    pull_request:
+      types: [opened, reopened, synchronize]
+
+jobs:
+    buildAndTest:
+      strategy:
+        matrix:
+          os: [macos-14]
+          swift: ["6.0"]
+      runs-on: ${{ matrix.os }}
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Build
+          run: swift build
+        - name: Test
+          run: swift test
+        
