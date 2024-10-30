@@ -11,8 +11,6 @@ jobs:
           os: [macos-14]
           swift: ["6.0"]
       runs-on: ${{ matrix.os }}
-      container:
-        image: swift:${{ matrix.swift }}
       steps:
         - name: Checkout
           uses: actions/checkout@v2
