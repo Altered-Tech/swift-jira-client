@@ -8,6 +8,7 @@
 import OpenAPIRuntime
 import OpenAPIURLSession
 import Foundation
+import AuthenticationClientMiddleware
 
 public struct JiraClient {
     
@@ -17,10 +18,12 @@ public struct JiraClient {
         self.underlyingClient = underlyingClient
     }
     
-    public init(url: String, session: URLSession) {
-        let transportConfig = URLSessionTransport.Configuration(session: session)
-        let transport = URLSessionTransport(configuration: transportConfig)
-        self.init(underlyingClient: Client(serverURL: URL(string: url)!, transport: transport))
+    public init(url: String, auth: String) {
+        self.init(underlyingClient: Client(
+            serverURL: URL(string: url)!,
+            transport: URLSessionTransport(),
+            middlewares: [AuthenticationClientMiddleware(headerFieldValue: auth)])
+        )
     }
     
     public func findIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Components.Schemas.IssueBean {

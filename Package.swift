@@ -18,13 +18,21 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-openapi-runtime", from: "1.0.0"),
         .package(url: "https://github.com/apple/swift-openapi-generator", from: "1.0.0"),
         .package(url: "https://github.com/apple/swift-openapi-urlsession", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-http-types", from: "1.0.2"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
+        .target(name: "AuthenticationClientMiddleware",
+                dependencies: [
+                    .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime"),
+                    .product(name: "HTTPTypes", package: "swift-http-types"),
+                ]
+               ),
         .target(
             name: "JiraClient",
             dependencies: [
+                "AuthenticationClientMiddleware",
                 .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime"),
                 .product(name: "OpenAPIURLSession", package: "swift-openapi-urlsession"),
             ],
