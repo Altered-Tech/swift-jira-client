@@ -70,26 +70,8 @@ public struct IssueBean {
         self.operations = Operation(client: client?.operations?.value1)
         self.properties = client?.properties?.additionalProperties
         self.renderedFields = client?.renderedFields?.additionalProperties
-        self.schema = client?.schema?.additionalProperties.map{ $0:JsonTypeBean(client: $1) }
+//        self.schema = client?.schema?.additionalProperties.map{ $0:JsonTypeBean(client: $1) }
+        self._self = client?._self
+        self.transitions =
     }
-    
-    internal func mapToJsonTypeBean(from containers: [String: OpenAPIValueContainer]) -> [String: JsonTypeBean] {
-        var jsonTypeBeans: [String: JsonTypeBean] = [:]
-        
-        for (key, container) in containers {
-            let jsonTypeBean = JsonTypeBean(
-                configuration: container.configuration?.additionalProperties ?? [:],
-                custom: container.custom,
-                customId: container.customId,
-                items: container.items,
-                system: container.system,
-                type: container.type // Assuming `OpenAPIValueContainer` has `type` as a String.
-            )
-            
-            jsonTypeBeans[key] = jsonTypeBean
-        }
-        
-        return jsonTypeBeans
-    }
-
 }

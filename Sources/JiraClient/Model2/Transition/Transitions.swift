@@ -10,7 +10,7 @@ import Foundation
 
 /** List of issue transitions. */
 
-public struct Transitions: Codable {
+public struct Transitions {
 
     /** Expand options that include additional transitions details in the response. */
     public var expand: String?
