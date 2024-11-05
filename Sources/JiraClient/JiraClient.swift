@@ -26,7 +26,7 @@ public struct JiraClient {
         )
     }
     
-    public func findIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Components.Schemas.IssueBean {
+    public func findIssue(key: String, fields: [String]? = nil, expand: String? = nil, properties: [String]? = nil) async throws -> Issue {
         
         let path = Operations.getIssue.Input.Path(issueIdOrKey: key)
         let query = Operations.getIssue.Input.Query(fields: fields, expand: expand, properties: properties)
