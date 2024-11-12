@@ -10,7 +10,7 @@ import Foundation
 
 /** The result of the task execution. */
 
-public struct AllOfTaskProgressBeanRemoveOptionFromIssuesResultResult: Codable {
+public struct AllOfTaskProgressBeanRemoveOptionFromIssuesResultResult {
 
     /** A collection of errors related to unchanged issues. The collection size is limited, which means not all errors may be returned. */
     public var errors: Any?

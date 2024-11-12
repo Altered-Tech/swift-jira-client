@@ -10,7 +10,7 @@ import Foundation
 
 /** A clause that asserts a previous value of a field. For example, &#x60;status WAS \&quot;Resolved\&quot; BY currentUser() BEFORE \&quot;2019/02/02\&quot;&#x60;. See [WAS](https://confluence.atlassian.com/x/dgiiLQ#Advancedsearching-operatorsreference-WASWAS) for more information about the WAS operator. */
 
-public struct FieldWasClause: Codable {
+public struct FieldWasClause {
 
     public enum Operator: String, Codable { 
         case was = "was"

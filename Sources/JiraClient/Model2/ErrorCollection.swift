@@ -10,7 +10,7 @@ import Foundation
 
 /** Error messages from an operation. */
 
-public struct ErrorCollection: Codable {
+public struct ErrorCollection {
 
     /** The list of error messages produced by this operation. For example, \&quot;input parameter &#x27;key&#x27; must be provided\&quot; */
     public var errorMessages: [String]?

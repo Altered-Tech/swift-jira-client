@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the time tracking provider. */
 
-public struct TimeTrackingProvider: Codable {
+public struct TimeTrackingProvider {
 
     /** The key for the time tracking provider. For example, *JIRA*. */
     public var key: String

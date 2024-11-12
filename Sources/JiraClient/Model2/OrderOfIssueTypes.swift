@@ -10,7 +10,7 @@ import Foundation
 
 /** An ordered list of issue type IDs and information about where to move them. */
 
-public struct OrderOfIssueTypes: Codable {
+public struct OrderOfIssueTypes {
 
     public enum Position: String, Codable { 
         case first = "First"

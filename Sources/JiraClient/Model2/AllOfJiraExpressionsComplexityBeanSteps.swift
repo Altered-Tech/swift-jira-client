@@ -10,7 +10,7 @@ import Foundation
 
 /** The number of steps it took to evaluate the expression, where a step is a high-level operation performed by the expression. A step is an operation such as arithmetic, accessing a property, accessing a context variable, or calling a function. */
 
-public struct AllOfJiraExpressionsComplexityBeanSteps: Codable {
+public struct AllOfJiraExpressionsComplexityBeanSteps {
 
     /** The maximum allowed complexity. The evaluation will fail if this value is exceeded. */
     public var limit: Int

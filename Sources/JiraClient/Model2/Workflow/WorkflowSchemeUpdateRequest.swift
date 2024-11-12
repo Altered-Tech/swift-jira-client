@@ -10,7 +10,7 @@ import Foundation
 
 /** The update workflow scheme payload. */
 
-public struct WorkflowSchemeUpdateRequest: Codable {
+public struct WorkflowSchemeUpdateRequest {
 
 
 

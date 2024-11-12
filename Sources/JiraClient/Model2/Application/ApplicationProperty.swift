@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an application property. */
 
-public struct ApplicationProperty: Codable {
+public struct ApplicationProperty {
 
     /** The allowed values, if applicable. */
     public let allowedValues: [String]?

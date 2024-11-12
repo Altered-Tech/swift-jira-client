@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SimplifiedHierarchyLevel: Codable {
+public struct SimplifiedHierarchyLevel {
 
     /** The ID of the level above this one in the hierarchy. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/). */
     public var aboveLevelId: Int64?

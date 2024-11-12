@@ -10,7 +10,7 @@ import Foundation
 
 /** A rule configuration. */
 
-public struct RuleConfiguration: Codable {
+public struct RuleConfiguration {
 
     /** Whether the rule is disabled. */
     public var disabled: Bool?

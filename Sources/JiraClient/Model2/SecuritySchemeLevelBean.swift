@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SecuritySchemeLevelBean: Codable {
+public struct SecuritySchemeLevelBean {
 
     /** The description of the issue security scheme level. */
     public var _description: String?

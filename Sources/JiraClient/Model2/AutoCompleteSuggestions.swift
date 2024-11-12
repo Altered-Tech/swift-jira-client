@@ -10,7 +10,7 @@ import Foundation
 
 /** The results from a JQL query. */
 
-public struct AutoCompleteSuggestions: Codable {
+public struct AutoCompleteSuggestions {
 
     /** The list of suggested item. */
     public var results: [AutoCompleteSuggestion]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of new default levels. */
 
-public struct SetDefaultLevelsRequest: Codable {
+public struct SetDefaultLevelsRequest {
 
 
 

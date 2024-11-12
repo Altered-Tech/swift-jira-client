@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of watchers on an issue. */
 
-public struct Watchers: Codable {
+public struct Watchers {
 
     /** Whether the calling user is watching this issue. */
     public var isWatching: Bool?
@@ -19,9 +19,9 @@ public struct Watchers: Codable {
     /** The number of users watching this issue. */
     public var watchCount: Int?
     /** Details of the users watching this issue. */
-    public var watchers: [UserDetails]?
+    public var watchers: [User]?
 
-    public init(isWatching: Bool? = nil, _self: String? = nil, watchCount: Int? = nil, watchers: [UserDetails]? = nil) {
+    public init(isWatching: Bool? = nil, _self: String? = nil, watchCount: Int? = nil, watchers: [User]? = nil) {
         self.isWatching = isWatching
         self._self = _self
         self.watchCount = watchCount

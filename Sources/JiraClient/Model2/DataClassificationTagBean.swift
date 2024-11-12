@@ -10,7 +10,7 @@ import Foundation
 
 /** The data classification. */
 
-public struct DataClassificationTagBean: Codable {
+public struct DataClassificationTagBean {
 
     /** The color of the data classification object. */
     public var color: String?

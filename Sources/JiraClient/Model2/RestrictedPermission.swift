@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the permission. */
 
-public struct RestrictedPermission: Codable {
+public struct RestrictedPermission {
 
 
 

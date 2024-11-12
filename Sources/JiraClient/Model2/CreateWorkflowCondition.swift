@@ -10,7 +10,7 @@ import Foundation
 
 /** A workflow transition condition. */
 
-public struct CreateWorkflowCondition: Codable {
+public struct CreateWorkflowCondition {
 
     public enum Operator: String, Codable { 
         case and = "AND"

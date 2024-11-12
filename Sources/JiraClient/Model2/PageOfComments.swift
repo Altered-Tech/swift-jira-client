@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of comments. */
 
-public struct PageOfComments: Codable {
+public struct PageOfComments {
 
 
 

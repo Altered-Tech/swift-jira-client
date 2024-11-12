@@ -10,7 +10,7 @@ import Foundation
 
 /** The user that last modified the draft workflow scheme. A modification is a change to the issue type-project mappings only. This property does not apply to non-draft workflows. */
 
-public struct AllOfWorkflowSchemeLastModifiedUser: Codable {
+public struct AllOfWorkflowSchemeLastModifiedUser {
 
     public enum AccountType: String, Codable { 
         case atlassian = "atlassian"

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a dashboard. */
 
-public struct Dashboard: Codable {
+public struct Dashboard {
 
     /** The automatic refresh interval for the dashboard in milliseconds. */
     public var automaticRefreshMs: Int?

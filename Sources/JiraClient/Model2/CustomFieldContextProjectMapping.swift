@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a context to project association. */
 
-public struct CustomFieldContextProjectMapping: Codable {
+public struct CustomFieldContextProjectMapping {
 
     /** The ID of the context. */
     public var contextId: String

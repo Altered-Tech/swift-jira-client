@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the order-by JQL clause. */
 
-public struct JqlQueryOrderByClause: Codable {
+public struct JqlQueryOrderByClause {
 
     /** The list of order-by clause fields and their ordering directives. */
     public var fields: [JqlQueryOrderByClauseElement]

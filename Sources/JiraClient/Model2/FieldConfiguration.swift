@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a field configuration. */
 
-public struct FieldConfiguration: Codable {
+public struct FieldConfiguration {
 
     /** The description of the field configuration. */
     public var _description: String

@@ -10,7 +10,7 @@ import Foundation
 
 /** An issue priority with sequence information. */
 
-public struct PriorityWithSequence: Codable {
+public struct PriorityWithSequence {
 
     /** The description of the issue priority. */
     public var _description: String?

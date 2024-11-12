@@ -10,7 +10,7 @@ import Foundation
 
 /** The account ID of the new owner. */
 
-public struct ChangeFilterOwner: Codable {
+public struct ChangeFilterOwner {
 
     /** The account ID of the new owner. */
     public var accountId: String

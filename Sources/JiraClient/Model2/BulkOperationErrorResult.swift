@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct BulkOperationErrorResult: Codable {
+public struct BulkOperationErrorResult {
 
     public var elementErrors: ErrorCollection?
     public var failedElementNumber: Int?

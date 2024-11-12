@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a custom field context. */
 
-public struct CustomFieldContext: Codable {
+public struct CustomFieldContext {
 
     /** The description of the context. */
     public var _description: String

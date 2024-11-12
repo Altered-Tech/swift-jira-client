@@ -10,7 +10,7 @@ import Foundation
 
 /** Issue type screen scheme with a list of the projects that use it. */
 
-public struct IssueTypeScreenSchemesProjects: Codable {
+public struct IssueTypeScreenSchemesProjects {
 
     /** Details of an issue type screen scheme. */
     public var issueTypeScreenScheme: AllOfIssueTypeScreenSchemesProjectsIssueTypeScreenScheme

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an notification scheme. */
 
-public struct CreateNotificationSchemeDetails: Codable {
+public struct CreateNotificationSchemeDetails {
 
 
 

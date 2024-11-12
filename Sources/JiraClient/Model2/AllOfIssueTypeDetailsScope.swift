@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the next-gen projects the issue type is available in. */
 
-public struct AllOfIssueTypeDetailsScope: Codable {
+public struct AllOfIssueTypeDetailsScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

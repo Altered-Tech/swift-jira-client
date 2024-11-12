@@ -10,7 +10,7 @@ import Foundation
 
 /** The response code and messages related to any requested watchers. */
 
-public struct AllOfCreatedIssueWatchers: Codable {
+public struct AllOfCreatedIssueWatchers {
 
     public var errorCollection: ErrorCollection?
     public var status: Int?

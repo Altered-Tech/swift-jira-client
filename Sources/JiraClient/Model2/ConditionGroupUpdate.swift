@@ -10,7 +10,7 @@ import Foundation
 
 /** The conditions group associated with the transition. */
 
-public struct ConditionGroupUpdate: Codable {
+public struct ConditionGroupUpdate {
 
     public enum Operation: String, Codable { 
         case any = "ANY"

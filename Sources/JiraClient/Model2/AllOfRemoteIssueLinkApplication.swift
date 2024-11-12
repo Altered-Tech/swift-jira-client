@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the remote application the linked item is in. */
 
-public struct AllOfRemoteIssueLinkApplication: Codable {
+public struct AllOfRemoteIssueLinkApplication {
 
     /** The name of the application. Used in conjunction with the (remote) object icon title to display a tooltip for the link&#x27;s icon. The tooltip takes the format \&quot;\\[application name\\] icon title\&quot;. Blank items are excluded from the tooltip title. If both items are blank, the icon tooltop displays as \&quot;Web Link\&quot;. Grouping and sorting of links may place links without an application name last. */
     public var name: String?

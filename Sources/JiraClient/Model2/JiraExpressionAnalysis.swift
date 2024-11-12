@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the analysed Jira expression. */
 
-public struct JiraExpressionAnalysis: Codable {
+public struct JiraExpressionAnalysis {
 
     public var complexity: JiraExpressionComplexity?
     /** A list of validation errors. Not included if the expression is valid. */

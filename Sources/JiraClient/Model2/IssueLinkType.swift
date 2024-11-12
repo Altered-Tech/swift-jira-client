@@ -10,7 +10,7 @@ import Foundation
 
 /** This object is used as follows:   *  In the [ issueLink](#api-rest-api-2-issueLink-post) resource it defines and reports on the type of link between the issues. Find a list of issue link types with [Get issue link types](#api-rest-api-2-issueLinkType-get).  *  In the [ issueLinkType](#api-rest-api-2-issueLinkType-post) resource it defines and reports on issue link types. */
 
-public struct IssueLinkType: Codable {
+public struct IssueLinkType {
 
     /** The ID of the issue link type and is used as follows:   *  In the [ issueLink](#api-rest-api-2-issueLink-post) resource it is the type of issue link. Required on create when &#x60;name&#x60; isn&#x27;t provided. Otherwise, read only.  *  In the [ issueLinkType](#api-rest-api-2-issueLinkType-post) resource it is read only. */
     public var _id: String?

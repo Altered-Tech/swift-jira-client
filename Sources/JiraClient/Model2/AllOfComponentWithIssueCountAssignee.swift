@@ -10,9 +10,9 @@ import Foundation
 
 /** The details of the user associated with &#x60;assigneeType&#x60;, if any. See &#x60;realAssignee&#x60; for details of the user assigned to issues created with this component. */
 
-public struct AllOfComponentWithIssueCountAssignee: Codable {
+public struct AllOfComponentWithIssueCountAssignee {
 
-    public enum AccountType: String, Codable { 
+    public enum AccountType: String {
         case atlassian = "atlassian"
         case app = "app"
         case customer = "customer"
@@ -63,22 +63,4 @@ public struct AllOfComponentWithIssueCountAssignee: Codable {
         self._self = _self
         self.timeZone = timeZone
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case accountId
-        case accountType
-        case active
-        case applicationRoles
-        case avatarUrls
-        case displayName
-        case emailAddress
-        case expand
-        case groups
-        case key
-        case locale
-        case name
-        case _self = "self"
-        case timeZone
-    }
-
 }

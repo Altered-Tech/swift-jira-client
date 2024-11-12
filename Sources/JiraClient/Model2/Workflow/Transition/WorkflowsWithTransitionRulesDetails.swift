@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of workflows and their transition rules to delete. */
 
-public struct WorkflowsWithTransitionRulesDetails: Codable {
+public struct WorkflowsWithTransitionRulesDetails {
 
     /** The list of workflows with transition rules to delete. */
     public var workflows: [WorkflowTransitionRulesDetails]

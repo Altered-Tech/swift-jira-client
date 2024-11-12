@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CustomContextVariable: Codable {
+public struct CustomContextVariable {
 
     /** Type of custom context variable. */
     public var type: String

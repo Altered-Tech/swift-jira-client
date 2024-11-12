@@ -10,7 +10,7 @@ import Foundation
 
 /** List of pairs (id and value) for precomputation updates. */
 
-public struct JqlFunctionPrecomputationUpdateRequestBean: Codable {
+public struct JqlFunctionPrecomputationUpdateRequestBean {
 
     public var values: [JqlFunctionPrecomputationUpdateBean]?
 

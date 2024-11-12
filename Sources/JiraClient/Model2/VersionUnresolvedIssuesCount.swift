@@ -10,7 +10,7 @@ import Foundation
 
 /** Count of a version&#x27;s unresolved issues. */
 
-public struct VersionUnresolvedIssuesCount: Codable {
+public struct VersionUnresolvedIssuesCount {
 
     /** Count of issues. */
     public var issuesCount: Int64?

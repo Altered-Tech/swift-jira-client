@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of issue security scheme level. */
 
-public struct UpdateIssueSecurityLevelDetails: Codable {
+public struct UpdateIssueSecurityLevelDetails {
 
 
 

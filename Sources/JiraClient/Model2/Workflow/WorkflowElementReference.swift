@@ -10,7 +10,7 @@ import Foundation
 
 /** A reference to the location of the error. This will be null if the error does not refer to a specific element. */
 
-public struct WorkflowElementReference: Codable {
+public struct WorkflowElementReference {
 
     /** A property key. */
     public var propertyKey: String?

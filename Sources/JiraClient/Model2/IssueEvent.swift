@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an issue event. */
 
-public struct IssueEvent: Codable {
+public struct IssueEvent {
 
     /** The ID of the event. */
     public var _id: Int64?

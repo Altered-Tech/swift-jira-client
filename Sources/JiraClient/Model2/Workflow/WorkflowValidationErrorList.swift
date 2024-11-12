@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowValidationErrorList: Codable {
+public struct WorkflowValidationErrorList {
 
     /** The list of validation errors. */
     public var errors: [WorkflowValidationError]?

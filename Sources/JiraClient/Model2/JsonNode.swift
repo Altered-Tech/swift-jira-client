@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JsonNode: Codable {
+public struct JsonNode {
 
     public enum NumberType: String, Codable { 
         case int = "INT"

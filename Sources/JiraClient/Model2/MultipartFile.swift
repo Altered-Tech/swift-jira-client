@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct MultipartFile: Codable {
+public struct MultipartFile {
 
     public var bytes: [Data]?
     public var contentType: String?

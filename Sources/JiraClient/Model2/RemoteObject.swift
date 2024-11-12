@@ -10,7 +10,7 @@ import Foundation
 
 /** The linked item. */
 
-public struct RemoteObject: Codable {
+public struct RemoteObject {
 
 
 

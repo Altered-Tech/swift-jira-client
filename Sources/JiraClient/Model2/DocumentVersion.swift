@@ -10,7 +10,7 @@ import Foundation
 
 /** The current version details of this workflow scheme. */
 
-public struct DocumentVersion: Codable {
+public struct DocumentVersion {
 
     /** The version UUID. */
     public var _id: String

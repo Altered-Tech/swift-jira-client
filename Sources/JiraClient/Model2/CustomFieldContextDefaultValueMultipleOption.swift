@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a multi-select custom field. */
 
-public struct CustomFieldContextDefaultValueMultipleOption: Codable {
+public struct CustomFieldContextDefaultValueMultipleOption {
 
     /** The ID of the context. */
     public var contextId: String

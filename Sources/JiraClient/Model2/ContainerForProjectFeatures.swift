@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of features on a project. */
 
-public struct ContainerForProjectFeatures: Codable {
+public struct ContainerForProjectFeatures {
 
     /** The project features. */
     public var features: [ProjectFeature]?

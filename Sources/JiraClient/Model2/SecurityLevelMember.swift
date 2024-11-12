@@ -10,7 +10,7 @@ import Foundation
 
 /** Issue security level member. */
 
-public struct SecurityLevelMember: Codable {
+public struct SecurityLevelMember {
 
 
 

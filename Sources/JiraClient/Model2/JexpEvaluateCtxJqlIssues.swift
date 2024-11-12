@@ -10,7 +10,7 @@ import Foundation
 
 /** The JQL specifying the issues available in the evaluated Jira expression under the &#x60;issues&#x60; context variable. Not all issues returned by the JQL query are loaded, only those described by the &#x60;nextPageToken&#x60; and &#x60;maxResults&#x60; properties. This bean will be replacing JexpJqlIssues bean as part of new &#x60;evaluate&#x60; endpoint */
 
-public struct JexpEvaluateCtxJqlIssues: Codable {
+public struct JexpEvaluateCtxJqlIssues {
 
     /** The maximum number of issues to return from the JQL query. max results value considered may be lower than the number specific here. */
     public var maxResults: Int?

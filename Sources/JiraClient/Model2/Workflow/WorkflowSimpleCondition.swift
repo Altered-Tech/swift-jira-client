@@ -10,7 +10,7 @@ import Foundation
 
 /** A workflow transition rule condition. This object returns &#x60;nodeType&#x60; as &#x60;simple&#x60;. */
 
-public struct WorkflowSimpleCondition: Codable {
+public struct WorkflowSimpleCondition {
 
     /** EXPERIMENTAL. The configuration of the transition rule. */
     public var configuration: Any?

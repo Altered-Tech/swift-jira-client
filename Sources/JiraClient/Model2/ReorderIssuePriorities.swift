@@ -10,7 +10,7 @@ import Foundation
 
 /** Change the order of issue priorities. */
 
-public struct ReorderIssuePriorities: Codable {
+public struct ReorderIssuePriorities {
 
     /** The ID of the priority. Required if &#x60;position&#x60; isn&#x27;t provided. */
     public var after: String?

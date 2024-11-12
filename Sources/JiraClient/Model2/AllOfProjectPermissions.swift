@@ -10,7 +10,7 @@ import Foundation
 
 /** User permissions on the project */
 
-public struct AllOfProjectPermissions: Codable {
+public struct AllOfProjectPermissions {
 
     /** Whether the logged user can edit the project. */
     public var canEdit: Bool?

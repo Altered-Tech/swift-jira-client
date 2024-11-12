@@ -10,9 +10,9 @@ import Foundation
 
 /** The in-progress issue migration task. */
 
-public struct AllOfPrioritySchemeIdTask: Codable {
+public struct AllOfPrioritySchemeIdTask {
 
-    public enum Status: String, Codable { 
+    public enum Status: String {
         case enqueued = "ENQUEUED"
         case running = "RUNNING"
         case complete = "COMPLETE"
@@ -62,22 +62,6 @@ public struct AllOfPrioritySchemeIdTask: Codable {
         self.status = status
         self.submitted = submitted
         self.submittedBy = submittedBy
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case elapsedRuntime
-        case finished
-        case _id = "id"
-        case lastUpdate
-        case message
-        case progress
-        case result
-        case _self = "self"
-        case started
-        case status
-        case submitted
-        case submittedBy
     }
 
 }

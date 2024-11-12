@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AttachmentArchiveImpl: Codable {
+public struct AttachmentArchiveImpl {
 
     /** The list of the items included in the archive. */
     public var entries: [AttachmentArchiveEntry]?

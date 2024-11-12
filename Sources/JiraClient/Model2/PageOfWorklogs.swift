@@ -10,7 +10,7 @@ import Foundation
 
 /** Paginated list of worklog details */
 
-public struct PageOfWorklogs: Codable {
+public struct PageOfWorklogs {
 
 
 

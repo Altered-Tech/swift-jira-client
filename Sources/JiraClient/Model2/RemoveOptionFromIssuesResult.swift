@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct RemoveOptionFromIssuesResult: Codable {
+public struct RemoveOptionFromIssuesResult {
 
     /** A collection of errors related to unchanged issues. The collection size is limited, which means not all errors may be returned. */
     public var errors: AllOfRemoveOptionFromIssuesResultErrors?

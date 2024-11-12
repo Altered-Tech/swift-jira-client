@@ -10,7 +10,7 @@ import Foundation
 
 /** A type of issue suggested for use in auto-completion. */
 
-public struct IssuePickerSuggestionsIssueType: Codable {
+public struct IssuePickerSuggestionsIssueType {
 
     /** The ID of the type of issues suggested for use in auto-completion. */
     public var _id: String?

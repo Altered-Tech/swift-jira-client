@@ -10,7 +10,7 @@ import Foundation
 
 /** A JSON object with custom content. */
 
-public struct JsonContextVariable: Codable {
+public struct JsonContextVariable {
 
     /** Type of custom context variable. */
     public var type: String

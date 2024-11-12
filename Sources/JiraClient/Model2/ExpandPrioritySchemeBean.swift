@@ -10,7 +10,7 @@ import Foundation
 
 /** A priority scheme with less fields to be used in for an API expand response. */
 
-public struct ExpandPrioritySchemeBean: Codable {
+public struct ExpandPrioritySchemeBean {
 
     /** The ID of the priority scheme. */
     public var _id: String?

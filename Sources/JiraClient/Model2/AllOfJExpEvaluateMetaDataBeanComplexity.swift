@@ -10,7 +10,7 @@ import Foundation
 
 /** Contains information about the expression complexity. For example, the number of steps it took to evaluate the expression. */
 
-public struct AllOfJExpEvaluateMetaDataBeanComplexity: Codable {
+public struct AllOfJExpEvaluateMetaDataBeanComplexity {
 
     /** The number of Jira REST API beans returned in the response. */
     public var beans: Any

@@ -10,7 +10,7 @@ import Foundation
 
 /** Instructions to migrate issues. */
 
-public struct AllOfUpdatePrioritySchemeRequestBeanMappings: Codable {
+public struct AllOfUpdatePrioritySchemeRequestBeanMappings {
 
     /** The mapping of priorities for issues being migrated **into** this priority scheme. Key is the old priority ID, value is the new priority ID (must exist in this priority scheme). */
     public var _in: [String:Int64]?

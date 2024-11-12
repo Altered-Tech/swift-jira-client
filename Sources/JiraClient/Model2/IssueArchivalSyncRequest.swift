@@ -10,7 +10,7 @@ import Foundation
 
 /** List of Issue Ids Or Keys that are to be archived or unarchived */
 
-public struct IssueArchivalSyncRequest: Codable {
+public struct IssueArchivalSyncRequest {
 
     public var issueIdsOrKeys: [String]?
 

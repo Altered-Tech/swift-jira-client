@@ -10,9 +10,9 @@ import Foundation
 
 /** A clause that asserts the current value of a field. For example, &#x60;summary ~ test&#x60;. */
 
-public struct FieldValueClause: Codable {
+public struct FieldValueClause {
 
-    public enum Operator: String, Codable { 
+    public enum Operator: String {
         case equal = "="
         case notEqual = "!="
         case greaterThan = ">"
@@ -22,7 +22,7 @@ public struct FieldValueClause: Codable {
         case _in = "in"
         case notIn = "not in"
         case tilde = "~"
-        case ~&#x3D; = "~="
+        case tildaEqual = "~="
         case _is = "is"
         case isNot = "is not"
     }
@@ -35,12 +35,6 @@ public struct FieldValueClause: Codable {
         self.field = field
         self.operand = operand
         self._operator = _operator
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case field
-        case operand
-        case _operator = "operator"
     }
 
 }

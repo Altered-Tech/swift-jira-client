@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an entity property. */
 
-public struct JqlQueryFieldEntityProperty: Codable {
+public struct JqlQueryFieldEntityProperty {
 
     public enum ModelType: String, Codable { 
         case number = "number"

@@ -10,7 +10,7 @@ import Foundation
 
 /** A JQL query clause. */
 
-public struct JqlQueryClause: Codable {
+public struct JqlQueryClause {
 
 
 

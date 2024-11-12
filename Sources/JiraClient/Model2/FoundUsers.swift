@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of users found in a search, including header text (Showing X of Y matching users) and total of matched users. */
 
-public struct FoundUsers: Codable {
+public struct FoundUsers {
 
     /** Header text indicating the number of users in the response and the total number of users found in the search. */
     public var header: String?

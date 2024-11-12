@@ -10,7 +10,7 @@ import Foundation
 
 /** The wrapper for the issue creation metadata for a list of projects. */
 
-public struct IssueCreateMetadata: Codable {
+public struct IssueCreateMetadata {
 
     /** Expand options that include additional project details in the response. */
     public var expand: String?

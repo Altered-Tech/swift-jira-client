@@ -36,7 +36,7 @@ public struct JiraClient {
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+            return Issue(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -46,14 +46,14 @@ public struct JiraClient {
         }
     }
     
-    public func getTransitions(key: String, transitionId id: String? = nil, expand: String? = nil) async throws -> [Components.Schemas.IssueTransition]? {
+    public func getTransitions(key: String, transitionId id: String? = nil, expand: String? = nil) async throws -> [IssueTransition]? {
         let query = Operations.getTransitions.Input.Query(expand: expand, transitionId: id)
         let input = Operations.getTransitions.Input(path: .init(issueIdOrKey: key), query: query)
         let result = try await underlyingClient.getTransitions(input)
         switch result {
             
         case .ok(let value):
-            return try value.body.json.transitions
+            return try value.body.json.transitions?.map{IssueTransition(client: $0)}
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -70,12 +70,12 @@ public struct JiraClient {
         return id
     }
     
-    public func votes(for key: String) async throws -> Components.Schemas.Votes {
+    public func votes(for key: String) async throws -> Votes {
         let result = try await underlyingClient.getVotes(path: .init(issueIdOrKey: key))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+            return Votes(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -412,8 +412,8 @@ Returned if:
     
     public func issueLink(with linkType: String, for inward: String, and outward: String, comment: String? = nil) async throws {
         
-        let inwardIssue: Components.Schemas.IssueBean = try await self.findIssue(key: inward)
-        let outwardIssue: Components.Schemas.IssueBean = try await self.findIssue(key: outward)
+        let inwardIssue: Issue = try await self.findIssue(key: inward)
+        let outwardIssue: Issue = try await self.findIssue(key: outward)
         
         guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
         guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType || $0.inward == linkType || $0.outward == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}

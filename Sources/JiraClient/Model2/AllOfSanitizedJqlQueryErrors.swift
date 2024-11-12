@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of errors. */
 
-public struct AllOfSanitizedJqlQueryErrors: Codable {
+public struct AllOfSanitizedJqlQueryErrors {
 
     /** The list of error messages produced by this operation. For example, \&quot;input parameter &#x27;key&#x27; must be provided\&quot; */
     public var errorMessages: [String]?

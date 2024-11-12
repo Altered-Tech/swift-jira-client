@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope of the field. */
 
-public struct AllOfFieldDetailsScope: Codable {
+public struct AllOfFieldDetailsScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

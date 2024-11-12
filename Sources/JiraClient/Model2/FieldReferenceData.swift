@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a field that can be used in advanced searches. */
 
-public struct FieldReferenceData: Codable {
+public struct FieldReferenceData {
 
     public enum Auto: String, Codable { 
         case _true = "true"

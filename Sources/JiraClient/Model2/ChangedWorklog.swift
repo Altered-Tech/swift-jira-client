@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a changed worklog. */
 
-public struct ChangedWorklog: Codable {
+public struct ChangedWorklog {
 
     /** Details of properties associated with the change. */
     public var properties: [EntityProperty]?

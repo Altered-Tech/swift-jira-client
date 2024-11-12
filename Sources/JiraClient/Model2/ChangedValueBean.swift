@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of names changed in the record event. */
 
-public struct ChangedValueBean: Codable {
+public struct ChangedValueBean {
 
     /** The value of the field before the change. */
     public var changedFrom: String?

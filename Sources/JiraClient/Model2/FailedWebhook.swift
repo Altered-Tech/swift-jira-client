@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a failed webhook. */
 
-public struct FailedWebhook: Codable {
+public struct FailedWebhook {
 
     /** The webhook body. */
     public var body: String?

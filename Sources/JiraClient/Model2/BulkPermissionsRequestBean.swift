@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of global permissions to look up and project permissions with associated projects and issues to look up. */
 
-public struct BulkPermissionsRequestBean: Codable {
+public struct BulkPermissionsRequestBean {
 
     /** The account ID of a user. */
     public var accountId: String?

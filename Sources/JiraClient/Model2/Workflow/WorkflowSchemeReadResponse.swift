@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowSchemeReadResponse: Codable {
+public struct WorkflowSchemeReadResponse {
 
     public var defaultWorkflow: WorkflowMetadataRestModel?
     /** The description of the workflow scheme. */
@@ -39,16 +39,5 @@ public struct WorkflowSchemeReadResponse: Codable {
         self.workflowsForIssueTypes = workflowsForIssueTypes
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case defaultWorkflow
-        case _description = "description"
-        case _id = "id"
-        case name
-        case projectIdsUsingScheme
-        case scope
-        case taskId
-        case version
-        case workflowsForIssueTypes
-    }
 
 }

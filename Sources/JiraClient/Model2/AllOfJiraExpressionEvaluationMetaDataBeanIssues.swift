@@ -10,7 +10,7 @@ import Foundation
 
 /** Contains information about the &#x60;issues&#x60; variable in the context. For example, is the issues were loaded with JQL, information about the page will be included here. */
 
-public struct AllOfJiraExpressionEvaluationMetaDataBeanIssues: Codable {
+public struct AllOfJiraExpressionEvaluationMetaDataBeanIssues {
 
     public var jql: IssuesJqlMetaDataBean?
 

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct NestedResponse: Codable {
+public struct NestedResponse {
 
     public var errorCollection: ErrorCollection?
     public var status: Int?

@@ -10,7 +10,7 @@ import Foundation
 
 /** The custom user or group field. */
 
-public struct AllOfEventNotificationField: Codable {
+public struct AllOfEventNotificationField {
 
     /** The names that can be used to reference the field in an advanced search. For more information, see [Advanced searching - fields reference](https://confluence.atlassian.com/x/gwORLQ). */
     public var clauseNames: [String]?

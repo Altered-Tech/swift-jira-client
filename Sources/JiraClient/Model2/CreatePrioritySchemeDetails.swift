@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a new priority scheme */
 
-public struct CreatePrioritySchemeDetails: Codable {
+public struct CreatePrioritySchemeDetails {
 
     /** The ID of the default priority for the priority scheme. */
     public var defaultPriorityId: Int64

@@ -10,7 +10,7 @@ import Foundation
 
 /** The x and y location of the status in the workflow. */
 
-public struct WorkflowStatusLayout: Codable {
+public struct WorkflowStatusLayout {
 
     /** The x axis location. */
     public var x: Double?

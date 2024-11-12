@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of status mappings. */
 
-public struct WorkflowAssociationStatusMapping: Codable {
+public struct WorkflowAssociationStatusMapping {
 
     /** The ID of the status in the new workflow. */
     public var newStatusId: String

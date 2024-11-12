@@ -10,7 +10,7 @@ import Foundation
 
 /** Lists of issues and entity properties. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information. */
 
-public struct IssueEntityProperties: Codable {
+public struct IssueEntityProperties {
 
     /** A list of entity property IDs. */
     public var entitiesIds: [Int64]?

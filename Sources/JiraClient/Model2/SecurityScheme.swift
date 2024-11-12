@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a security scheme. */
 
-public struct SecurityScheme: Codable {
+public struct SecurityScheme {
 
     /** The ID of the default security level. */
     public var defaultSecurityLevelId: Int64?

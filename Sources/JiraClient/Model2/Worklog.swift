@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a worklog. */
 
-public struct Worklog: Codable {
+public struct Worklog {
 
 
 

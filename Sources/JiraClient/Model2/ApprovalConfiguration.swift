@@ -10,7 +10,7 @@ import Foundation
 
 /** The approval configuration of a status within a workflow. Applies only to Jira Service Management approvals. */
 
-public struct ApprovalConfiguration: Codable {
+public struct ApprovalConfiguration {
 
     public enum Active: String, Codable { 
         case _true = "true"

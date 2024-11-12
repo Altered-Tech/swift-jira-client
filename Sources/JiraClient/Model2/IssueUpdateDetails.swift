@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue update request. */
 
-public struct IssueUpdateDetails: Codable {
+public struct IssueUpdateDetails {
 
 
 

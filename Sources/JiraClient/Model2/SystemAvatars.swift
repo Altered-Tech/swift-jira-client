@@ -10,7 +10,7 @@ import Foundation
 
 /** List of system avatars. */
 
-public struct SystemAvatars: Codable {
+public struct SystemAvatars {
 
     /** A list of avatar details. */
     public var system: [Avatar]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of global and project permissions granted to the user. */
 
-public struct BulkPermissionGrants: Codable {
+public struct BulkPermissionGrants {
 
     /** List of permissions granted to the user. */
     public var globalPermissions: [String]

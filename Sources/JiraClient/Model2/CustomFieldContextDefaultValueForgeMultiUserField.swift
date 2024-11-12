@@ -10,7 +10,7 @@ import Foundation
 
 /** Defaults for a Forge collection of users custom field. */
 
-public struct CustomFieldContextDefaultValueForgeMultiUserField: Codable {
+public struct CustomFieldContextDefaultValueForgeMultiUserField {
 
     /** The IDs of the default users. */
     public var accountIds: [String]

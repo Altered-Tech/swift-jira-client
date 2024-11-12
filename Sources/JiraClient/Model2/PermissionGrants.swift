@@ -10,7 +10,7 @@ import Foundation
 
 /** List of permission grants. */
 
-public struct PermissionGrants: Codable {
+public struct PermissionGrants {
 
     /** Expand options that include additional permission grant details in the response. */
     public var expand: String?

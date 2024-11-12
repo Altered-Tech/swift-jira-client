@@ -10,7 +10,7 @@ import Foundation
 
 /** A custom field and its new value with a list of issue to update. */
 
-public struct MultipleCustomFieldValuesUpdate: Codable {
+public struct MultipleCustomFieldValuesUpdate {
 
     /** The ID or key of the custom field. For example, &#x60;customfield_10010&#x60;. */
     public var customField: String

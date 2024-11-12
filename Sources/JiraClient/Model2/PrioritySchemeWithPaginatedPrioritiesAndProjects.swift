@@ -10,7 +10,7 @@ import Foundation
 
 /** A priority scheme with paginated priorities and projects. */
 
-public struct PrioritySchemeWithPaginatedPrioritiesAndProjects: Codable {
+public struct PrioritySchemeWithPaginatedPrioritiesAndProjects {
 
 
 

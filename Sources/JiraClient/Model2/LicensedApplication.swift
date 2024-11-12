@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a licensed Jira application. */
 
-public struct LicensedApplication: Codable {
+public struct LicensedApplication {
 
     public enum Plan: String, Codable { 
         case unlicensed = "UNLICENSED"

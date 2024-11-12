@@ -10,7 +10,7 @@ import Foundation
 
 /** A screen tab field. */
 
-public struct ScreenableField: Codable {
+public struct ScreenableField {
 
     /** The ID of the screen tab field. */
     public var _id: String?

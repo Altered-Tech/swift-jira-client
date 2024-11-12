@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of updates for a custom field. */
 
-public struct CustomFieldValueUpdateDetails: Codable {
+public struct CustomFieldValueUpdateDetails {
 
     /** The list of custom field update details. */
     public var updates: [CustomFieldValueUpdate]?

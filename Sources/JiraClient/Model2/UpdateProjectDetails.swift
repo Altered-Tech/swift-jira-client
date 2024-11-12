@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the project. */
 
-public struct UpdateProjectDetails: Codable {
+public struct UpdateProjectDetails {
 
     public enum AssigneeType: String, Codable { 
         case projectLead = "PROJECT_LEAD"

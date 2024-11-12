@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the projects the option is available in. */
 
-public struct IssueFieldOptionConfiguration: Codable {
+public struct IssueFieldOptionConfiguration {
 
     public enum Attributes: String, Codable { 
         case notselectable = "notSelectable"

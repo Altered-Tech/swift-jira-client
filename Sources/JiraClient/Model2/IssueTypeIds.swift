@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of issue type IDs. */
 
-public struct IssueTypeIds: Codable {
+public struct IssueTypeIds {
 
     /** The list of issue type IDs. */
     public var issueTypeIds: [String]

@@ -10,7 +10,7 @@ import Foundation
 
 /** Container for a list of webhook IDs. */
 
-public struct ContainerForWebhookIDs: Codable {
+public struct ContainerForWebhookIDs {
 
     /** A list of webhook IDs. */
     public var webhookIds: [Int64]

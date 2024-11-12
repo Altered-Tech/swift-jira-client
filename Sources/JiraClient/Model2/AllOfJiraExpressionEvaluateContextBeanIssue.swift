@@ -10,7 +10,7 @@ import Foundation
 
 /** The issue that is available under the &#x60;issue&#x60; variable when evaluating the expression. */
 
-public struct AllOfJiraExpressionEvaluateContextBeanIssue: Codable {
+public struct AllOfJiraExpressionEvaluateContextBeanIssue {
 
     /** The ID of the referenced item. */
     public var _id: Int64?

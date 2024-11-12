@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a license for the Jira instance. */
 
-public struct License: Codable {
+public struct License {
 
     /** The applications under this license. */
     public var applications: [LicensedApplication]

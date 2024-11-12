@@ -10,7 +10,7 @@ import Foundation
 
 /** The default text for a read only custom field. */
 
-public struct CustomFieldContextDefaultValueReadOnly: Codable {
+public struct CustomFieldContextDefaultValueReadOnly {
 
     /** The default text. The maximum length is 255 characters. */
     public var text: String?

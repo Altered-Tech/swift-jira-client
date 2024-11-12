@@ -10,7 +10,7 @@ import Foundation
 
 /** Update projects in a scheme */
 
-public struct UpdateProjectsInSchemeRequestBean: Codable {
+public struct UpdateProjectsInSchemeRequestBean {
 
 
 

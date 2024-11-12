@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowUpdateValidateRequestBean: Codable {
+public struct WorkflowUpdateValidateRequestBean {
 
     public var payload: WorkflowUpdateRequest
     public var validationOptions: ValidationOptionsForUpdate?

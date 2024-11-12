@@ -10,7 +10,7 @@ import Foundation
 
 /** The IDs of the screens for the screen types of the screen scheme. Only screens used in classic projects are accepted. */
 
-public struct AllOfScreenSchemeDetailsScreens: Codable {
+public struct AllOfScreenSchemeDetailsScreens {
 
     /** The ID of the create screen. */
     public var create: Int64?

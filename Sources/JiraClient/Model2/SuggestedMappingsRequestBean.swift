@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of changes to a priority scheme that require suggested priority mappings. */
 
-public struct SuggestedMappingsRequestBean: Codable {
+public struct SuggestedMappingsRequestBean {
 
     /** The maximum number of results that could be on the page. */
     public var maxResults: Int?

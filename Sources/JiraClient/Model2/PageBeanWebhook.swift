@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanWebhook: Codable {
+public struct PageBeanWebhook {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

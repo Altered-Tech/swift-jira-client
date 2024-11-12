@@ -10,7 +10,7 @@ import Foundation
 
 /** The data schema for the field. */
 
-public struct AllOfFieldDetailsSchema: Codable {
+public struct AllOfFieldDetailsSchema {
 
     /** If the field is a custom field, the configuration of the field. */
     public var configuration: [String:Any]?

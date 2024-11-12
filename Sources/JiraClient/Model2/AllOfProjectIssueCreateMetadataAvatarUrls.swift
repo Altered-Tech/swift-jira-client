@@ -10,7 +10,7 @@ import Foundation
 
 /** List of the project&#x27;s avatars, returning the avatar size and associated URL. */
 
-public struct AllOfProjectIssueCreateMetadataAvatarUrls: Codable {
+public struct AllOfProjectIssueCreateMetadataAvatarUrls {
 
     /** The URL of the item&#x27;s 16x16 pixel avatar. */
     public var _16x16: String?

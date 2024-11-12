@@ -10,7 +10,7 @@ import Foundation
 
 /** Project list with assigned field configuration schema. */
 
-public struct FieldConfigurationSchemeProjects: Codable {
+public struct FieldConfigurationSchemeProjects {
 
     public var fieldConfigurationScheme: FieldConfigurationScheme?
     /** The IDs of projects using the field configuration scheme. */

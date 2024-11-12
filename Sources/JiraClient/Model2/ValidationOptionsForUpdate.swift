@@ -10,7 +10,7 @@ import Foundation
 
 /** The level of validation to return from the API. If no values are provided, the default would return &#x60;WARNING&#x60; and &#x60;ERROR&#x60; level validation results. */
 
-public struct ValidationOptionsForUpdate: Codable {
+public struct ValidationOptionsForUpdate {
 
     public enum Levels: String, Codable { 
         case warning = "WARNING"

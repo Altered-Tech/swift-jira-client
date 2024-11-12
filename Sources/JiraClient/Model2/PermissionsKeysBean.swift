@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct PermissionsKeysBean: Codable {
+public struct PermissionsKeysBean {
 
     /** A list of permission keys. */
     public var permissions: [String]

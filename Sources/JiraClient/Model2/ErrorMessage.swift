@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ErrorMessage: Codable {
+public struct ErrorMessage {
 
     /** The error message. */
     public var message: String

@@ -10,7 +10,7 @@ import Foundation
 
 /** The JQL query that specifies the set of issues available in the Jira expression. */
 
-public struct AllOfJexpIssuesJql: Codable {
+public struct AllOfJexpIssuesJql {
 
     public enum Validation: String, Codable { 
         case strict = "strict"

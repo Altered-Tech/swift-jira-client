@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssueLimitReportResponseBean: Codable {
+public struct IssueLimitReportResponseBean {
 
     /** A list of ids of issues approaching the limit and their field count */
     public var issuesApproachingLimit: [String:[String:Int64]]?

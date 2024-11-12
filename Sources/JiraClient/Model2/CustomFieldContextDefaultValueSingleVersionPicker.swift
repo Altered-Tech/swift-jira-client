@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a version picker custom field. */
 
-public struct CustomFieldContextDefaultValueSingleVersionPicker: Codable {
+public struct CustomFieldContextDefaultValueSingleVersionPicker {
 
     public var type: String
     /** The ID of the default version. */

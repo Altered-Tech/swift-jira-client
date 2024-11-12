@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of the workflows to create. */
 
-public struct WorkflowCreate: Codable {
+public struct WorkflowCreate {
 
     /** The description of the workflow to create. */
     public var _description: String?

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IncludedFields: Codable {
+public struct IncludedFields {
 
     public let actuallyIncluded: [String]?
     public let excluded: [String]?

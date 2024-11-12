@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of CreateMetaIssueTypes. */
 
-public struct PageOfCreateMetaIssueTypes: Codable {
+public struct PageOfCreateMetaIssueTypes {
 
 
 

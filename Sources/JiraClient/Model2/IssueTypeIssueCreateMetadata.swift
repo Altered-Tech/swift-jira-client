@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the issue creation metadata for an issue type. */
 
-public struct IssueTypeIssueCreateMetadata: Codable {
+public struct IssueTypeIssueCreateMetadata {
 
     /** The ID of the issue type&#x27;s avatar. */
     public var avatarId: Int64?

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowReadRequest: Codable {
+public struct WorkflowReadRequest {
 
     /** The list of projects and issue types to query. */
     public var projectAndIssueTypes: [ProjectAndIssueTypePair]?

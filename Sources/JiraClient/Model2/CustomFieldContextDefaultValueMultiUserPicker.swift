@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a User Picker (multiple) custom field. */
 
-public struct CustomFieldContextDefaultValueMultiUserPicker: Codable {
+public struct CustomFieldContextDefaultValueMultiUserPicker {
 
     /** The IDs of the default users. */
     public var accountIds: [String]

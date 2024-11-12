@@ -10,7 +10,7 @@ import Foundation
 
 /** A field used in a JQL query. See [Advanced searching - fields reference](https://confluence.atlassian.com/x/dAiiLQ) for more information about fields in JQL queries. */
 
-public struct JqlQueryField: Codable {
+public struct JqlQueryField {
 
     /** The encoded name of the field, which can be used directly in a JQL query. */
     public var encodedName: String?

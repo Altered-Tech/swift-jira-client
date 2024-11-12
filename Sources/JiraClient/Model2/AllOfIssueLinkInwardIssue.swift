@@ -10,7 +10,7 @@ import Foundation
 
 /** Provides details about the linked issue. If presenting this link in a user interface, use the &#x60;inward&#x60; field of the issue link type to label the link. */
 
-public struct AllOfIssueLinkInwardIssue: Codable {
+public struct AllOfIssueLinkInwardIssue {
 
     /** The fields associated with the issue. */
     public var fields: Any?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the issues created and the errors for requests that failed. */
 
-public struct CreatedIssues: Codable {
+public struct CreatedIssues {
 
     /** Error details for failed issue creation requests. */
     public var errors: [BulkOperationErrorResult]?

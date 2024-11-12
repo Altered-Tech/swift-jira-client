@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope where this workflow applies */
 
-public struct AllOfDeprecatedWorkflowScope: Codable {
+public struct AllOfDeprecatedWorkflowScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

@@ -10,7 +10,7 @@ import Foundation
 
 /** Number of archived/unarchived issues and list of errors that occurred during the action, if any. */
 
-public struct IssueArchivalSyncResponse: Codable {
+public struct IssueArchivalSyncResponse {
 
     public var errors: Errors?
     public var numberOfIssuesUpdated: Int64?

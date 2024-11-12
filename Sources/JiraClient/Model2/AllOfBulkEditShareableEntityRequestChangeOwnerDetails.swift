@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of change owner action. */
 
-public struct AllOfBulkEditShareableEntityRequestChangeOwnerDetails: Codable {
+public struct AllOfBulkEditShareableEntityRequestChangeOwnerDetails {
 
     /** Whether the name is fixed automatically if it&#x27;s duplicated after changing owner. */
     public var autofixName: Bool

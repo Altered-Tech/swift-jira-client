@@ -10,7 +10,7 @@ import Foundation
 
 /** A container for a list of workflow schemes together with the projects they are associated with. */
 
-public struct ContainerOfWorkflowSchemeAssociations: Codable {
+public struct ContainerOfWorkflowSchemeAssociations {
 
     /** A list of workflow schemes together with projects they are associated with. */
     public var values: [WorkflowSchemeAssociations]

@@ -10,7 +10,7 @@ import Foundation
 
 /** The project landing page info. */
 
-public struct AllOfProjectLandingPageInfo: Codable {
+public struct AllOfProjectLandingPageInfo {
 
     public var attributes: [String:String]?
     public var boardId: Int64?

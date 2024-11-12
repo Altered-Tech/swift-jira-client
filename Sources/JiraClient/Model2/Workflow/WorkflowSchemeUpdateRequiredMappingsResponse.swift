@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowSchemeUpdateRequiredMappingsResponse: Codable {
+public struct WorkflowSchemeUpdateRequiredMappingsResponse {
 
     /** The list of required status mappings by issue type. */
     public var statusMappingsByIssueTypes: [RequiredMappingByIssueType]?

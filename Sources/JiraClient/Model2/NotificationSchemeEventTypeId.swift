@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of an event that is being mapped to notifications. */
 
-public struct NotificationSchemeEventTypeId: Codable {
+public struct NotificationSchemeEventTypeId {
 
 
 

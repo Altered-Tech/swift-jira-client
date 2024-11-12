@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of available trigger types. */
 
-public struct AvailableWorkflowTriggerTypes: Codable {
+public struct AvailableWorkflowTriggerTypes {
 
     /** The description of the trigger rule. */
     public var _description: String?

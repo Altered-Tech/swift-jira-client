@@ -10,7 +10,7 @@ import Foundation
 
 /** List of changed worklogs. */
 
-public struct ChangedWorklogs: Codable {
+public struct ChangedWorklogs {
 
     public var lastPage: Bool?
     /** The URL of the next list of changed worklogs. */
@@ -31,15 +31,6 @@ public struct ChangedWorklogs: Codable {
         self.since = since
         self.until = until
         self.values = values
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case lastPage
-        case nextPage
-        case _self = "self"
-        case since
-        case until
-        case values
     }
 
 }

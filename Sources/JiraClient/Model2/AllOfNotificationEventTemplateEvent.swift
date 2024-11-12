@@ -10,7 +10,7 @@ import Foundation
 
 /** The template of the event. Only custom events configured by Jira administrators have template. */
 
-public struct AllOfNotificationEventTemplateEvent: Codable {
+public struct AllOfNotificationEventTemplateEvent {
 
     /** The description of the event. */
     public var _description: String?

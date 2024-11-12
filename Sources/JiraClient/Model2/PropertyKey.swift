@@ -10,7 +10,7 @@ import Foundation
 
 /** Property key details. */
 
-public struct PropertyKey: Codable {
+public struct PropertyKey {
 
     /** The key of the property. */
     public var key: String?

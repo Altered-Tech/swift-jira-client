@@ -10,7 +10,7 @@ import Foundation
 
 /** A [Connect module](https://developer.atlassian.com/cloud/jira/platform/about-jira-modules/) in the same format as in the [app descriptor](https://developer.atlassian.com/cloud/jira/platform/app-descriptor/). */
 
-public struct ConnectModule: Codable {
+public struct ConnectModule {
 
 
 

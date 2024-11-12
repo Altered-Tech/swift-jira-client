@@ -10,7 +10,7 @@ import Foundation
 
 /** The field configuration for an issue type. */
 
-public struct FieldConfigurationIssueTypeItem: Codable {
+public struct FieldConfigurationIssueTypeItem {
 
     /** The ID of the field configuration. */
     public var fieldConfigurationId: String

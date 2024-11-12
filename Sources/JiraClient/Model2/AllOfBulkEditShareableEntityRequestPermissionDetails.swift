@@ -10,7 +10,7 @@ import Foundation
 
 /** The permission details to be changed. */
 
-public struct AllOfBulkEditShareableEntityRequestPermissionDetails: Codable {
+public struct AllOfBulkEditShareableEntityRequestPermissionDetails {
 
     /** The edit permissions for the shareable entities. */
     public var editPermissions: [SharePermission]

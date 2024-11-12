@@ -10,7 +10,7 @@ import Foundation
 
 /** A field auto-complete suggestion. */
 
-public struct AutoCompleteSuggestion: Codable {
+public struct AutoCompleteSuggestion {
 
     /** The display name of a suggested item. If &#x60;fieldValue&#x60; or &#x60;predicateValue&#x60; are provided, the matching text is highlighted with the HTML bold tag. */
     public var displayName: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about data policy. */
 
-public struct WorkspaceDataPolicy: Codable {
+public struct WorkspaceDataPolicy {
 
     /** Whether the workspace contains any content inaccessible to the requesting application. */
     public var anyContentBlocked: Bool?

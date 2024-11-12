@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ErrorCollections: Codable {
+public struct ErrorCollections {
 
 
 

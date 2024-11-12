@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the issue type screen schemes associated with the screen scheme. */
 
-public struct AllOfScreenSchemeIssueTypeScreenSchemes: Codable {
+public struct AllOfScreenSchemeIssueTypeScreenSchemes {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

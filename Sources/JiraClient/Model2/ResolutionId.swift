@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of an issue resolution. */
 
-public struct ResolutionId: Codable {
+public struct ResolutionId {
 
 
 

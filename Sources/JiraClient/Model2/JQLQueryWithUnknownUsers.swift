@@ -10,7 +10,7 @@ import Foundation
 
 /** JQL queries that contained users that could not be found */
 
-public struct JQLQueryWithUnknownUsers: Codable {
+public struct JQLQueryWithUnknownUsers {
 
     /** The converted query, with accountIDs instead of user identifiers, or &#x27;unknown&#x27; for users that could not be found */
     public var convertedQuery: String?

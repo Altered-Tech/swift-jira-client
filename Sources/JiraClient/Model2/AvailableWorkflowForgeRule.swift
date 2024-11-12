@@ -10,7 +10,7 @@ import Foundation
 
 /** The Forge provided ecosystem rules available. */
 
-public struct AvailableWorkflowForgeRule: Codable {
+public struct AvailableWorkflowForgeRule {
 
     public enum RuleType: String, Codable { 
         case condition = "Condition"

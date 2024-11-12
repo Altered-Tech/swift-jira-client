@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct OldToNewSecurityLevelMappingsBean: Codable {
+public struct OldToNewSecurityLevelMappingsBean {
 
     /** The new issue security level ID. Providing null will clear the assigned old level from issues. */
     public var newLevelId: String

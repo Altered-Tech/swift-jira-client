@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of a priority scheme. */
 
-public struct PrioritySchemeId: Codable {
+public struct PrioritySchemeId {
 
     /** The ID of the priority scheme. */
     public var _id: String?

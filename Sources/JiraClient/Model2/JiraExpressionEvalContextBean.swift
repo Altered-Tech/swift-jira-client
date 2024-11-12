@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JiraExpressionEvalContextBean: Codable {
+public struct JiraExpressionEvalContextBean {
 
     /** The ID of the board that is available under the &#x60;board&#x60; variable when evaluating the expression. */
     public var board: Int64?

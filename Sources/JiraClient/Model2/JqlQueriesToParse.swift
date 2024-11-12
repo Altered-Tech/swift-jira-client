@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of JQL queries to parse. */
 
-public struct JqlQueriesToParse: Codable {
+public struct JqlQueriesToParse {
 
     /** A list of queries to parse. */
     public var queries: [String]

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a workflow configuration update request. */
 
-public struct WorkflowTransitionRulesDetails: Codable {
+public struct WorkflowTransitionRulesDetails {
 
     public var workflowId: WorkflowId
     /** The list of connect workflow rule IDs. */

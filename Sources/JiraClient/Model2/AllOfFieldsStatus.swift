@@ -10,7 +10,7 @@ import Foundation
 
 /** The status of the linked issue. */
 
-public struct AllOfFieldsStatus: Codable {
+public struct AllOfFieldsStatus {
 
     /** The description of the status. */
     public var _description: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Associated related work to a version */
 
-public struct VersionRelatedWork: Codable {
+public struct VersionRelatedWork {
 
     /** The category of the related work */
     public var category: String

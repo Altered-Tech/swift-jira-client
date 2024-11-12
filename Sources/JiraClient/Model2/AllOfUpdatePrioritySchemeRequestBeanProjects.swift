@@ -10,7 +10,7 @@ import Foundation
 
 /** The projects in the scheme. */
 
-public struct AllOfUpdatePrioritySchemeRequestBeanProjects: Codable {
+public struct AllOfUpdatePrioritySchemeRequestBeanProjects {
 
     /** Projects to add to a scheme */
     public var add: Any?

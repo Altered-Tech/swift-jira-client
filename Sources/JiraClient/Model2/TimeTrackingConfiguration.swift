@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the time tracking configuration. */
 
-public struct TimeTrackingConfiguration: Codable {
+public struct TimeTrackingConfiguration {
 
     public enum DefaultUnit: String, Codable { 
         case minute = "minute"

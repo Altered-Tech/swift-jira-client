@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an project using security scheme mapping. */
 
-public struct IssueSecuritySchemeToProjectMapping: Codable {
+public struct IssueSecuritySchemeToProjectMapping {
 
 
 

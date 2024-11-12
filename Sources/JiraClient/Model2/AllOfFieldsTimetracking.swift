@@ -10,7 +10,7 @@ import Foundation
 
 /** The time tracking of the linked issue. */
 
-public struct AllOfFieldsTimetracking: Codable {
+public struct AllOfFieldsTimetracking {
 
     /** The original estimate of time needed for this issue in readable format. */
     public var originalEstimate: String?

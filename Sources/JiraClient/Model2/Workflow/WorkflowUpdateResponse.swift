@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowUpdateResponse: Codable {
+public struct WorkflowUpdateResponse {
 
     /** List of updated statuses. */
     public var statuses: [JiraWorkflowStatus]?

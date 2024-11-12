@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct PaginatedResponseIssueTypeIssueCreateMetadata: Codable {
+public struct PaginatedResponseIssueTypeIssueCreateMetadata {
 
     public var maxResults: Int?
     public var results: [IssueTypeIssueCreateMetadata]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Update priorities in a scheme */
 
-public struct UpdatePrioritiesInSchemeRequestBean: Codable {
+public struct UpdatePrioritiesInSchemeRequestBean {
 
 
 

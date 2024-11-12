@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ArchiveIssueAsyncRequest: Codable {
+public struct ArchiveIssueAsyncRequest {
 
     public var jql: String?
 

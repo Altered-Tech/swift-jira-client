@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about system and custom avatars. */
 
-public struct Avatars: Codable {
+public struct Avatars {
 
     /** Custom avatars list. */
     public var custom: [Avatar]?

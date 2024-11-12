@@ -10,7 +10,7 @@ import Foundation
 
 /** The status mappings by workflows. Status mappings are required when the new workflow for an issue type doesn&#x27;t contain all statuses that the old workflow has. Status mappings can be provided by a combination of &#x60;statusMappingsByWorkflows&#x60; and &#x60;statusMappingsByIssueTypeOverride&#x60;. */
 
-public struct MappingsByWorkflow: Codable {
+public struct MappingsByWorkflow {
 
     /** The ID of the new workflow. */
     public var newWorkflowId: String

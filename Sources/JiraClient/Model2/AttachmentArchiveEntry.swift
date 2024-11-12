@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AttachmentArchiveEntry: Codable {
+public struct AttachmentArchiveEntry {
 
     public var abbreviatedName: String?
     public var entryIndex: Int64?

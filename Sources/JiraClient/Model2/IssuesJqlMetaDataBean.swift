@@ -10,7 +10,7 @@ import Foundation
 
 /** The description of the page of issues loaded by the provided JQL query. */
 
-public struct IssuesJqlMetaDataBean: Codable {
+public struct IssuesJqlMetaDataBean {
 
     /** The number of issues that were loaded in this evaluation. */
     public var count: Int

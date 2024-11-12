@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct Group: Codable {
+public struct Group {
 
     /** Expand options that include additional group details in the response. */
     public var expand: String?

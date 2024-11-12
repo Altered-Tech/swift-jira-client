@@ -10,7 +10,7 @@ import Foundation
 
 /** Defines the behavior of the option within the global context. If this property is set, even if set to an empty object, then the option is available in all projects. */
 
-public struct AllOfIssueFieldOptionScopeBeanGlobal: Codable {
+public struct AllOfIssueFieldOptionScopeBeanGlobal {
 
     public enum Attributes: String, Codable { 
         case notselectable = "notSelectable"

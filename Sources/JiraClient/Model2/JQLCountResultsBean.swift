@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JQLCountResultsBean: Codable {
+public struct JQLCountResultsBean {
 
     /** Number of issues matching JQL query. */
     public var count: Int64?

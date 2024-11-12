@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the scope of the default sharing for new filters and dashboards. */
 
-public struct DefaultShareScope: Codable {
+public struct DefaultShareScope {
 
     public enum Scope: String, Codable { 
         case global = "GLOBAL"

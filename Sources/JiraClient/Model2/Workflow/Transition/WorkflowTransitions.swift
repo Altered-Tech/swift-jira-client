@@ -10,9 +10,9 @@ import Foundation
 
 /** The transitions of the workflow. Note that a transition can have either the deprecated &#x60;to&#x60;/&#x60;from&#x60; fields or the &#x60;toStatusReference&#x60;/&#x60;links&#x60; fields, but never both nor a combination. */
 
-public struct WorkflowTransitions: Codable {
+public struct WorkflowTransitions {
 
-    public enum ModelType: String, Codable { 
+    public enum ModelType: String {
         case initial = "INITIAL"
         case global = "GLOBAL"
         case directed = "DIRECTED"
@@ -61,24 +61,6 @@ public struct WorkflowTransitions: Codable {
         self.triggers = triggers
         self.type = type
         self.validators = validators
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case actions
-        case conditions
-        case customIssueEventId
-        case _description = "description"
-        case from
-        case _id = "id"
-        case links
-        case name
-        case properties
-        case to
-        case toStatusReference
-        case transitionScreen
-        case triggers
-        case type
-        case validators
     }
 
 }

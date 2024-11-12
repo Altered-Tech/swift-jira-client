@@ -10,7 +10,7 @@ import Foundation
 
 /** A screen scheme. */
 
-public struct ScreenScheme: Codable {
+public struct ScreenScheme {
 
     /** The description of the screen scheme. */
     public var _description: String?

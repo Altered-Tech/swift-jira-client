@@ -10,7 +10,7 @@ import Foundation
 
 /** The type of the linked issue. */
 
-public struct AllOfFieldsIssueType: Codable {
+public struct AllOfFieldsIssueType {
 
     /** The ID of the issue type&#x27;s avatar. */
     public var avatarId: Int64?

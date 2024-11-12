@@ -10,7 +10,7 @@ import Foundation
 
 /** Identifiers for a UI modification. */
 
-public struct UiModificationIdentifiers: Codable {
+public struct UiModificationIdentifiers {
 
     /** The ID of the UI modification. */
     public var _id: String

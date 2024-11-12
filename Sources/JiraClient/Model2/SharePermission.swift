@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a share permission for the filter. */
 
-public struct SharePermission: Codable {
+public struct SharePermission {
 
     public enum ModelType: String, Codable { 
         case user = "user"

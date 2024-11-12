@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SearchRequestBean: Codable {
+public struct SearchRequestBean {
 
     public enum ValidateQuery: String, Codable { 
         case strict = "strict"

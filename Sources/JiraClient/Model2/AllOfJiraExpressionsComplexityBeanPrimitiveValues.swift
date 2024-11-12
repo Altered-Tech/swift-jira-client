@@ -10,7 +10,7 @@ import Foundation
 
 /** The number of primitive values returned in the response. */
 
-public struct AllOfJiraExpressionsComplexityBeanPrimitiveValues: Codable {
+public struct AllOfJiraExpressionsComplexityBeanPrimitiveValues {
 
     /** The maximum allowed complexity. The evaluation will fail if this value is exceeded. */
     public var limit: Int

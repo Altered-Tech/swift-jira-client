@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssueTypeUpdateBean: Codable {
+public struct IssueTypeUpdateBean {
 
     /** The ID of an issue type avatar. */
     public var avatarId: Int64?

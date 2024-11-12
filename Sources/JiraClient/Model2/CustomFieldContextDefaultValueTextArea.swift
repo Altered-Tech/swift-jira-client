@@ -10,7 +10,7 @@ import Foundation
 
 /** The default text for a text area custom field. */
 
-public struct CustomFieldContextDefaultValueTextArea: Codable {
+public struct CustomFieldContextDefaultValueTextArea {
 
     /** The default text. The maximum length is 32767 characters. */
     public var text: String?

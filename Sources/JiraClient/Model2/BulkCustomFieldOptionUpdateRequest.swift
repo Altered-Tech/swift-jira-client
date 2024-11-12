@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the options to update for a custom field. */
 
-public struct BulkCustomFieldOptionUpdateRequest: Codable {
+public struct BulkCustomFieldOptionUpdateRequest {
 
     /** Details of the options to update. */
     public var options: [CustomFieldOptionUpdate]?

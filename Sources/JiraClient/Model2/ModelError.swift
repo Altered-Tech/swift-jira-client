@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ModelError: Codable {
+public struct ModelError {
 
     public var count: Int64?
     public var issueIdsOrKeys: [String]?

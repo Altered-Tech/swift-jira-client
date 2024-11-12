@@ -10,7 +10,7 @@ import Foundation
 
 /** A paginated list of subscriptions to a filter. */
 
-public struct FilterSubscriptionsList: Codable {
+public struct FilterSubscriptionsList {
 
     /** The index of the last item returned on the page. */
     public var endIndex: Int?
@@ -29,14 +29,6 @@ public struct FilterSubscriptionsList: Codable {
         self.maxResults = maxResults
         self.size = size
         self.startIndex = startIndex
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case endIndex = "end-index"
-        case items
-        case maxResults = "max-results"
-        case size
-        case startIndex = "start-index"
     }
 
 }

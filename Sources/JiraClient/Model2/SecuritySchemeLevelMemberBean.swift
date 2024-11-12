@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SecuritySchemeLevelMemberBean: Codable {
+public struct SecuritySchemeLevelMemberBean {
 
     /** The value corresponding to the specified member type. */
     public var parameter: String?

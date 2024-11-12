@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflows that use this status. Only available if the &#x60;workflowUsages&#x60; expand is requested. */
 
-public struct WorkflowUsages: Codable {
+public struct WorkflowUsages {
 
     /** Workflow ID. */
     public var workflowId: String?

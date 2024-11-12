@@ -10,7 +10,7 @@ import Foundation
 
 /** The project and issue type mapping with a matching custom field context. */
 
-public struct ContextForProjectAndIssueType: Codable {
+public struct ContextForProjectAndIssueType {
 
     /** The ID of the custom field context. */
     public var contextId: String

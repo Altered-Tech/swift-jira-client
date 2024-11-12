@@ -10,7 +10,7 @@ import Foundation
 
 /** Container for a list of registered webhooks. Webhook details are returned in the same order as the request. */
 
-public struct ContainerForRegisteredWebhooks: Codable {
+public struct ContainerForRegisteredWebhooks {
 
     /** A list of registered webhooks. */
     public var webhookRegistrationResult: [RegisteredWebhook]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** The tab for the screen. */
 
-public struct AllOfScreenWithTabTab: Codable {
+public struct AllOfScreenWithTabTab {
 
     /** The ID of the screen tab. */
     public var _id: Int64?

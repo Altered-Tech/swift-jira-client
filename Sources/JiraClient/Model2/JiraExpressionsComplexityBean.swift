@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JiraExpressionsComplexityBean: Codable {
+public struct JiraExpressionsComplexityBean {
 
     /** The number of Jira REST API beans returned in the response. */
     public var beans: AllOfJiraExpressionsComplexityBeanBeans

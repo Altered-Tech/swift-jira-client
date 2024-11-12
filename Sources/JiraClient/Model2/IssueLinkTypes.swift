@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of issue link type beans. */
 
-public struct IssueLinkTypes: Codable {
+public struct IssueLinkTypes {
 
     /** The issue link type bean. */
     public var issueLinkTypes: [IssueLinkType]?

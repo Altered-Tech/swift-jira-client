@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct InputStreamSource: Codable {
+public struct InputStreamSource {
 
     public var inputStream: Any?
 

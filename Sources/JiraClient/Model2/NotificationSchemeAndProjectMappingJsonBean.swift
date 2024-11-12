@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct NotificationSchemeAndProjectMappingJsonBean: Codable {
+public struct NotificationSchemeAndProjectMappingJsonBean {
 
     public var notificationSchemeId: String?
     public var projectId: String?

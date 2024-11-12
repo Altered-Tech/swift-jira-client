@@ -10,7 +10,7 @@ import Foundation
 
 /** An ordered list of custom field option IDs and information on where to move them. */
 
-public struct OrderOfCustomFieldOptions: Codable {
+public struct OrderOfCustomFieldOptions {
 
     public enum Position: String, Codable { 
         case first = "First"

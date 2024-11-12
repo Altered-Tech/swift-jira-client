@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct UpdateIssueSecuritySchemeRequestBean: Codable {
+public struct UpdateIssueSecuritySchemeRequestBean {
 
     /** The description of the security scheme scheme. */
     public var _description: String?

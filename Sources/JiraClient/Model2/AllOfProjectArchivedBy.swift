@@ -10,9 +10,9 @@ import Foundation
 
 /** The user who archived the project. */
 
-public struct AllOfProjectArchivedBy: Codable {
+public struct AllOfProjectArchivedBy {
 
-    public enum AccountType: String, Codable { 
+    public enum AccountType: String {
         case atlassian = "atlassian"
         case app = "app"
         case customer = "customer"
@@ -62,23 +62,6 @@ public struct AllOfProjectArchivedBy: Codable {
         self.name = name
         self._self = _self
         self.timeZone = timeZone
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case accountId
-        case accountType
-        case active
-        case applicationRoles
-        case avatarUrls
-        case displayName
-        case emailAddress
-        case expand
-        case groups
-        case key
-        case locale
-        case name
-        case _self = "self"
-        case timeZone
     }
 
 }

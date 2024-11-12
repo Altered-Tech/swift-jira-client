@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a workflow. */
 
-public struct CreateWorkflowDetails: Codable {
+public struct CreateWorkflowDetails {
 
     /** The description of the workflow. The maximum length is 1000 characters. */
     public var _description: String?
@@ -26,13 +26,6 @@ public struct CreateWorkflowDetails: Codable {
         self.name = name
         self.statuses = statuses
         self.transitions = transitions
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case name
-        case statuses
-        case transitions
     }
 
 }

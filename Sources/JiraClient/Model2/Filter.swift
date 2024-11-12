@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a filter. */
 
-public struct Filter: Codable {
+public struct Filter {
 
     /** \\[Experimental\\] Approximate last used time. Returns the date and time when the filter was last used. Returns &#x60;null&#x60; if the filter hasn&#x27;t been used after tracking was enabled. For performance reasons, timestamps aren&#x27;t updated in real time and therefore may not be exactly accurate. */
     public var approximateLastUsed: Date?
@@ -61,22 +61,5 @@ public struct Filter: Codable {
         self.viewUrl = viewUrl
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case approximateLastUsed
-        case _description = "description"
-        case editPermissions
-        case favourite
-        case favouritedCount
-        case _id = "id"
-        case jql
-        case name
-        case owner
-        case searchUrl
-        case _self = "self"
-        case sharePermissions
-        case sharedUsers
-        case subscriptions
-        case viewUrl
-    }
 
 }

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JiraExpressionsComplexityValueBean: Codable {
+public struct JiraExpressionsComplexityValueBean {
 
     /** The maximum allowed complexity. The evaluation will fail if this value is exceeded. */
     public var limit: Int

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssuesUpdateBean: Codable {
+public struct IssuesUpdateBean {
 
 
 

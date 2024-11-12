@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of gadgets on the dashboard. */
 
-public struct DashboardGadgetResponse: Codable {
+public struct DashboardGadgetResponse {
 
     /** The list of gadgets. */
     public var gadgets: [DashboardGadget]

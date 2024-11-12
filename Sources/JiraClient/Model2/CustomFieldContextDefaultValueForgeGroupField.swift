@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a Forge group custom field. */
 
-public struct CustomFieldContextDefaultValueForgeGroupField: Codable {
+public struct CustomFieldContextDefaultValueForgeGroupField {
 
     /** The ID of the context. */
     public var contextId: String

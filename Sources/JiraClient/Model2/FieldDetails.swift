@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a field. */
 
-public struct FieldDetails: Codable {
+public struct FieldDetails {
 
     /** The names that can be used to reference the field in an advanced search. For more information, see [Advanced searching - fields reference](https://confluence.atlassian.com/x/gwORLQ). */
     public var clauseNames: [String]?
@@ -44,19 +44,6 @@ public struct FieldDetails: Codable {
         self.schema = schema
         self.scope = scope
         self.searchable = searchable
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case clauseNames
-        case custom
-        case _id = "id"
-        case key
-        case name
-        case navigable
-        case orderable
-        case schema
-        case scope
-        case searchable
     }
 
 }

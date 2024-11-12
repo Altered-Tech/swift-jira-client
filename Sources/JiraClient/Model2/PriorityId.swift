@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of an issue priority. */
 
-public struct PriorityId: Codable {
+public struct PriorityId {
 
 
 

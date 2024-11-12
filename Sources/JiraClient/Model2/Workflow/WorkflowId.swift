@@ -10,7 +10,7 @@ import Foundation
 
 /** Properties that identify a workflow. */
 
-public struct WorkflowId: Codable {
+public struct WorkflowId {
 
     /** Whether the workflow is in the draft state. */
     public var draft: Bool

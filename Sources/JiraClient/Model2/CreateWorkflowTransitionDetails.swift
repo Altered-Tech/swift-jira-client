@@ -10,9 +10,9 @@ import Foundation
 
 /** The details of a workflow transition. */
 
-public struct CreateWorkflowTransitionDetails: Codable {
+public struct CreateWorkflowTransitionDetails {
 
-    public enum ModelType: String, Codable { 
+    public enum ModelType: String {
         case global = "global"
         case initial = "initial"
         case directed = "directed"
@@ -43,17 +43,6 @@ public struct CreateWorkflowTransitionDetails: Codable {
         self.screen = screen
         self.to = to
         self.type = type
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case from
-        case name
-        case properties
-        case rules
-        case screen
-        case to
-        case type
     }
 
 }

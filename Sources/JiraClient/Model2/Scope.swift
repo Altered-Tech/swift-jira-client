@@ -10,9 +10,27 @@ import Foundation
 
 /** The projects the item is associated with. Indicated for items associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO). */
 
-public struct Scope: Codable {
+public struct Scope {
+    public let type: String?
+//    public let projectDetails: ProjectDetails?
+    public let additionalProperties: [String: (any Sendable)?]?
+    
+    internal init(client: Components.Schemas.Scope?) {
+        self.type = ScopeType(type: client?._type)?.rawValue
+//        self.projectDetails = ProjectDetails(client: client?.project?.value1)
+        self.additionalProperties = client?.additionalProperties.value
+    }
+}
 
-
-
-
+enum ScopeType: String {
+    case PROJECT
+    case TEMPLATE
+    
+    internal init?(type: Components.Schemas.Scope._typePayload?) {
+        switch type {
+        case .PROJECT: self = .PROJECT
+        case .TEMPLATE: self = .TEMPLATE
+        default : return nil
+        }
+    }
 }

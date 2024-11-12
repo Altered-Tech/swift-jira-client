@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an issue type. */
 
-public struct IssueTypeDetails: Codable {
+public struct IssueTypeDetails {
 
     /** The ID of the issue type&#x27;s avatar. */
     public var avatarId: Int64?
@@ -47,20 +47,6 @@ public struct IssueTypeDetails: Codable {
         self._self = _self
         self.subtask = subtask
         self.untranslatedName = untranslatedName
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case avatarId
-        case _description = "description"
-        case entityId
-        case hierarchyLevel
-        case iconUrl
-        case _id = "id"
-        case name
-        case scope
-        case _self = "self"
-        case subtask
-        case untranslatedName
     }
 
 }

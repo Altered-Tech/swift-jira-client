@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a Forge object custom field. */
 
-public struct CustomFieldContextDefaultValueForgeObjectField: Codable {
+public struct CustomFieldContextDefaultValueForgeObjectField {
 
     /** The default JSON object. */
     public var object: Any?

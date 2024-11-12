@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the Jira instance. */
 
-public struct ServerInformation: Codable {
+public struct ServerInformation {
 
     /** The base URL of the Jira instance. */
     public var baseUrl: String?

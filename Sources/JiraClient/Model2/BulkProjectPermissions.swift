@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of project permissions and associated issues and projects to look up. */
 
-public struct BulkProjectPermissions: Codable {
+public struct BulkProjectPermissions {
 
     /** List of issue IDs. */
     public var issues: [Int64]?

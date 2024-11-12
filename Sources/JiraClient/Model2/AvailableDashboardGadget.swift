@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of the available dashboard gadget. */
 
-public struct AvailableDashboardGadget: Codable {
+public struct AvailableDashboardGadget {
 
     /** The module key of the gadget type. */
     public var moduleKey: String?

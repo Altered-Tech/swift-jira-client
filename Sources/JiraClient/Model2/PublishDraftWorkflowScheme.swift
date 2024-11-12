@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the status mappings for publishing a draft workflow scheme. */
 
-public struct PublishDraftWorkflowScheme: Codable {
+public struct PublishDraftWorkflowScheme {
 
     /** Mappings of statuses to new statuses for issue types. */
     public var statusMappings: [StatusMapping]?

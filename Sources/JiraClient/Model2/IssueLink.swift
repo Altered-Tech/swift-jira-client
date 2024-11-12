@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a link between issues. */
 
-public struct IssueLink: Codable {
+public struct IssueLink {
 
     /** The ID of the issue link. */
     public var _id: String?

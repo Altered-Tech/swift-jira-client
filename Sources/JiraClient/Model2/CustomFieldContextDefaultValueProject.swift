@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a project custom field. */
 
-public struct CustomFieldContextDefaultValueProject: Codable {
+public struct CustomFieldContextDefaultValueProject {
 
     /** The ID of the context. */
     public var contextId: String

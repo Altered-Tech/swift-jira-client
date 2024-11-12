@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a user or group subscribing to a filter. */
 
-public struct FilterSubscription: Codable {
+public struct FilterSubscription {
 
     /** The group subscribing to filter. */
     public var group: AllOfFilterSubscriptionGroup?
@@ -23,12 +23,6 @@ public struct FilterSubscription: Codable {
         self.group = group
         self._id = _id
         self.user = user
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case group
-        case _id = "id"
-        case user
     }
 
 }

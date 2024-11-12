@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct Errors: Codable {
+public struct Errors {
 
     public var issueIsSubtask: ModelError?
     public var issuesInArchivedProjects: ModelError?

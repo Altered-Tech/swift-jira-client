@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflow scheme. */
 
-public struct AllOfWorkflowSchemeAssociationsWorkflowScheme: Codable {
+public struct AllOfWorkflowSchemeAssociationsWorkflowScheme {
 
     /** The name of the default workflow for the workflow scheme. The default workflow has *All Unassigned Issue Types* assigned to it in Jira. If &#x60;defaultWorkflow&#x60; is not specified when creating a workflow scheme, it is set to *Jira Workflow (jira)*. */
     public var defaultWorkflow: String?

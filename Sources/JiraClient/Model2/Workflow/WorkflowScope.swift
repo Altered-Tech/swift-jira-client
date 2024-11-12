@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope of the workflow. */
 
-public struct WorkflowScope: Codable {
+public struct WorkflowScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

@@ -10,7 +10,7 @@ import Foundation
 
 /** List of security schemes. */
 
-public struct SecuritySchemes: Codable {
+public struct SecuritySchemes {
 
     /** List of security schemes. */
     public var issueSecuritySchemes: [SecurityScheme]?

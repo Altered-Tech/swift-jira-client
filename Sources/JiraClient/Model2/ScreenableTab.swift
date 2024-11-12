@@ -10,7 +10,7 @@ import Foundation
 
 /** A screen tab. */
 
-public struct ScreenableTab: Codable {
+public struct ScreenableTab {
 
     /** The ID of the screen tab. */
     public var _id: Int64?

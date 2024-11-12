@@ -10,7 +10,7 @@ import Foundation
 
 /** Meta data describing the &#x60;issues&#x60; context variable. */
 
-public struct IssuesMetaBean: Codable {
+public struct IssuesMetaBean {
 
     public var jql: IssuesJqlMetaDataBean?
 

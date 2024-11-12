@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a task. */
 
-public struct TaskProgressBeanJsonNode: Codable {
+public struct TaskProgressBeanJsonNode {
 
     public enum Status: String, Codable { 
         case enqueued = "ENQUEUED"

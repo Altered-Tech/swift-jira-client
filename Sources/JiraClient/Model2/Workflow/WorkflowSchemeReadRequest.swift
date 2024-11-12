@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflow scheme read request body. */
 
-public struct WorkflowSchemeReadRequest: Codable {
+public struct WorkflowSchemeReadRequest {
 
     /** The list of project IDs to query. */
     public var projectIds: [String]?

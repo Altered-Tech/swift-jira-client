@@ -10,7 +10,7 @@ import Foundation
 
 /** List issues archived within a specified date range. */
 
-public struct DateRangeFilterRequest: Codable {
+public struct DateRangeFilterRequest {
 
     /** List issues archived after a specified date, passed in the YYYY-MM-DD format. */
     public var dateAfter: String

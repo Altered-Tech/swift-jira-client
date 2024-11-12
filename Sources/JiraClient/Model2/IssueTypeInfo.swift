@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue type. */
 
-public struct IssueTypeInfo: Codable {
+public struct IssueTypeInfo {
 
     /** The avatar of the issue type. */
     public var avatarId: Int64?

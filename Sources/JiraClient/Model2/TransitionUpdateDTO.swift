@@ -10,7 +10,7 @@ import Foundation
 
 /** The transition update data. Note that a transition can have either the deprecated &#x60;to&#x60;/&#x60;from&#x60; fields or the &#x60;toStatusReference&#x60;/&#x60;links&#x60; fields, but never both nor a combination. */
 
-public struct TransitionUpdateDTO: Codable {
+public struct TransitionUpdateDTO {
 
 
 

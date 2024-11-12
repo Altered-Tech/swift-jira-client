@@ -10,7 +10,7 @@ import Foundation
 
 /** List of property keys. */
 
-public struct PropertyKeys: Codable {
+public struct PropertyKeys {
 
     /** Property key details. */
     public var keys: [PropertyKey]?

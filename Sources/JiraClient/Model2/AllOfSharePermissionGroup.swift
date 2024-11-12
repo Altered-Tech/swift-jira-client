@@ -10,7 +10,7 @@ import Foundation
 
 /** The group that the filter is shared with. For a request, specify the &#x60;groupId&#x60; or &#x60;name&#x60; property for the group. As a group&#x27;s name can change, use of &#x60;groupId&#x60; is recommended. */
 
-public struct AllOfSharePermissionGroup: Codable {
+public struct AllOfSharePermissionGroup {
 
     /** The ID of the group, which uniquely identifies the group across all Atlassian products. For example, *952d12c3-5b5b-4d04-bb32-44d383afc4b2*. */
     public var groupId: String?

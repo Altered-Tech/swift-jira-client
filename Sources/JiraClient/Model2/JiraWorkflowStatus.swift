@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a status. */
 
-public struct JiraWorkflowStatus: Codable {
+public struct JiraWorkflowStatus {
 
     public enum StatusCategory: String, Codable { 
         case todo = "TODO"

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a custom option for a field. */
 
-public struct CustomFieldOption: Codable {
+public struct CustomFieldOption {
 
     /** The URL of these custom field option details. */
     public var _self: String?

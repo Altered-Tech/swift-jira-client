@@ -10,7 +10,7 @@ import Foundation
 
 /** The request for updating the default project classification level. */
 
-public struct UpdateDefaultProjectClassificationBean: Codable {
+public struct UpdateDefaultProjectClassificationBean {
 
     /** The ID of the project classification. */
     public var _id: String

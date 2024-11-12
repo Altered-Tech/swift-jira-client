@@ -10,7 +10,7 @@ import Foundation
 
 /** The create workflows payload. */
 
-public struct WorkflowCreateRequest: Codable {
+public struct WorkflowCreateRequest {
 
     public var scope: WorkflowScope
     /** The statuses to associate with the workflows. */

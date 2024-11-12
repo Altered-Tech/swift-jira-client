@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the status being updated. */
 
-public struct WorkflowStatusUpdate: Codable {
+public struct WorkflowStatusUpdate {
 
 
 

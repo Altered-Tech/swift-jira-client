@@ -10,7 +10,7 @@ import Foundation
 
 /** Announcement banner configuration. */
 
-public struct AnnouncementBannerConfiguration: Codable {
+public struct AnnouncementBannerConfiguration {
 
     public enum Visibility: String, Codable { 
         case _public = "PUBLIC"

@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of failed webhooks. */
 
-public struct FailedWebhooks: Codable {
+public struct FailedWebhooks {
 
     /** The maximum number of items on the page. If the list of values is shorter than this number, then there are no more pages. */
     public var maxResults: Int

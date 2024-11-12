@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue level security item. */
 
-public struct SecurityLevel: Codable {
+public struct SecurityLevel {
 
     /** The description of the issue level security item. */
     public var _description: String?

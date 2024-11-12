@@ -10,7 +10,7 @@ import Foundation
 
 /** Insights about the project. */
 
-public struct AllOfProjectInsight: Codable {
+public struct AllOfProjectInsight {
 
     /** The last issue update time. */
     public var lastIssueUpdateTime: Date?

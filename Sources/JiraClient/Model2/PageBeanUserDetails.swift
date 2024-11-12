@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanUserDetails: Codable {
+public struct PageBeanUserDetails {
 
     /** Whether this is the last page. */
     public var isLast: Bool?
@@ -25,9 +25,9 @@ public struct PageBeanUserDetails: Codable {
     /** The number of items returned. */
     public var total: Int64?
     /** The list of items. */
-    public var values: [UserDetails]?
+    public var values: [User]?
 
-    public init(isLast: Bool? = nil, maxResults: Int? = nil, nextPage: String? = nil, _self: String? = nil, startAt: Int64? = nil, total: Int64? = nil, values: [UserDetails]? = nil) {
+    public init(isLast: Bool? = nil, maxResults: Int? = nil, nextPage: String? = nil, _self: String? = nil, startAt: Int64? = nil, total: Int64? = nil, values: [User]? = nil) {
         self.isLast = isLast
         self.maxResults = maxResults
         self.nextPage = nextPage
@@ -35,16 +35,6 @@ public struct PageBeanUserDetails: Codable {
         self.startAt = startAt
         self.total = total
         self.values = values
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case isLast
-        case maxResults
-        case nextPage
-        case _self = "self"
-        case startAt
-        case total
-        case values
     }
 
 }

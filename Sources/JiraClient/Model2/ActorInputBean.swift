@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ActorInputBean: Codable {
+public struct ActorInputBean {
 
     /** The name of the group to add as a default actor. This parameter cannot be used with the &#x60;groupId&#x60; parameter. As a group&#x27;s name can change,use of &#x60;groupId&#x60; is recommended. This parameter accepts a comma-separated list. For example, &#x60;\&quot;group\&quot;:[\&quot;project-admin\&quot;, \&quot;jira-developers\&quot;]&#x60;. */
     public var group: [String]?

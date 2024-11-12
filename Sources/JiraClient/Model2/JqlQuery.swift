@@ -10,7 +10,7 @@ import Foundation
 
 /** A parsed JQL query. */
 
-public struct JqlQuery: Codable {
+public struct JqlQuery {
 
     public var orderBy: JqlQueryOrderByClause?
     public var _where: JqlQueryClause?

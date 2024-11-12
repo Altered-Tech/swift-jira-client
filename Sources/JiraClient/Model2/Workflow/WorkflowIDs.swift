@@ -10,7 +10,7 @@ import Foundation
 
 /** The classic workflow identifiers. */
 
-public struct WorkflowIDs: Codable {
+public struct WorkflowIDs {
 
     /** The entity ID of the workflow. */
     public var entityId: String?

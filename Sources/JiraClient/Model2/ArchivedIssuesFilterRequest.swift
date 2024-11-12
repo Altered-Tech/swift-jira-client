@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a filter for exporting archived issues. */
 
-public struct ArchivedIssuesFilterRequest: Codable {
+public struct ArchivedIssuesFilterRequest {
 
 
 

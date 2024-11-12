@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an issue. */
 
-public struct IssueBean {
+public struct Issue {
 
     /** Details of changelogs associated with the issue. */
     public let changelog: PageOfChangelogs?
@@ -33,31 +33,14 @@ public struct IssueBean {
     /** The rendered value of each field present on the issue. */
     public let renderedFields: [String:Any]?
     /** The schema describing each field present on the issue. */
-    public let schema: [String:JsonTypeBean]?
+//    public let schema: [String:JsonTypeBean]?
     /** The URL of the issue details. */
     public let _self: String?
     /** The transitions that can be performed on the issue. */
     public let transitions: [IssueTransition]?
     /** The versions of each field on the issue. */
-    public let versionedRepresentations: [String:[String:Any]]?
-
-//    public init(changelog: AllOfIssueBeanChangelog? = nil, editmeta: AllOfIssueBeanEditmeta? = nil, expand: String? = nil, fields: Dictionary? = nil, fieldsToInclude: IncludedFields? = nil, _id: String? = nil, key: String? = nil, names: [String:String]? = nil, operations: AllOfIssueBeanOperations? = nil, properties: [String:Any]? = nil, renderedFields: [String:Any]? = nil, schema: [String:JsonTypeBean]? = nil, _self: String? = nil, transitions: [IssueTransition]? = nil, versionedRepresentations: [String:[String:Any]]? = nil) {
-//        self.changelog = changelog
-//        self.editmeta = editmeta
-//        self.expand = expand
-//        self.fields = fields
-//        self.fieldsToInclude = fieldsToInclude
-//        self._id = _id
-//        self.key = key
-//        self.names = names
-//        self.operations = operations
-//        self.properties = properties
-//        self.renderedFields = renderedFields
-//        self.schema = schema
-//        self._self = _self
-//        self.transitions = transitions
-//        self.versionedRepresentations = versionedRepresentations
-//    }
+//    public let versionedRepresentations: [String:[String:Any]]?
+    
     internal init(client: Components.Schemas.IssueBean?) {
         self.changelog = PageOfChangelogs(client: client?.changelog?.value1)
         self.editmeta = IssueUpdateMetadata(client: client?.editmeta?.value1)
@@ -70,8 +53,9 @@ public struct IssueBean {
         self.operations = Operation(client: client?.operations?.value1)
         self.properties = client?.properties?.additionalProperties
         self.renderedFields = client?.renderedFields?.additionalProperties
-//        self.schema = client?.schema?.additionalProperties.map{ $0:JsonTypeBean(client: $1) }
+//        self.schema = client?.schema?.additionalProperties.map{ }
         self._self = client?._self
-        self.transitions =
+        self.transitions = client?.transitions?.map{ IssueTransition(client: $0) }
+        
     }
 }

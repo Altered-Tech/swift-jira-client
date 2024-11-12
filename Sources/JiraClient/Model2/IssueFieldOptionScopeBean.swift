@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssueFieldOptionScopeBean: Codable {
+public struct IssueFieldOptionScopeBean {
 
     /** Defines the behavior of the option within the global context. If this property is set, even if set to an empty object, then the option is available in all projects. */
     public var global: AllOfIssueFieldOptionScopeBeanGlobal?

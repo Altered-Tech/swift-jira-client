@@ -10,7 +10,7 @@ import Foundation
 
 /** The request to evaluate a Jira expression. This bean will be replacing &#x60;JiraExpressionEvaluateRequest&#x60; as part of new &#x60;evaluate&#x60; endpoint */
 
-public struct JiraExpressionEvaluateRequestBean: Codable {
+public struct JiraExpressionEvaluateRequestBean {
 
     /** The context in which the Jira expression is evaluated. */
     public var context: AllOfJiraExpressionEvaluateRequestBeanContext?

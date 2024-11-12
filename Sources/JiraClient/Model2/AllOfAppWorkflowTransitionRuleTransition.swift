@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AllOfAppWorkflowTransitionRuleTransition: Codable {
+public struct AllOfAppWorkflowTransitionRuleTransition {
 
     /** The transition ID. */
     public var _id: Int

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct StringList: Codable {
+public struct StringList {
 
 
 

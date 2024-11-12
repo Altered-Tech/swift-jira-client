@@ -10,9 +10,9 @@ import Foundation
 
 /** The user who owns the filter. Defaults to the creator of the filter, however, Jira administrators can change the owner of a shared filter in the admin settings. */
 
-public struct AllOfFilterDetailsOwner: Codable {
+public struct AllOfFilterDetailsOwner {
 
-    public enum AccountType: String, Codable { 
+    public enum AccountType: String { 
         case atlassian = "atlassian"
         case app = "app"
         case customer = "customer"

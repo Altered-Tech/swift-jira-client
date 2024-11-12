@@ -10,7 +10,7 @@ import Foundation
 
 /** A paginated list of the users that the filter is shared with. This includes users that are members of the groups or can browse the projects that the filter is shared with. */
 
-public struct AllOfFilterSharedUsers: Codable {
+public struct AllOfFilterSharedUsers {
 
     /** The index of the last item returned on the page. */
     public var endIndex: Int?

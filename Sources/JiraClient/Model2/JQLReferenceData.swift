@@ -10,7 +10,7 @@ import Foundation
 
 /** Lists of JQL reference data. */
 
-public struct JQLReferenceData: Codable {
+public struct JQLReferenceData {
 
     /** List of JQL query reserved words. */
     public var jqlReservedWords: [String]?

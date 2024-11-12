@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CreateUpdateRoleRequestBean: Codable {
+public struct CreateUpdateRoleRequestBean {
 
     /** A description of the project role. Required when fully updating a project role. Optional when creating or partially updating a project role. */
     public var _description: String?

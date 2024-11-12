@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the replacement for a deleted version. */
 
-public struct CustomFieldReplacement: Codable {
+public struct CustomFieldReplacement {
 
     /** The ID of the custom field in which to replace the version number. */
     public var customFieldId: Int64?

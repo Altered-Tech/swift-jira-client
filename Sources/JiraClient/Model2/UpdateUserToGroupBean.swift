@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct UpdateUserToGroupBean: Codable {
+public struct UpdateUserToGroupBean {
 
 
 

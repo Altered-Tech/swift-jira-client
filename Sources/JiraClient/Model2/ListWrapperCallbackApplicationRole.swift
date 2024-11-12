@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ListWrapperCallbackApplicationRole: Codable {
+public struct ListWrapperCallbackApplicationRole {
 
 
 

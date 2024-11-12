@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an avatar. */
 
-public struct Avatar: Codable {
+public struct Avatar {
 
 
 

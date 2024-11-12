@@ -10,7 +10,7 @@ import Foundation
 
 /** Issue security scheme, project, and remapping details. */
 
-public struct AssociateSecuritySchemeWithProjectDetails: Codable {
+public struct AssociateSecuritySchemeWithProjectDetails {
 
     /** The list of scheme levels which should be remapped to new levels of the issue security scheme. */
     public var oldToNewSecurityLevelMappings: [OldToNewSecurityLevelMappingsBean]?

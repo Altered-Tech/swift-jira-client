@@ -10,7 +10,7 @@ import Foundation
 
 /** If the expand option &#x60;issuesstatus&#x60; is used, returns the count of issues in this version for each of the status categories *to do*, *in progress*, *done*, and *unmapped*. The *unmapped* property contains a count of issues with a status other than *to do*, *in progress*, and *done*. */
 
-public struct AllOfVersionIssuesStatusForFixVersion: Codable {
+public struct AllOfVersionIssuesStatusForFixVersion {
 
     /** Count of issues with status *done*. */
     public var done: Int64?

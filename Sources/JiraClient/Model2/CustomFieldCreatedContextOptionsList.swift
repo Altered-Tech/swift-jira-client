@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of custom field options for a context. */
 
-public struct CustomFieldCreatedContextOptionsList: Codable {
+public struct CustomFieldCreatedContextOptionsList {
 
     /** The created custom field options. */
     public var options: [CustomFieldContextOption]?

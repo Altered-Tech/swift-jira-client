@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the analysed Jira expression. */
 
-public struct JiraExpressionsAnalysis: Codable {
+public struct JiraExpressionsAnalysis {
 
     /** The results of Jira expressions analysis. */
     public var results: [JiraExpressionAnalysis]

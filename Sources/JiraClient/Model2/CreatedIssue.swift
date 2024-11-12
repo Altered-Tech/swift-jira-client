@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a created issue or subtask. */
 
-public struct CreatedIssue: Codable {
+public struct CreatedIssue {
 
     /** The ID of the created issue or subtask. */
     public var _id: String?

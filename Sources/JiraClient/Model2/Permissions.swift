@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about permissions. */
 
-public struct Permissions: Codable {
+public struct Permissions {
 
     /** List of permissions. */
     public var permissions: [String:UserPermission]?

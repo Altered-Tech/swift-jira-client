@@ -10,7 +10,7 @@ import Foundation
 
 /** The statuses the transition can start from, and the mapping of ports between the statuses. */
 
-public struct WorkflowTransitionLinks: Codable {
+public struct WorkflowTransitionLinks {
 
     /** The port that the transition starts from. */
     public var fromPort: Int?

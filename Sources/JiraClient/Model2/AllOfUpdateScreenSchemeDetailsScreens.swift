@@ -10,7 +10,7 @@ import Foundation
 
 /** The IDs of the screens for the screen types of the screen scheme. Only screens used in classic projects are accepted. */
 
-public struct AllOfUpdateScreenSchemeDetailsScreens: Codable {
+public struct AllOfUpdateScreenSchemeDetailsScreens {
 
     /** The ID of the create screen. To remove the screen association, pass a null. */
     public var create: String?

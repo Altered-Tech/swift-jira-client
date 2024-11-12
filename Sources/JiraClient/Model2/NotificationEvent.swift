@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a notification event. */
 
-public struct NotificationEvent: Codable {
+public struct NotificationEvent {
 
     /** The description of the event. */
     public var _description: String?

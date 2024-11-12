@@ -10,7 +10,7 @@ import Foundation
 
 /** The converted JQL queries. */
 
-public struct ConvertedJQLQueries: Codable {
+public struct ConvertedJQLQueries {
 
     /** List of queries containing user information that could not be mapped to an existing user */
     public var queriesWithUnknownUsers: [JQLQueryWithUnknownUsers]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the default workflow. */
 
-public struct DefaultWorkflow: Codable {
+public struct DefaultWorkflow {
 
     /** Whether a draft workflow scheme is created or updated when updating an active workflow scheme. The draft is updated with the new default workflow. Defaults to &#x60;false&#x60;. */
     public var updateDraftIfNeeded: Bool?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Configuration of the announcement banner. */
 
-public struct AnnouncementBannerConfigurationUpdate: Codable {
+public struct AnnouncementBannerConfigurationUpdate {
 
     /** Flag indicating if the announcement banner can be dismissed by the user. */
     public var isDismissible: Bool?

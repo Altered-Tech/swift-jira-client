@@ -10,7 +10,7 @@ import Foundation
 
 /** The JQL query that specifies the set of issues available in the Jira expression. */
 
-public struct AllOfJexpEvaluateCtxIssuesJql: Codable {
+public struct AllOfJexpEvaluateCtxIssuesJql {
 
     /** The maximum number of issues to return from the JQL query. max results value considered may be lower than the number specific here. */
     public var maxResults: Int?

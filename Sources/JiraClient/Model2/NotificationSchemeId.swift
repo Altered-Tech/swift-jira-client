@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of a notification scheme. */
 
-public struct NotificationSchemeId: Codable {
+public struct NotificationSchemeId {
 
 
 

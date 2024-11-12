@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a Forge date time custom field. */
 
-public struct CustomFieldContextDefaultValueForgeDateTimeField: Codable {
+public struct CustomFieldContextDefaultValueForgeDateTimeField {
 
     /** The ID of the context. */
     public var contextId: String

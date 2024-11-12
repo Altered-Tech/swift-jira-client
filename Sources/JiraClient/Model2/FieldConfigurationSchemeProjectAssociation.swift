@@ -10,7 +10,7 @@ import Foundation
 
 /** Associated field configuration scheme and project. */
 
-public struct FieldConfigurationSchemeProjectAssociation: Codable {
+public struct FieldConfigurationSchemeProjectAssociation {
 
     /** The ID of the field configuration scheme. If the field configuration scheme ID is &#x60;null&#x60;, the operation assigns the default field configuration scheme. */
     public var fieldConfigurationSchemeId: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Metadata for an archive (for example a zip) and its contents. */
 
-public struct AttachmentArchiveMetadataReadable: Codable {
+public struct AttachmentArchiveMetadataReadable {
 
     /** The list of the items included in the archive. */
     public var entries: [AttachmentArchiveItemReadable]?

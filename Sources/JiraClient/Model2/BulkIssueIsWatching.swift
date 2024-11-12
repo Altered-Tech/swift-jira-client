@@ -10,7 +10,7 @@ import Foundation
 
 /** A container for the watch status of a list of issues. */
 
-public struct BulkIssueIsWatching: Codable {
+public struct BulkIssueIsWatching {
 
     /** The map of issue ID to boolean watch status. */
     public var issuesIsWatching: [String:Bool]?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an attachment. */
 
-public struct Attachment: Codable {
+public struct Attachment {
 
 
 

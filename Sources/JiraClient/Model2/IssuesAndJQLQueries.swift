@@ -10,7 +10,7 @@ import Foundation
 
 /** List of issues and JQL queries. */
 
-public struct IssuesAndJQLQueries: Codable {
+public struct IssuesAndJQLQueries {
 
     /** A list of issue IDs. */
     public var issueIds: [Int64]

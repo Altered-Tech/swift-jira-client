@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope of the screen. */
 
-public struct AllOfScreenWithTabScope: Codable {
+public struct AllOfScreenWithTabScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

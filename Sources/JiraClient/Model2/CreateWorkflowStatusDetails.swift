@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a transition status. */
 
-public struct CreateWorkflowStatusDetails: Codable {
+public struct CreateWorkflowStatusDetails {
 
     /** The ID of the status. */
     public var _id: String

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the contextual configuration for a custom field. */
 
-public struct BulkContextualConfiguration: Codable {
+public struct BulkContextualConfiguration {
 
     /** The field configuration. */
     public var configuration: Any?

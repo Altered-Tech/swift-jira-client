@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct GlobalScopeBean: Codable {
+public struct GlobalScopeBean {
 
     public enum Attributes: String, Codable { 
         case notselectable = "notSelectable"

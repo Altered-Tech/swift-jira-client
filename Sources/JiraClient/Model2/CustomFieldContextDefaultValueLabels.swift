@@ -10,7 +10,7 @@ import Foundation
 
 /** Default value for a labels custom field. */
 
-public struct CustomFieldContextDefaultValueLabels: Codable {
+public struct CustomFieldContextDefaultValueLabels {
 
     /** The default labels value. */
     public var labels: [String]

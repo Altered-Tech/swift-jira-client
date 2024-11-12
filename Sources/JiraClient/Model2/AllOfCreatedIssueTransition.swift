@@ -10,7 +10,7 @@ import Foundation
 
 /** The response code and messages related to any requested transition. */
 
-public struct AllOfCreatedIssueTransition: Codable {
+public struct AllOfCreatedIssueTransition {
 
     public var errorCollection: ErrorCollection?
     public var status: Int?

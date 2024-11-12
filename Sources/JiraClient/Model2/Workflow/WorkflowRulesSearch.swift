@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the workflow and its transition rules. */
 
-public struct WorkflowRulesSearch: Codable {
+public struct WorkflowRulesSearch {
 
     /** Use expand to include additional information in the response. This parameter accepts &#x60;transition&#x60; which, for each rule, returns information about the transition the rule is assigned to. */
     public var expand: String?

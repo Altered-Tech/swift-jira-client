@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorklogsMoveRequestBean: Codable {
+public struct WorklogsMoveRequestBean {
 
     /** A list of worklog IDs. */
     public var ids: [Int64]?

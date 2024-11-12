@@ -10,7 +10,7 @@ import Foundation
 
 /** A change item. */
 
-public struct ChangeDetails: Codable {
+public struct ChangeDetails {
 
     /** The name of the field changed. */
     public let field: String?

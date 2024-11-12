@@ -10,7 +10,7 @@ import Foundation
 
 /** A clause that asserts whether a field was changed. For example, &#x60;status CHANGED AFTER startOfMonth(-1M)&#x60;.See [CHANGED](https://confluence.atlassian.com/x/dgiiLQ#Advancedsearching-operatorsreference-CHANGEDCHANGED) for more information about the CHANGED operator. */
 
-public struct FieldChangedClause: Codable {
+public struct FieldChangedClause {
 
     public enum Operator: String, Codable { 
         case changed = "changed"

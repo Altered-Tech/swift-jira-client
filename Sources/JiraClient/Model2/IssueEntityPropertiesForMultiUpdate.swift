@@ -10,7 +10,7 @@ import Foundation
 
 /** An issue ID with entity property values. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information. */
 
-public struct IssueEntityPropertiesForMultiUpdate: Codable {
+public struct IssueEntityPropertiesForMultiUpdate {
 
     /** The ID of the issue. */
     public var issueID: Int64?

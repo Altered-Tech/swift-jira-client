@@ -10,7 +10,7 @@ import Foundation
 
 /** The syntax tree of the query. Empty if the query was invalid. */
 
-public struct AllOfParsedJqlQueryStructure: Codable {
+public struct AllOfParsedJqlQueryStructure {
 
     public var orderBy: JqlQueryOrderByClause?
     public var _where: JqlQueryClause?

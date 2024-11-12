@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of the issue security scheme. */
 
-public struct SecuritySchemeId: Codable {
+public struct SecuritySchemeId {
 
 
 

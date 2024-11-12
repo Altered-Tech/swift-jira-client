@@ -10,7 +10,7 @@ import Foundation
 
 /** The position of the gadget. When the gadget is placed into the position, other gadgets in the same column are moved down to accommodate it. */
 
-public struct AllOfDashboardGadgetSettingsPosition: Codable {
+public struct AllOfDashboardGadgetSettingsPosition {
 
     public var theColumnPositionOfTheGadget_: Int
     public var theRowPositionOfTheGadget_: Int

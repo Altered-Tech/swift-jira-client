@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the instance&#x27;s attachment settings. */
 
-public struct AttachmentSettings: Codable {
+public struct AttachmentSettings {
 
     /** Whether the ability to add attachments is enabled. */
     public var enabled: Bool?

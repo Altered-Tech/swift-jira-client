@@ -10,7 +10,7 @@ import Foundation
 
 /** An operand that can be part of a list operand. */
 
-public struct JqlQueryUnitaryOperand: Codable {
+public struct JqlQueryUnitaryOperand {
 
 
 

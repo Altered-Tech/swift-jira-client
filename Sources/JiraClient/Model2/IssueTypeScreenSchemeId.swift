@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of an issue type screen scheme. */
 
-public struct IssueTypeScreenSchemeId: Codable {
+public struct IssueTypeScreenSchemeId {
 
     /** The ID of the issue type screen scheme. */
     public var _id: String

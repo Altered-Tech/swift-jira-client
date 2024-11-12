@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct PrioritySchemeChangesWithMappings: Codable {
+public struct PrioritySchemeChangesWithMappings {
 
     /** Affected entity ids. */
     public var ids: [Int64]

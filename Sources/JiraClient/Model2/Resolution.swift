@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue resolution. */
 
-public struct Resolution: Codable {
+public struct Resolution {
 
     /** The description of the issue resolution. */
     public var _description: String?

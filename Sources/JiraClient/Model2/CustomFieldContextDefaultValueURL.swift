@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a URL custom field. */
 
-public struct CustomFieldContextDefaultValueURL: Codable {
+public struct CustomFieldContextDefaultValueURL {
 
     /** The ID of the context. */
     public var contextId: String

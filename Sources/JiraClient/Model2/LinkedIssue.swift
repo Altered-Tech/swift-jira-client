@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID or key of a linked issue. */
 
-public struct LinkedIssue: Codable {
+public struct LinkedIssue {
 
     /** The fields associated with the issue. */
     public var fields: AllOfLinkedIssueFields?

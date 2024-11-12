@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the name, description, and default issue type for an issue type scheme. */
 
-public struct IssueTypeSchemeUpdateDetails: Codable {
+public struct IssueTypeSchemeUpdateDetails {
 
     /** The ID of the default issue type of the issue type scheme. */
     public var defaultIssueTypeId: String?

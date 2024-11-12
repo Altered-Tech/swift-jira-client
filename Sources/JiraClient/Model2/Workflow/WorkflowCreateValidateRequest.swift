@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowCreateValidateRequest: Codable {
+public struct WorkflowCreateValidateRequest {
 
     public var payload: WorkflowCreateRequest
     public var validationOptions: ValidationOptionsForCreate?

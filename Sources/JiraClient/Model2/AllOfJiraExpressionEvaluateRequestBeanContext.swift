@@ -10,7 +10,7 @@ import Foundation
 
 /** The context in which the Jira expression is evaluated. */
 
-public struct AllOfJiraExpressionEvaluateRequestBeanContext: Codable {
+public struct AllOfJiraExpressionEvaluateRequestBeanContext {
 
     /** The ID of the board that is available under the &#x60;board&#x60; variable when evaluating the expression. */
     public var board: Int64?

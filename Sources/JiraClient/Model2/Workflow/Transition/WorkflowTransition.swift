@@ -10,7 +10,7 @@ import Foundation
 
 /** A workflow transition. */
 
-public struct WorkflowTransition: Codable {
+public struct WorkflowTransition {
 
     /** The transition ID. */
     public var _id: Int

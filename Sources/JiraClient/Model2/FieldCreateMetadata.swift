@@ -10,7 +10,7 @@ import Foundation
 
 /** The metadata describing an issue field for createmeta. */
 
-public struct FieldCreateMetadata: Codable {
+public struct FieldCreateMetadata {
 
     /** The list of values allowed in the field. */
     public var allowedValues: [Any]?
@@ -47,20 +47,6 @@ public struct FieldCreateMetadata: Codable {
         self.operations = operations
         self._required = _required
         self.schema = schema
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case allowedValues
-        case autoCompleteUrl
-        case configuration
-        case defaultValue
-        case fieldId
-        case hasDefaultValue
-        case key
-        case name
-        case operations
-        case _required = "required"
-        case schema
     }
 
 }

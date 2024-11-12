@@ -10,7 +10,7 @@ import Foundation
 
 /** Metadata for an item in an attachment archive. */
 
-public struct AttachmentArchiveItemReadable: Codable {
+public struct AttachmentArchiveItemReadable {
 
     /** The position of the item within the archive. */
     public var index: Int64?

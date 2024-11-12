@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an item associated with the changed record. */
 
-public struct AssociatedItemBean: Codable {
+public struct AssociatedItemBean {
 
     /** The ID of the associated record. */
     public var _id: String?

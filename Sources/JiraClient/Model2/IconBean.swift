@@ -10,7 +10,7 @@ import Foundation
 
 /** An icon. */
 
-public struct IconBean: Codable {
+public struct IconBean {
 
     /** The URL of the tooltip, used only for a status icon. */
     public var link: String?

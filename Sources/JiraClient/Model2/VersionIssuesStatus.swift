@@ -10,7 +10,7 @@ import Foundation
 
 /** Counts of the number of issues in various statuses. */
 
-public struct VersionIssuesStatus: Codable {
+public struct VersionIssuesStatus {
 
 
 

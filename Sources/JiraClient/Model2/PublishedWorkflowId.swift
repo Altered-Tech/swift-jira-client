@@ -10,7 +10,7 @@ import Foundation
 
 /** Properties that identify a published workflow. */
 
-public struct PublishedWorkflowId: Codable {
+public struct PublishedWorkflowId {
 
     /** The entity ID of the workflow. */
     public var entityId: String?

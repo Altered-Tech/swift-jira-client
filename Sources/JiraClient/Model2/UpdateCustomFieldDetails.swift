@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a custom field. */
 
-public struct UpdateCustomFieldDetails: Codable {
+public struct UpdateCustomFieldDetails {
 
     public enum SearcherKey: String, Codable { 
         case cascadingselectsearcher = "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselectsearcher"

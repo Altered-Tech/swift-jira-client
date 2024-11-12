@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssueCommentListRequestBean: Codable {
+public struct IssueCommentListRequestBean {
 
     /** The list of comment IDs. A maximum of 1000 IDs can be specified. */
     public var ids: [Int64]

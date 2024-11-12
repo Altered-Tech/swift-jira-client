@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of a screen scheme. */
 
-public struct ScreenSchemeId: Codable {
+public struct ScreenSchemeId {
 
     /** The ID of the screen scheme. */
     public var _id: Int64

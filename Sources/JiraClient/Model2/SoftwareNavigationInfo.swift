@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SoftwareNavigationInfo: Codable {
+public struct SoftwareNavigationInfo {
 
     public var boardId: Int64?
     public var boardName: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** The user details. */
 
-public struct NewUserDetails: Codable {
+public struct NewUserDetails {
 
 
 

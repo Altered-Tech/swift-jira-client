@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about an issue security scheme. */
 
-public struct SecuritySchemeWithProjects: Codable {
+public struct SecuritySchemeWithProjects {
 
 
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a workflow scheme. */
 
-public struct WorkflowScheme: Codable {
+public struct WorkflowScheme {
 
     /** The name of the default workflow for the workflow scheme. The default workflow has *All Unassigned Issue Types* assigned to it in Jira. If &#x60;defaultWorkflow&#x60; is not specified when creating a workflow scheme, it is set to *Jira Workflow (jira)*. */
     public var defaultWorkflow: String?
@@ -52,22 +52,6 @@ public struct WorkflowScheme: Codable {
         self.originalIssueTypeMappings = originalIssueTypeMappings
         self._self = _self
         self.updateDraftIfNeeded = updateDraftIfNeeded
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case defaultWorkflow
-        case _description = "description"
-        case draft
-        case _id = "id"
-        case issueTypeMappings
-        case issueTypes
-        case lastModified
-        case lastModifiedUser
-        case name
-        case originalDefaultWorkflow
-        case originalIssueTypeMappings
-        case _self = "self"
-        case updateDraftIfNeeded
     }
 
 }

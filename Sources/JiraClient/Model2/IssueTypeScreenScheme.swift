@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue type screen scheme. */
 
-public struct IssueTypeScreenScheme: Codable {
+public struct IssueTypeScreenScheme {
 
     /** The description of the issue type screen scheme. */
     public var _description: String?

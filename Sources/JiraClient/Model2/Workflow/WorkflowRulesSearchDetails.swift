@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of workflow transition rules. */
 
-public struct WorkflowRulesSearchDetails: Codable {
+public struct WorkflowRulesSearchDetails {
 
     /** List of workflow rule IDs that do not belong to the workflow or can not be found. */
     public var invalidRules: [UUID]?

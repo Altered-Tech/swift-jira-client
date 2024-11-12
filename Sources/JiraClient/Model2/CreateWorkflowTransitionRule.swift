@@ -10,7 +10,7 @@ import Foundation
 
 /** A workflow transition rule. */
 
-public struct CreateWorkflowTransitionRule: Codable {
+public struct CreateWorkflowTransitionRule {
 
     /** EXPERIMENTAL. The configuration of the transition rule. */
     public var configuration: [String:Any]?

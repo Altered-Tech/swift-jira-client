@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CustomFieldDefinitionJsonBean: Codable {
+public struct CustomFieldDefinitionJsonBean {
 
     public enum SearcherKey: String, Codable { 
         case cascadingselectsearcher = "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselectsearcher"

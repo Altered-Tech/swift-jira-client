@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue remote link. */
 
-public struct RemoteIssueLink: Codable {
+public struct RemoteIssueLink {
 
     /** Details of the remote application the linked item is in. */
     public var application: AllOfRemoteIssueLinkApplication?
@@ -32,15 +32,6 @@ public struct RemoteIssueLink: Codable {
         self.object = object
         self.relationship = relationship
         self._self = _self
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case application
-        case globalId
-        case _id = "id"
-        case object
-        case relationship
-        case _self = "self"
     }
 
 }

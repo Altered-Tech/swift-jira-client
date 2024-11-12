@@ -10,7 +10,7 @@ import Foundation
 
 /** An entity property, for more information see [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/). */
 
-public struct EntityProperty: Codable {
+public struct EntityProperty {
 
     /** The key of the property. Required on create and update. */
     public var key: String?

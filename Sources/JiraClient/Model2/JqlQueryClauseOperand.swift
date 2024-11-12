@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an operand in a JQL clause. */
 
-public struct JqlQueryClauseOperand: Codable {
+public struct JqlQueryClauseOperand {
 
 
 

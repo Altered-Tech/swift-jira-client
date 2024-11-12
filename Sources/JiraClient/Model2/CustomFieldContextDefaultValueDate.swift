@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a Date custom field. */
 
-public struct CustomFieldContextDefaultValueDate: Codable {
+public struct CustomFieldContextDefaultValueDate {
 
     /** The default date in ISO format. Ignored if &#x60;useCurrent&#x60; is true. */
     public var date: String?

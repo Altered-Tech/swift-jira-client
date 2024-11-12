@@ -10,7 +10,7 @@ import Foundation
 
 /** An element of the order-by JQL clause. */
 
-public struct JqlQueryOrderByClauseElement: Codable {
+public struct JqlQueryOrderByClauseElement {
 
     public enum Direction: String, Codable { 
         case asc = "asc"

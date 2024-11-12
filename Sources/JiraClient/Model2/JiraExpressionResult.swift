@@ -10,7 +10,7 @@ import Foundation
 
 /** The result of evaluating a Jira expression. */
 
-public struct JiraExpressionResult: Codable {
+public struct JiraExpressionResult {
 
     /** Contains various characteristics of the performed expression evaluation. */
     public var meta: AllOfJiraExpressionResultMeta?

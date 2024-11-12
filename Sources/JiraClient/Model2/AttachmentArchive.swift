@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AttachmentArchive: Codable {
+public struct AttachmentArchive {
 
     public var entries: [AttachmentArchiveEntry]?
     public var moreAvailable: Bool?

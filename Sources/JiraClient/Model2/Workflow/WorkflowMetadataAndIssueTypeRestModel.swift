@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflow metadata and issue type IDs which use this workflow. */
 
-public struct WorkflowMetadataAndIssueTypeRestModel: Codable {
+public struct WorkflowMetadataAndIssueTypeRestModel {
 
     /** The list of issue type IDs for the mapping. */
     public var issueTypeIds: [String]

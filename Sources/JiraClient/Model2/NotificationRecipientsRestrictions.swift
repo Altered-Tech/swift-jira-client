@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the group membership or permissions needed to receive the notification. */
 
-public struct NotificationRecipientsRestrictions: Codable {
+public struct NotificationRecipientsRestrictions {
 
     /** List of groupId memberships required to receive the notification. */
     public var groupIds: [String]?

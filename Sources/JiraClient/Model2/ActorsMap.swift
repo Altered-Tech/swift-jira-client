@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ActorsMap: Codable {
+public struct ActorsMap {
 
     /** The name of the group to add. This parameter cannot be used with the &#x60;groupId&#x60; parameter. As a group&#x27;s name can change, use of &#x60;groupId&#x60; is recommended. */
     public var group: [String]?

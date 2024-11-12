@@ -10,7 +10,7 @@ import Foundation
 
 /** Default values to update. */
 
-public struct CustomFieldContextDefaultValueUpdate: Codable {
+public struct CustomFieldContextDefaultValueUpdate {
 
     public var defaultValues: [CustomFieldContextDefaultValue]?
 

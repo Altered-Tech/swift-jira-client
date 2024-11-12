@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SimpleListWrapperApplicationRole: Codable {
+public struct SimpleListWrapperApplicationRole {
 
     public var callback: ListWrapperCallbackApplicationRole?
     public var items: [ApplicationRole]?

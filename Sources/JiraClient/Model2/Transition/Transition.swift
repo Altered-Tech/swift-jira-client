@@ -65,5 +65,4 @@ public struct Transition{
         self.to = client.to
         self.type = ModelType(type: client._type)!
     }
-
 }

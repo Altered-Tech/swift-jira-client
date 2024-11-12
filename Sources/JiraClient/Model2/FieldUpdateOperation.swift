@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an operation to perform on a field. */
 
-public struct FieldUpdateOperation: Codable {
+public struct FieldUpdateOperation {
 
     /** The value to add to the field. */
     public var add: Any?
@@ -30,13 +30,5 @@ public struct FieldUpdateOperation: Codable {
         self.remove = remove
         self._set = _set
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case add
-        case copy
-        case edit
-        case remove
-        case _set = "set"
-    }
-
+    
 }

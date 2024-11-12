@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a custom field option for a context. */
 
-public struct CustomFieldOptionUpdate: Codable {
+public struct CustomFieldOptionUpdate {
 
     /** Whether the option is disabled. */
     public var disabled: Bool?

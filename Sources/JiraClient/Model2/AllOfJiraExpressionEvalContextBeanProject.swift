@@ -10,7 +10,7 @@ import Foundation
 
 /** The project that is available under the &#x60;project&#x60; variable when evaluating the expression. */
 
-public struct AllOfJiraExpressionEvalContextBeanProject: Codable {
+public struct AllOfJiraExpressionEvalContextBeanProject {
 
     /** The ID of the referenced item. */
     public var _id: Int64?

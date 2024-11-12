@@ -10,7 +10,7 @@ import Foundation
 
 /** Contains various characteristics of the performed expression evaluation. */
 
-public struct AllOfJiraExpressionResultMeta: Codable {
+public struct AllOfJiraExpressionResultMeta {
 
     /** Contains information about the expression complexity. For example, the number of steps it took to evaluate the expression. */
     public var complexity: Any?

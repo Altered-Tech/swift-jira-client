@@ -10,7 +10,7 @@ import Foundation
 
 /** The number of expensive operations executed while evaluating the expression. Expensive operations are those that load additional data, such as entity properties, comments, or custom fields. */
 
-public struct AllOfJiraExpressionsComplexityBeanExpensiveOperations: Codable {
+public struct AllOfJiraExpressionsComplexityBeanExpensiveOperations {
 
     /** The maximum allowed complexity. The evaluation will fail if this value is exceeded. */
     public var limit: Int

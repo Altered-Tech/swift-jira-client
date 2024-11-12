@@ -10,7 +10,7 @@ import Foundation
 
 /** Bulk issue property update request details. */
 
-public struct BulkIssuePropertyUpdateRequest: Codable {
+public struct BulkIssuePropertyUpdateRequest {
 
     /** EXPERIMENTAL. The Jira expression to calculate the value of the property. The value of the expression must be an object that can be converted to JSON, such as a number, boolean, string, list, or map. The context variables available to the expression are &#x60;issue&#x60; and &#x60;user&#x60;. Issues for which the expression returns a value whose JSON representation is longer than 32768 characters are ignored. */
     public var expression: String?

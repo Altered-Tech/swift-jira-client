@@ -10,7 +10,7 @@ import Foundation
 
 /** Contains information about the expression evaluation. This bean will be replacing &#x60;JiraExpressionEvaluationMetaDataBean&#x60; bean as part of new &#x60;evaluate&#x60; endpoint */
 
-public struct JExpEvaluateMetaDataBean: Codable {
+public struct JExpEvaluateMetaDataBean {
 
     /** Contains information about the expression complexity. For example, the number of steps it took to evaluate the expression. */
     public var complexity: AllOfJExpEvaluateMetaDataBeanComplexity?

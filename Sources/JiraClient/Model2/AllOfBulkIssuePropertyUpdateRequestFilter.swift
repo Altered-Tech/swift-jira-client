@@ -10,7 +10,7 @@ import Foundation
 
 /** The bulk operation filter. */
 
-public struct AllOfBulkIssuePropertyUpdateRequestFilter: Codable {
+public struct AllOfBulkIssuePropertyUpdateRequestFilter {
 
     /** The value of properties to perform the bulk operation on. */
     public var currentValue: Any?

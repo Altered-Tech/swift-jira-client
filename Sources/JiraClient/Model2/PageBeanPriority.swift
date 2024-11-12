@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanPriority: Codable {
+public struct PageBeanPriority {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanJqlFunctionPrecomputationBean: Codable {
+public struct PageBeanJqlFunctionPrecomputationBean {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

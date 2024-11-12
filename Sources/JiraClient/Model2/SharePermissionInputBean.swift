@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SharePermissionInputBean: Codable {
+public struct SharePermissionInputBean {
 
     public enum ModelType: String, Codable { 
         case user = "user"

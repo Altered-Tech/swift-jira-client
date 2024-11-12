@@ -10,7 +10,7 @@ import Foundation
 
 /** The default text for a Forge string custom field. */
 
-public struct CustomFieldContextDefaultValueForgeStringField: Codable {
+public struct CustomFieldContextDefaultValueForgeStringField {
 
     /** The ID of the context. */
     public var contextId: String

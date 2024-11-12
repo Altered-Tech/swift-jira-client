@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a notification scheme event. */
 
-public struct NotificationSchemeEvent: Codable {
+public struct NotificationSchemeEvent {
 
     public var event: NotificationEvent?
     public var notifications: [EventNotification]?

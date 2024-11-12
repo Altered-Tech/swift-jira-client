@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a user assigned to a project role. */
 
-public struct RoleActor: Codable {
+public struct RoleActor {
 
     public enum ModelType: String, Codable { 
         case groupRoleActor = "atlassian-group-role-actor"

@@ -10,7 +10,7 @@ import Foundation
 
 /** The explicit association between issue types and a workflow in a workflow scheme. */
 
-public struct WorkflowSchemeAssociation: Codable {
+public struct WorkflowSchemeAssociation {
 
     /** The issue types assigned to the workflow. */
     public var issueTypeIds: [String]

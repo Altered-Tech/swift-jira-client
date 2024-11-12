@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a workflow. */
 
-public struct DeprecatedWorkflow: Codable {
+public struct DeprecatedWorkflow {
 
     public var _default: Bool?
     /** The description of the workflow. */
@@ -39,15 +39,5 @@ public struct DeprecatedWorkflow: Codable {
         self.steps = steps
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case _default = "default"
-        case _description = "description"
-        case lastModifiedDate
-        case lastModifiedUser
-        case lastModifiedUserAccountId
-        case name
-        case scope
-        case steps
-    }
 
 }

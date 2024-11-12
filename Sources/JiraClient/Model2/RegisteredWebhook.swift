@@ -10,7 +10,7 @@ import Foundation
 
 /** ID of a registered webhook or error messages explaining why a webhook wasn&#x27;t registered. */
 
-public struct RegisteredWebhook: Codable {
+public struct RegisteredWebhook {
 
     /** The ID of the webhook. Returned if the webhook is created. */
     public var createdWebhookId: Int64?

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SearchAndReconcileRequestBean: Codable {
+public struct SearchAndReconcileRequestBean {
 
     /** Use [expand](em&gt;#expansion) to include additional information about issues in the response. Note that, unlike the majority of instances where &#x60;expand&#x60; is specified, &#x60;expand&#x60; is defined as a list of values. The expand options are:   *  &#x60;renderedFields&#x60; Returns field values rendered in HTML format.  *  &#x60;names&#x60; Returns the display name of each field.  *  &#x60;schema&#x60; Returns the schema describing a field type.  *  &#x60;changelog&#x60; Returns a list of recent updates to an issue, sorted by date, starting from the most recent. */
     public var expand: String?

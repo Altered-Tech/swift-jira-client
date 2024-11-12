@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID and the name of the workflow scheme. */
 
-public struct WorkflowSchemeIdName: Codable {
+public struct WorkflowSchemeIdName {
 
     /** The ID of the workflow scheme. */
     public var _id: String

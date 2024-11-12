@@ -10,7 +10,7 @@ import Foundation
 
 /** The result of evaluating a Jira expression.This bean will be replacing &#x60;JiraExpressionResultBean&#x60; bean as part of new evaluate endpoint */
 
-public struct JExpEvaluateJiraExpressionResultBean: Codable {
+public struct JExpEvaluateJiraExpressionResultBean {
 
     /** Contains various characteristics of the performed expression evaluation. */
     public var meta: AllOfJExpEvaluateJiraExpressionResultBeanMeta?

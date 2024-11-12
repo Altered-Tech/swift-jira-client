@@ -10,7 +10,7 @@ import Foundation
 
 /** A page containing dashboard details. */
 
-public struct PageOfDashboards: Codable {
+public struct PageOfDashboards {
 
     /** List of dashboards. */
     public var dashboards: [Dashboard]?

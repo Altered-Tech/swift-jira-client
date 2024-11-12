@@ -10,7 +10,7 @@ import Foundation
 
 /** The sanitized JQL queries for the given account IDs. */
 
-public struct SanitizedJqlQueries: Codable {
+public struct SanitizedJqlQueries {
 
     /** The list of sanitized JQL queries. */
     public var queries: [SanitizedJqlQuery]?

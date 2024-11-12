@@ -10,7 +10,7 @@ import Foundation
 
 /** An issue suggested for use in the issue picker auto-completion. */
 
-public struct SuggestedIssue: Codable {
+public struct SuggestedIssue {
 
     /** The ID of the issue. */
     public var _id: Int64?

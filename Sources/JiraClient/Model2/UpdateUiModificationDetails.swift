@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a UI modification. */
 
-public struct UpdateUiModificationDetails: Codable {
+public struct UpdateUiModificationDetails {
 
     /** List of contexts of the UI modification. The maximum number of contexts is 1000. If provided, replaces all existing contexts. */
     public var contexts: [UiModificationContextDetails]?

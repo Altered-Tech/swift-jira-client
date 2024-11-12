@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a multiple group picker custom field. */
 
-public struct CustomFieldContextDefaultValueMultipleGroupPicker: Codable {
+public struct CustomFieldContextDefaultValueMultipleGroupPicker {
 
     /** The ID of the context. */
     public var contextId: String

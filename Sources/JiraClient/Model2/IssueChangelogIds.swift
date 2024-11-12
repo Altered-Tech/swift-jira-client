@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of changelog IDs. */
 
-public struct IssueChangelogIds: Codable {
+public struct IssueChangelogIds {
 
     /** The list of changelog IDs. */
     public var changelogIds: [Int64]

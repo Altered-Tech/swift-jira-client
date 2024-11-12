@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AllOfRoleActorActorGroup: Codable {
+public struct AllOfRoleActorActorGroup {
 
     /** The display name of the group. */
     public var displayName: String?

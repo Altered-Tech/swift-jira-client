@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the association between an issue type scheme and project. */
 
-public struct IssueTypeSchemeProjectAssociation: Codable {
+public struct IssueTypeSchemeProjectAssociation {
 
     /** The ID of the issue type scheme. */
     public var issueTypeSchemeId: String

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue resolution. */
 
-public struct CreateResolutionDetails: Codable {
+public struct CreateResolutionDetails {
 
 
 

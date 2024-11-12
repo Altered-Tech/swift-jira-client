@@ -10,7 +10,7 @@ import Foundation
 
 /** An [issue](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#issue) specified by ID or key. All the fields of the issue object are available in the Jira expression. */
 
-public struct IssueContextVariable: Codable {
+public struct IssueContextVariable {
 
     /** The issue ID. */
     public var _id: Int64?

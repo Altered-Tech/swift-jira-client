@@ -10,7 +10,7 @@ import Foundation
 
 /** The default text for a Forge collection of strings custom field. */
 
-public struct CustomFieldContextDefaultValueForgeMultiStringField: Codable {
+public struct CustomFieldContextDefaultValueForgeMultiStringField {
 
     public var type: String
     /** List of string values. The maximum length for a value is 254 characters. */

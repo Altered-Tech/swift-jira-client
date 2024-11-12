@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a permission granted to a user or group. */
 
-public struct PermissionGrant: Codable {
+public struct PermissionGrant {
 
 
 

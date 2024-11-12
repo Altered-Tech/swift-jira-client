@@ -10,7 +10,7 @@ import Foundation
 
 /** The statuses referenced in the workflow. */
 
-public struct WorkflowReferenceStatus: Codable {
+public struct WorkflowReferenceStatus {
 
     public var approvalConfiguration: ApprovalConfiguration?
     /** Indicates if the status is deprecated. */

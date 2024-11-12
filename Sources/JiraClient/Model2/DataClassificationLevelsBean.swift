@@ -10,7 +10,7 @@ import Foundation
 
 /** The data classification. */
 
-public struct DataClassificationLevelsBean: Codable {
+public struct DataClassificationLevelsBean {
 
     /** The data classifications. */
     public var classifications: [DataClassificationTagBean]?

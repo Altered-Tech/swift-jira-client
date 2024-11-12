@@ -10,12 +10,12 @@ import Foundation
 
 /** A paged list. To access additional details append &#x60;[start-index:end-index]&#x60; to the expand request. For example, &#x60;?expand&#x3D;sharedUsers[10:40]&#x60; returns a list starting at item 10 and finishing at item 40. */
 
-public struct PagedListUserDetailsApplicationUser: Codable {
+public struct PagedListUserDetailsApplicationUser {
 
     /** The index of the last item returned on the page. */
     public var endIndex: Int?
     /** The list of items. */
-    public var items: [UserDetails]?
+    public var items: [User]?
     /** The maximum number of results that could be on the page. */
     public var maxResults: Int?
     /** The number of items on the page. */
@@ -23,20 +23,12 @@ public struct PagedListUserDetailsApplicationUser: Codable {
     /** The index of the first item returned on the page. */
     public var startIndex: Int?
 
-    public init(endIndex: Int? = nil, items: [UserDetails]? = nil, maxResults: Int? = nil, size: Int? = nil, startIndex: Int? = nil) {
+    public init(endIndex: Int? = nil, items: [User]? = nil, maxResults: Int? = nil, size: Int? = nil, startIndex: Int? = nil) {
         self.endIndex = endIndex
         self.items = items
         self.maxResults = maxResults
         self.size = size
         self.startIndex = startIndex
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case endIndex = "end-index"
-        case items
-        case maxResults = "max-results"
-        case size
-        case startIndex = "start-index"
     }
 
 }

@@ -10,7 +10,7 @@ import Foundation
 
 /** The number of Jira REST API beans returned in the response. */
 
-public struct AllOfJiraExpressionsComplexityBeanBeans: Codable {
+public struct AllOfJiraExpressionsComplexityBeanBeans {
 
     /** The maximum allowed complexity. The evaluation will fail if this value is exceeded. */
     public var limit: Int

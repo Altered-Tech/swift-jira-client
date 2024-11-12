@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of how to filter and list search auto complete information. */
 
-public struct SearchAutoCompleteFilter: Codable {
+public struct SearchAutoCompleteFilter {
 
     /** Include collapsed fields for fields that have non-unique names. */
     public var includeCollapsedFields: Bool?

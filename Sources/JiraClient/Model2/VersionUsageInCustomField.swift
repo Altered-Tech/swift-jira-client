@@ -10,7 +10,7 @@ import Foundation
 
 /** List of custom fields using the version. */
 
-public struct VersionUsageInCustomField: Codable {
+public struct VersionUsageInCustomField {
 
     /** The ID of the custom field. */
     public var customFieldId: Int64?

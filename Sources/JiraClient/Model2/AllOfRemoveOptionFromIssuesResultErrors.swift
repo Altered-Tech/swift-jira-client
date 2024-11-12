@@ -10,7 +10,7 @@ import Foundation
 
 /** A collection of errors related to unchanged issues. The collection size is limited, which means not all errors may be returned. */
 
-public struct AllOfRemoveOptionFromIssuesResultErrors: Codable {
+public struct AllOfRemoveOptionFromIssuesResultErrors {
 
     /** The list of error messages produced by this operation. For example, \&quot;input parameter &#x27;key&#x27; must be provided\&quot; */
     public var errorMessages: [String]?

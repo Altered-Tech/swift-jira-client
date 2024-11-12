@@ -10,7 +10,7 @@ import Foundation
 
 /** A webhook. */
 
-public struct Webhook: Codable {
+public struct Webhook {
 
     public enum Events: String, Codable { 
         case jiraIssueCreated = "jira:issue_created"

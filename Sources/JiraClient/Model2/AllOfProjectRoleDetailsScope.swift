@@ -10,9 +10,9 @@ import Foundation
 
 /** The scope of the role. Indicated for roles associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO). */
 
-public struct AllOfProjectRoleDetailsScope: Codable {
+public struct AllOfProjectRoleDetailsScope {
 
-    public enum ModelType: String, Codable { 
+    public enum ModelType: String { 
         case project = "PROJECT"
         case template = "TEMPLATE"
     }

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the options to create for a custom field. */
 
-public struct BulkCustomFieldOptionCreateRequest: Codable {
+public struct BulkCustomFieldOptionCreateRequest {
 
     /** Details of options to create. */
     public var options: [CustomFieldOptionCreate]?

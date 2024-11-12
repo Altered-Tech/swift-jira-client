@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a workflow. */
 
-public struct Workflow: Codable {
+public struct Workflow {
 
     /** The creation date of the workflow. */
     public var created: Date?

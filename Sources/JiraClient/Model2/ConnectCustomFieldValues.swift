@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of updates for a custom field. */
 
-public struct ConnectCustomFieldValues: Codable {
+public struct ConnectCustomFieldValues {
 
     /** The list of custom field update details. */
     public var updateValueList: [ConnectCustomFieldValue]?

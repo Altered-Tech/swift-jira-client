@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflow transition rule conditions tree. */
 
-public struct WorkflowCondition: Codable {
+public struct WorkflowCondition {
 
 
 

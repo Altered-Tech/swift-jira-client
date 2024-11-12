@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanContext: Codable {
+public struct PageBeanContext {
 
     /** Whether this is the last page. */
     public var isLast: Bool?
@@ -36,15 +36,4 @@ public struct PageBeanContext: Codable {
         self.total = total
         self.values = values
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case isLast
-        case maxResults
-        case nextPage
-        case _self = "self"
-        case startAt
-        case total
-        case values
-    }
-
 }

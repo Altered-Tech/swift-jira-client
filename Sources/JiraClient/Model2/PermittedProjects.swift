@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of projects in which a user is granted permissions. */
 
-public struct PermittedProjects: Codable {
+public struct PermittedProjects {
 
     /** A list of projects. */
     public var projects: [ProjectIdentifierBean]?

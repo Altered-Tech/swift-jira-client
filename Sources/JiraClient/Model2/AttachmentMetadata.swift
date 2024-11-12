@@ -10,7 +10,7 @@ import Foundation
 
 /** Metadata for an issue attachment. */
 
-public struct AttachmentMetadata: Codable {
+public struct AttachmentMetadata {
 
     /** Details of the user who attached the file. */
     public var author: AllOfAttachmentMetadataAuthor?

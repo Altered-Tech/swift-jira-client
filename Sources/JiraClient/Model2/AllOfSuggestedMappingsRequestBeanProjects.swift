@@ -10,7 +10,7 @@ import Foundation
 
 /** The project changes in the scheme. */
 
-public struct AllOfSuggestedMappingsRequestBeanProjects: Codable {
+public struct AllOfSuggestedMappingsRequestBeanProjects {
 
     /** The ids of projects being added to the scheme. */
     public var add: [Int64]?

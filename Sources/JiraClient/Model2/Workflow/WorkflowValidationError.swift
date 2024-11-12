@@ -10,7 +10,7 @@ import Foundation
 
 /** The details about a workflow validation error. */
 
-public struct WorkflowValidationError: Codable {
+public struct WorkflowValidationError {
 
     public enum Level: String, Codable { 
         case warning = "WARNING"

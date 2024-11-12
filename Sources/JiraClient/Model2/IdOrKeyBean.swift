@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IdOrKeyBean: Codable {
+public struct IdOrKeyBean {
 
     /** The ID of the referenced item. */
     public var _id: Int64?

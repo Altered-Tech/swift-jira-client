@@ -10,7 +10,7 @@ import Foundation
 
 /** Details for permissions of shareable entities */
 
-public struct PermissionDetails: Codable {
+public struct PermissionDetails {
 
     /** The edit permissions for the shareable entities. */
     public var editPermissions: [SharePermission]

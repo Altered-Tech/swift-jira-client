@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a workflow status. */
 
-public struct WorkflowStatus: Codable {
+public struct WorkflowStatus {
 
     /** The ID of the issue status. */
     public var _id: String

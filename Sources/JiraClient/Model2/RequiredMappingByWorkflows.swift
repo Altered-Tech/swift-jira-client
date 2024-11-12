@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of required status mappings by workflow. */
 
-public struct RequiredMappingByWorkflows: Codable {
+public struct RequiredMappingByWorkflows {
 
     /** The ID of the source workflow. */
     public var sourceWorkflowId: String?

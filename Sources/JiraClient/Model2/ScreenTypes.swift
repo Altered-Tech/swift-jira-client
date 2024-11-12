@@ -10,7 +10,7 @@ import Foundation
 
 /** The IDs of the screens for the screen types of the screen scheme. */
 
-public struct ScreenTypes: Codable {
+public struct ScreenTypes {
 
     /** The ID of the create screen. */
     public var create: Int64?

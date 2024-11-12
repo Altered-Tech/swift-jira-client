@@ -10,7 +10,7 @@ import Foundation
 
 /** The default timezone of the Jira server. In a format known as Olson Time Zones, IANA Time Zones or TZ Database Time Zones. */
 
-public struct ServerInformationServerTimeZone: Codable {
+public struct ServerInformationServerTimeZone {
 
     public var displayName: String?
     public var dstsavings: Int?

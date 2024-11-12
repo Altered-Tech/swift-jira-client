@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IssueTypeCreateBean: Codable {
+public struct IssueTypeCreateBean {
 
     public enum ModelType: String, Codable { 
         case subtask = "subtask"

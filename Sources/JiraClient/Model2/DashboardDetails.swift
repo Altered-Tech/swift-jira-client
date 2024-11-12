@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a dashboard. */
 
-public struct DashboardDetails: Codable {
+public struct DashboardDetails {
 
     /** The description of the dashboard. */
     public var _description: String?

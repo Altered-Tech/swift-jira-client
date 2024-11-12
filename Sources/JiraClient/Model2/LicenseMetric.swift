@@ -10,7 +10,7 @@ import Foundation
 
 /** A metric that provides insight into the active licence details */
 
-public struct LicenseMetric: Codable {
+public struct LicenseMetric {
 
     /** The key of a specific license metric. */
     public var key: String?

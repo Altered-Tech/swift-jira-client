@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a project version. */
 
-public struct Version: Codable {
+public struct Version {
 
     /** If the expand option &#x60;approvers&#x60; is used, returns a list containing the approvers for this version. */
     public var approvers: [VersionApprover]?

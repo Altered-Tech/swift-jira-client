@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a notification associated with an event. */
 
-public struct EventNotification: Codable {
+public struct EventNotification {
 
     public enum NotificationType: String, Codable { 
         case currentAssignee = "CurrentAssignee"

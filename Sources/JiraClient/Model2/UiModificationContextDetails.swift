@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a UI modification&#x27;s context, which define where to activate the UI modification. */
 
-public struct UiModificationContextDetails: Codable {
+public struct UiModificationContextDetails {
 
     public enum ViewType: String, Codable { 
         case gic = "GIC"

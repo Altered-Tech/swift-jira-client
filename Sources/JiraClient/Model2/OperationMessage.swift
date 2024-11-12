@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct OperationMessage: Codable {
+public struct OperationMessage {
 
     /** The human-readable message that describes the result. */
     public var message: String

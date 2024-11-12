@@ -10,7 +10,7 @@ import Foundation
 
 /** The Connect provided ecosystem rules available. */
 
-public struct AvailableWorkflowConnectRule: Codable {
+public struct AvailableWorkflowConnectRule {
 
     public enum RuleType: String, Codable { 
         case condition = "Condition"

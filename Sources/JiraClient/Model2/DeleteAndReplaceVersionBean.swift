@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct DeleteAndReplaceVersionBean: Codable {
+public struct DeleteAndReplaceVersionBean {
 
     /** An array of custom field IDs (&#x60;customFieldId&#x60;) and version IDs (&#x60;moveTo&#x60;) to update when the fields contain the deleted version. */
     public var customFieldReplacementList: [CustomFieldReplacement]?

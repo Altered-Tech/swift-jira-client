@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WarningCollection: Codable {
+public struct WarningCollection {
 
     public var warnings: [String]?
 

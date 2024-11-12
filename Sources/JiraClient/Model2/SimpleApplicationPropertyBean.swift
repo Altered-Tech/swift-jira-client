@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SimpleApplicationPropertyBean: Codable {
+public struct SimpleApplicationPropertyBean {
 
     /** The ID of the application property. */
     public var _id: String?

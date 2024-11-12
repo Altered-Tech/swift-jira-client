@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of issue type screen scheme mappings. */
 
-public struct IssueTypeScreenSchemeMappingDetails: Codable {
+public struct IssueTypeScreenSchemeMappingDetails {
 
     /** The list of issue type to screen scheme mappings. A *default* entry cannot be specified because a default entry is added when an issue type screen scheme is created. */
     public var issueTypeMappings: [IssueTypeScreenSchemeMapping]

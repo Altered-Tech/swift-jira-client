@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a remote issue link. */
 
-public struct RemoteIssueLinkRequest: Codable {
+public struct RemoteIssueLinkRequest {
 
 
 

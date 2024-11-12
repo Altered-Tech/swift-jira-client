@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a workflow. */
 
-public struct JiraWorkflow: Codable {
+public struct JiraWorkflow {
 
     /** The description of the workflow. */
     public var _description: String?

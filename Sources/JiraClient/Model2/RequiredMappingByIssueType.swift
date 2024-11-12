@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of required status mappings by issue type. */
 
-public struct RequiredMappingByIssueType: Codable {
+public struct RequiredMappingByIssueType {
 
     /** The ID of the issue type. */
     public var issueTypeId: String?

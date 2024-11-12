@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue type screen scheme. */
 
-public struct IssueTypeScreenSchemeUpdateDetails: Codable {
+public struct IssueTypeScreenSchemeUpdateDetails {
 
     /** The description of the issue type screen scheme. The maximum length is 255 characters. */
     public var _description: String?

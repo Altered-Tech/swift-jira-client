@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AddGroupBean: Codable {
+public struct AddGroupBean {
 
 
 

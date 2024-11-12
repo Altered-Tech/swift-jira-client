@@ -10,7 +10,7 @@ import Foundation
 
 /** Details for changing owners of shareable entities */
 
-public struct BulkChangeOwnerDetails: Codable {
+public struct BulkChangeOwnerDetails {
 
     /** Whether the name is fixed automatically if it&#x27;s duplicated after changing owner. */
     public var autofixName: Bool

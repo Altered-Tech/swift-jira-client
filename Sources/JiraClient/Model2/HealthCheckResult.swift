@@ -10,7 +10,7 @@ import Foundation
 
 /** Jira instance health check results. Deprecated and no longer returned. */
 
-public struct HealthCheckResult: Codable {
+public struct HealthCheckResult {
 
     /** The description of the Jira health check item. */
     public var _description: String?

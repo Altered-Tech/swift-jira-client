@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct LinkIssueRequestJsonBean: Codable {
+public struct LinkIssueRequestJsonBean {
 
     public var comment: Comment?
     public var inwardIssue: LinkedIssue

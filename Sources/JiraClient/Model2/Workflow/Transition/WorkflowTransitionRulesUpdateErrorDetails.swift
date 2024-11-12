@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of any errors encountered while updating workflow transition rules for a workflow. */
 
-public struct WorkflowTransitionRulesUpdateErrorDetails: Codable {
+public struct WorkflowTransitionRulesUpdateErrorDetails {
 
     /** A list of transition rule update errors, indexed by the transition rule ID. Any transition rule that appears here wasn&#x27;t updated. */
     public var ruleUpdateErrors: [String:[String]]

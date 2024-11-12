@@ -10,7 +10,7 @@ import Foundation
 
 /** A time predicate for a temporal JQL clause. */
 
-public struct JqlQueryClauseTimePredicate: Codable {
+public struct JqlQueryClauseTimePredicate {
 
     public enum Operator: String, Codable { 
         case before = "before"

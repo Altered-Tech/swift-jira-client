@@ -10,7 +10,7 @@ import Foundation
 
 /** Precomputation id and its new value. */
 
-public struct JqlFunctionPrecomputationUpdateBean: Codable {
+public struct JqlFunctionPrecomputationUpdateBean {
 
     /** The error message to be displayed to the user if the given function clause is no longer valid during recalculation of the precomputation. */
     public var error: String?

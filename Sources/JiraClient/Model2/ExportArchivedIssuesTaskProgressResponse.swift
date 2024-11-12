@@ -10,7 +10,7 @@ import Foundation
 
 /** The response for status request for a running/completed export task. */
 
-public struct ExportArchivedIssuesTaskProgressResponse: Codable {
+public struct ExportArchivedIssuesTaskProgressResponse {
 
     public var fileUrl: String?
     public var payload: String?

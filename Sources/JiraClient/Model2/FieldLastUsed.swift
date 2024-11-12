@@ -10,7 +10,7 @@ import Foundation
 
 /** Information about the most recent use of a field. */
 
-public struct FieldLastUsed: Codable {
+public struct FieldLastUsed {
 
     public enum ModelType: String, Codable { 
         case tracked = "TRACKED"

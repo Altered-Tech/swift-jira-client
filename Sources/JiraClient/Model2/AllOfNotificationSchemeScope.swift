@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope of the notification scheme. */
 
-public struct AllOfNotificationSchemeScope: Codable {
+public struct AllOfNotificationSchemeScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

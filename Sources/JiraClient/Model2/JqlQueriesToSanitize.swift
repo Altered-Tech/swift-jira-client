@@ -10,7 +10,7 @@ import Foundation
 
 /** The list of JQL queries to sanitize for the given account IDs. */
 
-public struct JqlQueriesToSanitize: Codable {
+public struct JqlQueriesToSanitize {
 
     /** The list of JQL queries to sanitize. Must contain unique values. Maximum of 20 queries. */
     public var queries: [JqlQueryToSanitize]

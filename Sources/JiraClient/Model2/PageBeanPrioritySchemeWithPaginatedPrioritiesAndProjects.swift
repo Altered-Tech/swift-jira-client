@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects: Codable {
+public struct PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

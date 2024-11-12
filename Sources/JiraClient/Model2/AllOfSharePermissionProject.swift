@@ -10,7 +10,7 @@ import Foundation
 
 /** The project that the filter is shared with. This is similar to the project object returned by [Get project](#api-rest-api-2-project-projectIdOrKey-get) but it contains a subset of the properties, which are: &#x60;self&#x60;, &#x60;id&#x60;, &#x60;key&#x60;, &#x60;assigneeType&#x60;, &#x60;name&#x60;, &#x60;roles&#x60;, &#x60;avatarUrls&#x60;, &#x60;projectType&#x60;, &#x60;simplified&#x60;.   For a request, specify the &#x60;id&#x60; for the project. */
 
-public struct AllOfSharePermissionProject: Codable {
+public struct AllOfSharePermissionProject {
 
     public enum AssigneeType: String, Codable { 
         case projectLead = "PROJECT_LEAD"

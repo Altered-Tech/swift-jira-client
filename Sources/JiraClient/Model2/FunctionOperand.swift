@@ -10,7 +10,7 @@ import Foundation
 
 /** An operand that is a function. See [Advanced searching - functions reference](https://confluence.atlassian.com/x/dwiiLQ) for more information about JQL functions. */
 
-public struct FunctionOperand: Codable {
+public struct FunctionOperand {
 
     /** The list of function arguments. */
     public var arguments: [String]

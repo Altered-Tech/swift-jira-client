@@ -10,7 +10,7 @@ import Foundation
 
 /** Contains details about a version approver. */
 
-public struct VersionApprover: Codable {
+public struct VersionApprover {
 
 
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Jql function precomputation. */
 
-public struct JqlFunctionPrecomputationBean: Codable {
+public struct JqlFunctionPrecomputationBean {
 
     /** The list of arguments function was invoked with. */
     public var arguments: [String]?

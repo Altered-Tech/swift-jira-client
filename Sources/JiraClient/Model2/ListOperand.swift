@@ -10,7 +10,7 @@ import Foundation
 
 /** An operand that is a list of values. */
 
-public struct ListOperand: Codable {
+public struct ListOperand {
 
     /** Encoded operand, which can be used directly in a JQL query. */
     public var encodedOperand: String?

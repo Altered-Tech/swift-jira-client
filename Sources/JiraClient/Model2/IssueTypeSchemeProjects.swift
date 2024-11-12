@@ -10,7 +10,7 @@ import Foundation
 
 /** Issue type scheme with a list of the projects that use it. */
 
-public struct IssueTypeSchemeProjects: Codable {
+public struct IssueTypeSchemeProjects {
 
     /** Details of an issue type scheme. */
     public var issueTypeScheme: AllOfIssueTypeSchemeProjectsIssueTypeScheme

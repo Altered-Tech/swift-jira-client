@@ -10,7 +10,7 @@ import Foundation
 
 /** Defines the projects that the option is available in. If the scope is not defined, then the option is available in all projects. */
 
-public struct AllOfIssueFieldOptionConfigurationScope: Codable {
+public struct AllOfIssueFieldOptionConfigurationScope {
 
     /** Defines the behavior of the option within the global context. If this property is set, even if set to an empty object, then the option is available in all projects. */
     public var global: Any?

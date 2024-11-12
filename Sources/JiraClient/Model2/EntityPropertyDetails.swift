@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct EntityPropertyDetails: Codable {
+public struct EntityPropertyDetails {
 
     /** The entity property ID. */
     public var entityId: Decimal

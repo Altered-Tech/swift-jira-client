@@ -10,7 +10,7 @@ import Foundation
 
 /** Data policy. */
 
-public struct AllOfProjectWithDataPolicyDataPolicy: Codable {
+public struct AllOfProjectWithDataPolicyDataPolicy {
 
     /** Whether the project contains any content inaccessible to the requesting application. */
     public var anyContentBlocked: Bool?

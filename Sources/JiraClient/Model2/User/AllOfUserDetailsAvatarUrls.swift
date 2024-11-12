@@ -10,7 +10,7 @@ import Foundation
 
 /** The avatars of the user. */
 
-public struct AllOfUserDetailsAvatarUrls: Codable {
+public struct AllOfUserDetailsAvatarUrls {
 
     /** The URL of the item&#x27;s 16x16 pixel avatar. */
     public var _16x16: String?

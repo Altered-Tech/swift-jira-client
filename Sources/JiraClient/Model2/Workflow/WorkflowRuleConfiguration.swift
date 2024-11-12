@@ -10,7 +10,7 @@ import Foundation
 
 /** The configuration of the rule. */
 
-public struct WorkflowRuleConfiguration: Codable {
+public struct WorkflowRuleConfiguration {
 
     /** The ID of the rule. */
     public var _id: String?

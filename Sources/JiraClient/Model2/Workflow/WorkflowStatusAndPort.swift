@@ -10,7 +10,7 @@ import Foundation
 
 /** The status reference and port that a transition is connected to. */
 
-public struct WorkflowStatusAndPort: Codable {
+public struct WorkflowStatusAndPort {
 
     /** The port the transition is connected to this status. */
     public var port: Int?

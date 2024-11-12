@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JiraExpressionEvaluationMetaDataBean: Codable {
+public struct JiraExpressionEvaluationMetaDataBean {
 
     /** Contains information about the expression complexity. For example, the number of steps it took to evaluate the expression. */
     public var complexity: AllOfJiraExpressionEvaluationMetaDataBeanComplexity?

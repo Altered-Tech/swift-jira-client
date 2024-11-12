@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkManagementNavigationInfo: Codable {
+public struct WorkManagementNavigationInfo {
 
     public var boardName: String?
 

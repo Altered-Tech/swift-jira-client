@@ -10,7 +10,7 @@ import Foundation
 
 /** A group label. */
 
-public struct GroupLabel: Codable {
+public struct GroupLabel {
 
     public enum ModelType: String, Codable { 
         case admin = "ADMIN"

@@ -10,7 +10,7 @@ import Foundation
 
 /** The new default issue resolution. */
 
-public struct SetDefaultResolutionRequest: Codable {
+public struct SetDefaultResolutionRequest {
 
     /** The ID of the new default issue resolution. Must be an existing ID or null. Setting this to null erases the default resolution setting. */
     public var _id: String

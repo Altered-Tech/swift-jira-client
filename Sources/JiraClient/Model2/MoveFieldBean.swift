@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct MoveFieldBean: Codable {
+public struct MoveFieldBean {
 
     public enum Position: String, Codable { 
         case earlier = "Earlier"

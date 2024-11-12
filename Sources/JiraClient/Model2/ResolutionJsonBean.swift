@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ResolutionJsonBean: Codable {
+public struct ResolutionJsonBean {
 
     public var _default: Bool?
     public var _description: String?

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct Resource: Codable {
+public struct Resource {
 
     public var _description: String?
     public var file: Data?

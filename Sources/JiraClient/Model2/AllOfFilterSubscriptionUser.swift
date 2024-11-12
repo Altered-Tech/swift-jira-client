@@ -10,7 +10,7 @@ import Foundation
 
 /** The user subscribing to filter. */
 
-public struct AllOfFilterSubscriptionUser: Codable {
+public struct AllOfFilterSubscriptionUser {
 
     public enum AccountType: String, Codable { 
         case atlassian = "atlassian"

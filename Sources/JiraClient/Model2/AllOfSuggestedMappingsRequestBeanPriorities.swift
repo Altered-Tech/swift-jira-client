@@ -10,7 +10,7 @@ import Foundation
 
 /** The priority changes in the scheme. */
 
-public struct AllOfSuggestedMappingsRequestBeanPriorities: Codable {
+public struct AllOfSuggestedMappingsRequestBeanPriorities {
 
     /** The ids of priorities being removed from the scheme. */
     public var add: [Int64]?

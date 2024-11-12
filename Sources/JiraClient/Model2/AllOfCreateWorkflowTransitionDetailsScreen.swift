@@ -10,7 +10,7 @@ import Foundation
 
 /** The screen of the transition. */
 
-public struct AllOfCreateWorkflowTransitionDetailsScreen: Codable {
+public struct AllOfCreateWorkflowTransitionDetailsScreen {
 
     /** The ID of the screen. */
     public var _id: String

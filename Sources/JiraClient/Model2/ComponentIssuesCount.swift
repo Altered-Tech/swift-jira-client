@@ -10,7 +10,7 @@ import Foundation
 
 /** Count of issues assigned to a component. */
 
-public struct ComponentIssuesCount: Codable {
+public struct ComponentIssuesCount {
 
     /** The count of issues assigned to a component. */
     public var issueCount: Int64?

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SimpleErrorCollection: Codable {
+public struct SimpleErrorCollection {
 
     /** The list of error messages produced by this operation. For example, \&quot;input parameter &#x27;key&#x27; must be provided\&quot; */
     public var errorMessages: [String]?

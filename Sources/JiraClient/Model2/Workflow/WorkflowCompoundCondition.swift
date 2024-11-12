@@ -10,7 +10,7 @@ import Foundation
 
 /** A compound workflow transition rule condition. This object returns &#x60;nodeType&#x60; as &#x60;compound&#x60;. */
 
-public struct WorkflowCompoundCondition: Codable {
+public struct WorkflowCompoundCondition {
 
     public enum Operator: String, Codable { 
         case and = "AND"

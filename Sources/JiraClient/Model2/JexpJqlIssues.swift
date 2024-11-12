@@ -10,7 +10,7 @@ import Foundation
 
 /** The JQL specifying the issues available in the evaluated Jira expression under the &#x60;issues&#x60; context variable. Not all issues returned by the JQL query are loaded, only those described by the &#x60;startAt&#x60; and &#x60;maxResults&#x60; properties. To determine whether it is necessary to iterate to ensure all the issues returned by the JQL query are evaluated, inspect &#x60;meta.issues.jql.count&#x60; in the response. */
 
-public struct JexpJqlIssues: Codable {
+public struct JexpJqlIssues {
 
     public enum Validation: String, Codable { 
         case strict = "strict"

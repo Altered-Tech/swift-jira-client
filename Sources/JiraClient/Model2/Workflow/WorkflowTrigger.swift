@@ -10,7 +10,7 @@ import Foundation
 
 /** The trigger configuration associated with a workflow. */
 
-public struct WorkflowTrigger: Codable {
+public struct WorkflowTrigger {
 
     /** The ID of the trigger. */
     public var _id: String?

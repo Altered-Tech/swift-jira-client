@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct StreamingResponseBody: Codable {
+public struct StreamingResponseBody {
 
 
 

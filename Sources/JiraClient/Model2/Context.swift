@@ -10,7 +10,7 @@ import Foundation
 
 /** A context. */
 
-public struct Context: Codable {
+public struct Context {
 
     /** The ID of the context. */
     public var _id: Int64?
@@ -23,12 +23,6 @@ public struct Context: Codable {
         self._id = _id
         self.name = name
         self.scope = scope
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _id = "id"
-        case name
-        case scope
     }
 
 }

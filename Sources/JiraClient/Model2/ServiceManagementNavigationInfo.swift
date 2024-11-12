@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ServiceManagementNavigationInfo: Codable {
+public struct ServiceManagementNavigationInfo {
 
     public var queueCategory: String?
     public var queueId: Int64?

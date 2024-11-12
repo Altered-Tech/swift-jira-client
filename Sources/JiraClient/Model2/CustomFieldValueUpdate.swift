@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of issue IDs and the value to update a custom field to. */
 
-public struct CustomFieldValueUpdate: Codable {
+public struct CustomFieldValueUpdate {
 
     /** The list of issue IDs. */
     public var issueIds: [Int64]

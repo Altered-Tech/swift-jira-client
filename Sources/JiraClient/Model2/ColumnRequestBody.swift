@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ColumnRequestBody: Codable {
+public struct ColumnRequestBody {
 
     public var columns: [String]
 

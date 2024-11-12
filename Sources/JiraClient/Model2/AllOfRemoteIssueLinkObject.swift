@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the item linked to. */
 
-public struct AllOfRemoteIssueLinkObject: Codable {
+public struct AllOfRemoteIssueLinkObject {
 
     /** Details of the icon for the item. If no icon is defined, the default link icon is used in Jira. */
     public var icon: Any?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Status details for an issue type. */
 
-public struct IssueTypeWithStatus: Codable {
+public struct IssueTypeWithStatus {
 
     /** The ID of the issue type. */
     public var _id: String

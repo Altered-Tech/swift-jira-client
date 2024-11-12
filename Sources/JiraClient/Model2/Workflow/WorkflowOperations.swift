@@ -10,7 +10,7 @@ import Foundation
 
 /** Operations allowed on a workflow */
 
-public struct WorkflowOperations: Codable {
+public struct WorkflowOperations {
 
     /** Whether the workflow can be deleted. */
     public var canDelete: Bool

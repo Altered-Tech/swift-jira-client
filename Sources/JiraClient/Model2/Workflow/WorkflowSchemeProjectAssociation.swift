@@ -10,7 +10,7 @@ import Foundation
 
 /** An associated workflow scheme and project. */
 
-public struct WorkflowSchemeProjectAssociation: Codable {
+public struct WorkflowSchemeProjectAssociation {
 
     /** The ID of the project. */
     public var projectId: String

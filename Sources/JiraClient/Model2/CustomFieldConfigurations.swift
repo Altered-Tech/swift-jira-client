@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of configurations for a custom field. */
 
-public struct CustomFieldConfigurations: Codable {
+public struct CustomFieldConfigurations {
 
     /** The list of custom field configuration details. */
     public var configurations: [ContextualConfiguration]

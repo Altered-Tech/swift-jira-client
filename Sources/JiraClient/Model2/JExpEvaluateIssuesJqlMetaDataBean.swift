@@ -10,7 +10,7 @@ import Foundation
 
 /** The description of the page of issues loaded by the provided JQL query.This bean will be replacing IssuesJqlMetaDataBean bean as part of new &#x60;evaluate&#x60; endpoint */
 
-public struct JExpEvaluateIssuesJqlMetaDataBean: Codable {
+public struct JExpEvaluateIssuesJqlMetaDataBean {
 
     /** Next Page token for the next page of issues. */
     public var nextPageToken: String

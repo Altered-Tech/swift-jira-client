@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ServiceRegistryTier: Codable {
+public struct ServiceRegistryTier {
 
     /** tier description */
     public var _description: String?

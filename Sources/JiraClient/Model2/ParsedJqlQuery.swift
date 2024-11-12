@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a parsed JQL query. */
 
-public struct ParsedJqlQuery: Codable {
+public struct ParsedJqlQuery {
 
     /** The list of syntax or validation errors. */
     public var errors: [String]?

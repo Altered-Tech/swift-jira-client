@@ -10,7 +10,7 @@ import Foundation
 
 /** Result of your JQL search. Returns a list of issue IDs and a token to fetch the next page if one exists. */
 
-public struct IdSearchResults: Codable {
+public struct IdSearchResults {
 
     /** The list of issue IDs found by the search. */
     public var issueIds: [Int64]?

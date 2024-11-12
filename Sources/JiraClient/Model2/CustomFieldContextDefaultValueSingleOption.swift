@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a single select custom field. */
 
-public struct CustomFieldContextDefaultValueSingleOption: Codable {
+public struct CustomFieldContextDefaultValueSingleOption {
 
     /** The ID of the context. */
     public var contextId: String

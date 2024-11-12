@@ -10,7 +10,7 @@ import Foundation
 
 /** The request payload to get the required mappings for updating a workflow scheme. */
 
-public struct WorkflowSchemeUpdateRequiredMappingsRequest: Codable {
+public struct WorkflowSchemeUpdateRequiredMappingsRequest {
 
     /** The ID of the new default workflow for this workflow scheme. Only used in global-scoped workflow schemes. If it isn&#x27;t specified, is set to *Jira Workflow (jira)*. */
     public var defaultWorkflowId: String?

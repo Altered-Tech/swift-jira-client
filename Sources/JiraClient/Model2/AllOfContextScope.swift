@@ -10,7 +10,7 @@ import Foundation
 
 /** The scope of the context. */
 
-public struct AllOfContextScope: Codable {
+public struct AllOfContextScope {
 
     public enum ModelType: String, Codable { 
         case project = "PROJECT"

@@ -10,12 +10,12 @@ import Foundation
 
 /** The result of a JQL search. */
 
-public struct SearchResults: Codable {
+public struct SearchResults {
 
     /** Expand options that include additional search result details in the response. */
     public var expand: String?
     /** The list of issues found by the search. */
-    public var issues: [IssueBean]?
+    public var issues: [Issue]?
     /** The maximum number of results that could be on the page. */
     public var maxResults: Int?
     /** The ID and name of each field in the search results. */
@@ -29,7 +29,7 @@ public struct SearchResults: Codable {
     /** Any warnings related to the JQL query. */
     public var warningMessages: [String]?
 
-    public init(expand: String? = nil, issues: [IssueBean]? = nil, maxResults: Int? = nil, names: [String:String]? = nil, schema: [String:JsonTypeBean]? = nil, startAt: Int? = nil, total: Int? = nil, warningMessages: [String]? = nil) {
+    public init(expand: String? = nil, issues: [Issue]? = nil, maxResults: Int? = nil, names: [String:String]? = nil, schema: [String:JsonTypeBean]? = nil, startAt: Int? = nil, total: Int? = nil, warningMessages: [String]? = nil) {
         self.expand = expand
         self.issues = issues
         self.maxResults = maxResults

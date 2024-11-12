@@ -10,7 +10,7 @@ import Foundation
 
 /** The fields associated with the issue. */
 
-public struct AllOfLinkedIssueFields: Codable {
+public struct AllOfLinkedIssueFields {
 
     /** The assignee of the linked issue. */
     public var assignee: Any?

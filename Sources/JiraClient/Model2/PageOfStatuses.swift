@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct PageOfStatuses: Codable {
+public struct PageOfStatuses {
 
     /** Whether this is the last page. */
     public var isLast: Bool?

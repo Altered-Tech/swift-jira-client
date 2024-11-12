@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct PaginatedResponseComment: Codable {
+public struct PaginatedResponseComment {
 
     public var maxResults: Int?
     public var results: [Comment]?

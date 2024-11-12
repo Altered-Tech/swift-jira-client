@@ -10,9 +10,9 @@ import Foundation
 
 /** Details of a request to bulk edit shareable entity. */
 
-public struct BulkEditShareableEntityRequest: Codable {
+public struct BulkEditShareableEntityRequest {
 
-    public enum Action: String, Codable { 
+    public enum Action: String { 
         case changeowner = "changeOwner"
         case changepermission = "changePermission"
         case addpermission = "addPermission"

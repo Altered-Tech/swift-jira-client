@@ -10,7 +10,7 @@ import Foundation
 
 /** A workflow scheme along with a list of projects that use it. */
 
-public struct WorkflowSchemeAssociations: Codable {
+public struct WorkflowSchemeAssociations {
 
     /** The list of projects that use the workflow scheme. */
     public var projectIds: [String]

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a gadget. */
 
-public struct DashboardGadget: Codable {
+public struct DashboardGadget {
 
     public enum Color: String, Codable { 
         case blue = "blue"

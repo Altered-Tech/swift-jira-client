@@ -10,7 +10,7 @@ import Foundation
 
 /** Default value for a float (number) custom field. */
 
-public struct CustomFieldContextDefaultValueFloat: Codable {
+public struct CustomFieldContextDefaultValueFloat {
 
     /** The default floating-point number. */
     public var number: Double

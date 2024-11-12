@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the mapping between an issue type and a workflow. */
 
-public struct IssueTypeWorkflowMapping: Codable {
+public struct IssueTypeWorkflowMapping {
 
     /** The ID of the issue type. Not required if updating the issue type-workflow mapping. */
     public var issueType: String?

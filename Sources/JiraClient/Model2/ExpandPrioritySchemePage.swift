@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ExpandPrioritySchemePage: Codable {
+public struct ExpandPrioritySchemePage {
 
 
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the identifiers for a created or updated remote issue link. */
 
-public struct RemoteIssueLinkIdentifies: Codable {
+public struct RemoteIssueLinkIdentifies {
 
     /** The ID of the remote issue link, such as the ID of the item on the remote system. */
     public var _id: Int64?

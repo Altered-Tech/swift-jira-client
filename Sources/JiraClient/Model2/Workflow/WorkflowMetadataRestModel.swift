@@ -10,7 +10,7 @@ import Foundation
 
 /** Workflow metadata and usage detail. */
 
-public struct WorkflowMetadataRestModel: Codable {
+public struct WorkflowMetadataRestModel {
 
     /** The description of the workflow. */
     public var _description: String
@@ -30,12 +30,5 @@ public struct WorkflowMetadataRestModel: Codable {
         self.version = version
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case _id = "id"
-        case name
-        case usage
-        case version
-    }
 
 }

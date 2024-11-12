@@ -10,7 +10,7 @@ import Foundation
 
 /** Various counts of issues within a version. */
 
-public struct VersionIssueCounts: Codable {
+public struct VersionIssueCounts {
 
     /** List of custom fields using the version. */
     public var customFieldUsage: [VersionUsageInCustomField]?

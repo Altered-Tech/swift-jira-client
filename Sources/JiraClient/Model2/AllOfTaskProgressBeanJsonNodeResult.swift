@@ -10,7 +10,7 @@ import Foundation
 
 /** The result of the task execution. */
 
-public struct AllOfTaskProgressBeanJsonNodeResult: Codable {
+public struct AllOfTaskProgressBeanJsonNodeResult {
 
     public enum NumberType: String, Codable { 
         case int = "INT"

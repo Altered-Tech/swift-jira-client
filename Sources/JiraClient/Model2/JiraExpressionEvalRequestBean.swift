@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct JiraExpressionEvalRequestBean: Codable {
+public struct JiraExpressionEvalRequestBean {
 
     /** The context in which the Jira expression is evaluated. */
     public var context: AllOfJiraExpressionEvalRequestBeanContext?

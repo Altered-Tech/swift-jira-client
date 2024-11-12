@@ -10,7 +10,7 @@ import Foundation
 
 /** List of users and groups found in a search. */
 
-public struct FoundUsersAndGroups: Codable {
+public struct FoundUsersAndGroups {
 
     public var groups: FoundGroups?
     public var users: FoundUsers?

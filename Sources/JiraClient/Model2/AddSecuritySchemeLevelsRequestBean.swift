@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AddSecuritySchemeLevelsRequestBean: Codable {
+public struct AddSecuritySchemeLevelsRequestBean {
 
     /** The list of scheme levels which should be added to the security scheme. */
     public var levels: [SecuritySchemeLevelBean]?

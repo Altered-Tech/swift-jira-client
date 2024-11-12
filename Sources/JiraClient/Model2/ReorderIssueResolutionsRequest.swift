@@ -10,7 +10,7 @@ import Foundation
 
 /** Change the order of issue resolutions. */
 
-public struct ReorderIssueResolutionsRequest: Codable {
+public struct ReorderIssueResolutionsRequest {
 
     /** The ID of the resolution. Required if &#x60;position&#x60; isn&#x27;t provided. */
     public var after: String?

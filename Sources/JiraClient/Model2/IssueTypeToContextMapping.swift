@@ -10,7 +10,7 @@ import Foundation
 
 /** Mapping of an issue type to a context. */
 
-public struct IssueTypeToContextMapping: Codable {
+public struct IssueTypeToContextMapping {
 
     /** The ID of the context. */
     public var contextId: String

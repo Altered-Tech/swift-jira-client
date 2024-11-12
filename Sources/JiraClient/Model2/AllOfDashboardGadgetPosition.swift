@@ -10,7 +10,7 @@ import Foundation
 
 /** The position of the gadget. */
 
-public struct AllOfDashboardGadgetPosition: Codable {
+public struct AllOfDashboardGadgetPosition {
 
     public var theColumnPositionOfTheGadget_: Int
     public var theRowPositionOfTheGadget_: Int

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AvatarUrlsBean: Codable {
+public struct AvatarUrlsBean {
 
     /** The URL of the item&#x27;s 16x16 pixel avatar. */
     public var _16x16: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** The Atlassian provided system rules available. */
 
-public struct AvailableWorkflowSystemRule: Codable {
+public struct AvailableWorkflowSystemRule {
 
     public enum RuleType: String, Codable { 
         case condition = "Condition"

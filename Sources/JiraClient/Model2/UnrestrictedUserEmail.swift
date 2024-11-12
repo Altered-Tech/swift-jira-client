@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct UnrestrictedUserEmail: Codable {
+public struct UnrestrictedUserEmail {
 
 
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Meta data describing the &#x60;issues&#x60; context variable.This bean will be replacing IssuesMetaBean bean as part of new &#x60;evaluate&#x60; endpoint */
 
-public struct JExpEvaluateIssuesMetaBean: Codable {
+public struct JExpEvaluateIssuesMetaBean {
 
     public var jql: JExpEvaluateIssuesJqlMetaDataBean?
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a field. */
 
-public struct Field: Codable {
+public struct Field {
 
     /** Number of contexts where the field is used. */
     public var contextsCount: Int64?
@@ -51,22 +51,6 @@ public struct Field: Codable {
         self.screensCount = screensCount
         self.searcherKey = searcherKey
         self.stableId = stableId
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case contextsCount
-        case _description = "description"
-        case _id = "id"
-        case isLocked
-        case isUnscreenable
-        case key
-        case lastUsed
-        case name
-        case projectsCount
-        case schema
-        case screensCount
-        case searcherKey
-        case stableId
     }
 
 }

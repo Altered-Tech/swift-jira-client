@@ -10,15 +10,15 @@ import Foundation
 
 /** Details about a component with a count of the issues it contains. */
 
-public struct ComponentWithIssueCount: Codable {
+public struct ComponentWithIssueCount {
 
-    public enum AssigneeType: String, Codable { 
+    public enum AssigneeType: String {
         case projectDefault = "PROJECT_DEFAULT"
         case componentLead = "COMPONENT_LEAD"
         case projectLead = "PROJECT_LEAD"
         case unassigned = "UNASSIGNED"
     }
-    public enum RealAssigneeType: String, Codable { 
+    public enum RealAssigneeType: String {
         case projectDefault = "PROJECT_DEFAULT"
         case componentLead = "COMPONENT_LEAD"
         case projectLead = "PROJECT_LEAD"
@@ -65,22 +65,6 @@ public struct ComponentWithIssueCount: Codable {
         self.realAssignee = realAssignee
         self.realAssigneeType = realAssigneeType
         self._self = _self
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case assignee
-        case assigneeType
-        case _description = "description"
-        case _id = "id"
-        case isAssigneeTypeValid
-        case issueCount
-        case lead
-        case name
-        case project
-        case projectId
-        case realAssignee
-        case realAssigneeType
-        case _self = "self"
     }
 
 }

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct AddFieldBean: Codable {
+public struct AddFieldBean {
 
     /** The ID of the field to add. */
     public var fieldId: String

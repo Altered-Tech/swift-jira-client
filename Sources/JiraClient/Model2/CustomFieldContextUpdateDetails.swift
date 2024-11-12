@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a custom field context. */
 
-public struct CustomFieldContextUpdateDetails: Codable {
+public struct CustomFieldContextUpdateDetails {
 
     /** The description of the custom field context. The maximum length is 255 characters. */
     public var _description: String?

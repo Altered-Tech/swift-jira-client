@@ -10,7 +10,7 @@ import Foundation
 
 /** Errors of bulk edit action. */
 
-public struct BulkEditActionError: Codable {
+public struct BulkEditActionError {
 
     /** The error messages. */
     public var errorMessages: [String]

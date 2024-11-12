@@ -10,7 +10,7 @@ import Foundation
 
 /** A page of items. */
 
-public struct PageBeanWorkflowScheme: Codable {
+public struct PageBeanWorkflowScheme {
 
     /** Whether this is the last page. */
     public var isLast: Bool?
@@ -37,14 +37,5 @@ public struct PageBeanWorkflowScheme: Codable {
         self.values = values
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case isLast
-        case maxResults
-        case nextPage
-        case _self = "self"
-        case startAt
-        case total
-        case values
-    }
 
 }

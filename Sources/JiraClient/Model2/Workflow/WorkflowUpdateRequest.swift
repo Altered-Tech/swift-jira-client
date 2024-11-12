@@ -10,7 +10,7 @@ import Foundation
 
 /** The update workflows payload. */
 
-public struct WorkflowUpdateRequest: Codable {
+public struct WorkflowUpdateRequest {
 
     /** The statuses to associate with the workflows. */
     public var statuses: [WorkflowStatusUpdate]

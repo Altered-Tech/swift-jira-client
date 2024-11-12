@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about syntax and type errors. The error details apply to the entire expression, unless the object includes:   *  &#x60;line&#x60; and &#x60;column&#x60;  *  &#x60;expression&#x60; */
 
-public struct JiraExpressionValidationError: Codable {
+public struct JiraExpressionValidationError {
 
     public enum ModelType: String, Codable { 
         case syntax = "syntax"

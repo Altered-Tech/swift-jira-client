@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of issue security scheme level new members. */
 
-public struct SecuritySchemeMembersRequest: Codable {
+public struct SecuritySchemeMembersRequest {
 
     /** The list of level members which should be added to the issue security scheme level. */
     public var members: [SecuritySchemeLevelMemberBean]?

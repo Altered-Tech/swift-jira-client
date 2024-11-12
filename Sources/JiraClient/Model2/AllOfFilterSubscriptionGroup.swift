@@ -10,7 +10,7 @@ import Foundation
 
 /** The group subscribing to filter. */
 
-public struct AllOfFilterSubscriptionGroup: Codable {
+public struct AllOfFilterSubscriptionGroup {
 
     /** The ID of the group, which uniquely identifies the group across all Atlassian products. For example, *952d12c3-5b5b-4d04-bb32-44d383afc4b2*. */
     public var groupId: String?

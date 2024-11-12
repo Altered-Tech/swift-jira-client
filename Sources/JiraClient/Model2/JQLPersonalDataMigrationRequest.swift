@@ -10,7 +10,7 @@ import Foundation
 
 /** The JQL queries to be converted. */
 
-public struct JQLPersonalDataMigrationRequest: Codable {
+public struct JQLPersonalDataMigrationRequest {
 
     /** A list of queries with user identifiers. Maximum of 100 queries. */
     public var queryStrings: [String]?

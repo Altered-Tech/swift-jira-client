@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of functions that can be used in advanced searches. */
 
-public struct FunctionReferenceData: Codable {
+public struct FunctionReferenceData {
 
     public enum IsList: String, Codable { 
         case _true = "true"

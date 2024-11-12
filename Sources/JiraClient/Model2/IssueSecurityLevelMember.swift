@@ -10,7 +10,7 @@ import Foundation
 
 /** Issue security level member. */
 
-public struct IssueSecurityLevelMember: Codable {
+public struct IssueSecurityLevelMember {
 
     /** The user or group being granted the permission. It consists of a &#x60;type&#x60; and a type-dependent &#x60;parameter&#x60;. See [Holder object](../api-group-permission-schemes/#holder-object) in *Get all permission schemes* for more information. */
     public var holder: AllOfIssueSecurityLevelMemberHolder

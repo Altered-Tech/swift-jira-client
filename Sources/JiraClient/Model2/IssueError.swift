@@ -10,7 +10,7 @@ import Foundation
 
 /** Describes the error that occurred when retrieving data for a particular issue. */
 
-public struct IssueError: Codable {
+public struct IssueError {
 
     /** The error that occurred when fetching this issue. */
     public var errorMessage: String?

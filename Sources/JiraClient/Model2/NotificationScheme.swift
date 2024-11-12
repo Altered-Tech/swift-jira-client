@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about a notification scheme. */
 
-public struct NotificationScheme: Codable {
+public struct NotificationScheme {
 
     /** The description of the notification scheme. */
     public var _description: String?
@@ -37,17 +37,6 @@ public struct NotificationScheme: Codable {
         self.projects = projects
         self.scope = scope
         self._self = _self
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case expand
-        case _id = "id"
-        case name
-        case notificationSchemeEvents
-        case projects
-        case scope
-        case _self = "self"
     }
 
 }

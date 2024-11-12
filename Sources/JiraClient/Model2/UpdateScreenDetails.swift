@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of a screen. */
 
-public struct UpdateScreenDetails: Codable {
+public struct UpdateScreenDetails {
 
     /** The description of the screen. The maximum length is 255 characters. */
     public var _description: String?

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of the users and groups to receive the notification. */
 
-public struct NotificationRecipients: Codable {
+public struct NotificationRecipients {
 
 
 

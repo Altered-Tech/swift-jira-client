@@ -10,7 +10,7 @@ import Foundation
 
 /** The priority of the linked issue. */
 
-public struct AllOfFieldsPriority: Codable {
+public struct AllOfFieldsPriority {
 
     /** The avatarId of the avatar for the issue priority. This parameter is nullable and when set, this avatar references the universal avatar APIs. */
     public var avatarId: Int64?

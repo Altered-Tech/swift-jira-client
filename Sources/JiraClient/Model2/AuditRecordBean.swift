@@ -10,7 +10,7 @@ import Foundation
 
 /** An audit record. */
 
-public struct AuditRecordBean: Codable {
+public struct AuditRecordBean {
 
     /** The list of items associated with the changed record. */
     public var associatedItems: [AssociatedItemBean]?

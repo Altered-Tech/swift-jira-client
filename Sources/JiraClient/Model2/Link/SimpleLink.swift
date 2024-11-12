@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the operations available in this version. */
 
-public struct SimpleLink: Codable {
+public struct SimpleLink {
 
     public let href: String?
     public let iconClass: String?

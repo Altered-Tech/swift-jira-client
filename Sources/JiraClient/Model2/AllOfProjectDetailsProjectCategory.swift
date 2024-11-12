@@ -10,7 +10,7 @@ import Foundation
 
 /** The category the project belongs to. */
 
-public struct AllOfProjectDetailsProjectCategory: Codable {
+public struct AllOfProjectDetailsProjectCategory {
 
     /** The name of the project category. */
     public var _description: String?

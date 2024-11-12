@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of the issues matched to a JQL query or details of errors encountered during matching. */
 
-public struct IssueMatchesForJQL: Codable {
+public struct IssueMatchesForJQL {
 
     /** A list of errors. */
     public var errors: [String]

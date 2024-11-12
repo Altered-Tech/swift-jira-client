@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CustomFieldContextDefaultValue: Codable {
+public struct CustomFieldContextDefaultValue {
 
 
 

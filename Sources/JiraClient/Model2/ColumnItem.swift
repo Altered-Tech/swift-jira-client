@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue navigator column item. */
 
-public struct ColumnItem: Codable {
+public struct ColumnItem {
 
     /** The issue navigator column label. */
     public var label: String?

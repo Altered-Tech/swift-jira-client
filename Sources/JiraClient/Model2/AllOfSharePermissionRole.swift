@@ -10,7 +10,7 @@ import Foundation
 
 /** The project role that the filter is shared with.   For a request, specify the &#x60;id&#x60; for the role. You must also specify the &#x60;project&#x60; object and &#x60;id&#x60; for the project that the role is in. */
 
-public struct AllOfSharePermissionRole: Codable {
+public struct AllOfSharePermissionRole {
 
     /** The list of users who act in this role. */
     public var actors: [RoleActor]?

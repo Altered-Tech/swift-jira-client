@@ -10,7 +10,7 @@ import Foundation
 
 /** A project category. */
 
-public struct UpdatedProjectCategory: Codable {
+public struct UpdatedProjectCategory {
 
     /** The name of the project category. */
     public var _description: String?

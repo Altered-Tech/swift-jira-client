@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of workflows and related statuses. */
 
-public struct WorkflowReadResponse: Codable {
+public struct WorkflowReadResponse {
 
     /** List of statuses. */
     public var statuses: [JiraWorkflowStatus]?

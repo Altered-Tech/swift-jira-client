@@ -10,7 +10,7 @@ import Foundation
 
 /** The workflow conditions. */
 
-public struct AllOfCreateWorkflowTransitionRulesDetailsConditions: Codable {
+public struct AllOfCreateWorkflowTransitionRulesDetailsConditions {
 
     public enum Operator: String, Codable { 
         case and = "AND"
@@ -30,13 +30,6 @@ public struct AllOfCreateWorkflowTransitionRulesDetailsConditions: Codable {
         self.configuration = configuration
         self._operator = _operator
         self.type = type
-    }
-
-    public enum CodingKeys: String, CodingKey { 
-        case conditions
-        case configuration
-        case _operator = "operator"
-        case type
     }
 
 }

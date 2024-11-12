@@ -10,7 +10,7 @@ import Foundation
 
 /** The default value for a cascading select custom field. */
 
-public struct CustomFieldContextDefaultValueCascadingOption: Codable {
+public struct CustomFieldContextDefaultValueCascadingOption {
 
     /** The ID of the default cascading option. */
     public var cascadingOptionId: String?

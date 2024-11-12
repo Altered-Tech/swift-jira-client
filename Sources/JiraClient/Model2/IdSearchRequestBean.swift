@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct IdSearchRequestBean: Codable {
+public struct IdSearchRequestBean {
 
     /** A [JQL](https://confluence.atlassian.com/x/egORLQ) expression. Order by clauses are not allowed. */
     public var jql: String?

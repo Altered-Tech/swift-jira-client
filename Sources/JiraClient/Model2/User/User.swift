@@ -74,4 +74,17 @@ public struct User {
         self._self = client?._self
         self.timeZone = client?.timeZone
     }
+    
+    internal init(client: Components.Schemas.UserDetails?) {
+        self.accountId = client?.accountId
+        self.accountType = AccountType(type: client?.accountType)
+        self.active = client?.active
+        self.avatarUrls = UserAvatarUrls(client: client?.avatarUrls?.value1)
+        self.displayName = client?.displayName
+        self.emailAddress = client?.emailAddress
+        self.key = client?.key
+        self.name = client?.name
+        self._self = client?._self
+        self.timeZone = client?.timeZone
+    }
 }

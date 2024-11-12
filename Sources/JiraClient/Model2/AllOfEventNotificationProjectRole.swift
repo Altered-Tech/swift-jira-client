@@ -10,7 +10,7 @@ import Foundation
 
 /** The specified project role. */
 
-public struct AllOfEventNotificationProjectRole: Codable {
+public struct AllOfEventNotificationProjectRole {
 
     /** The list of users who act in this role. */
     public var actors: [RoleActor]?

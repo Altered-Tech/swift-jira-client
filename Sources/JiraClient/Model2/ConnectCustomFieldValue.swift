@@ -10,7 +10,7 @@ import Foundation
 
 /** A list of custom field details. */
 
-public struct ConnectCustomFieldValue: Codable {
+public struct ConnectCustomFieldValue {
 
     public enum ModelType: String, Codable { 
         case stringIssueField = "StringIssueField"

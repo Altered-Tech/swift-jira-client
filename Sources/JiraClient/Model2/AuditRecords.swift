@@ -10,7 +10,7 @@ import Foundation
 
 /** Container for a list of audit records. */
 
-public struct AuditRecords: Codable {
+public struct AuditRecords {
 
     /** The requested or default limit on the number of audit items to be returned. */
     public var limit: Int?

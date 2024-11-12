@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ComponentJsonBean: Codable {
+public struct ComponentJsonBean {
 
 
 

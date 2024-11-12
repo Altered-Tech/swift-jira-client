@@ -10,7 +10,7 @@ import Foundation
 
 /** The ID of a screen scheme. */
 
-public struct UpdateDefaultScreenScheme: Codable {
+public struct UpdateDefaultScreenScheme {
 
     /** The ID of the screen scheme. */
     public var screenSchemeId: String

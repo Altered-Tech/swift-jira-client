@@ -10,7 +10,7 @@ import Foundation
 
 /** The details of a workflow transition rules. */
 
-public struct CreateWorkflowTransitionRulesDetails: Codable {
+public struct CreateWorkflowTransitionRulesDetails {
 
     /** The workflow conditions. */
     public var conditions: AllOfCreateWorkflowTransitionRulesDetailsConditions?

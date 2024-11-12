@@ -10,7 +10,7 @@ import Foundation
 
 /** An operand that is a user-provided value. */
 
-public struct ValueOperand: Codable {
+public struct ValueOperand {
 
     /** Encoded value, which can be used directly in a JQL query. */
     public var encodedValue: String?

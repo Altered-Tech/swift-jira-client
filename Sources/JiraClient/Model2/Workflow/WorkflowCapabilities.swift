@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct WorkflowCapabilities: Codable {
+public struct WorkflowCapabilities {
 
     public enum EditorScope: String, Codable { 
         case project = "PROJECT"

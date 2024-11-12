@@ -10,7 +10,7 @@ import Foundation
 
 /** List of all permission schemes. */
 
-public struct PermissionSchemes: Codable {
+public struct PermissionSchemes {
 
     /** Permission schemes list. */
     public var permissionSchemes: [PermissionScheme]?

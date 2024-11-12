@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct RichText: Codable {
+public struct RichText {
 
     public var empty: Bool?
     public var emptyAdf: Bool?

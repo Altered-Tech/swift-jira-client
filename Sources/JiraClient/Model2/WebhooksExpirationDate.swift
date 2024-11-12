@@ -10,7 +10,7 @@ import Foundation
 
 /** The date the refreshed webhooks expire. */
 
-public struct WebhooksExpirationDate: Codable {
+public struct WebhooksExpirationDate {
 
     /** The expiration date of all the refreshed webhooks. */
     public var expirationDate: Int64

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details of an issue priority. */
 
-public struct CreatePriorityDetails: Codable {
+public struct CreatePriorityDetails {
 
 
 

@@ -10,7 +10,7 @@ import Foundation
 
 /** Details a link group, which defines issue operations. */
 
-public struct LinkGroup: Codable {
+public struct LinkGroup {
 
     public let groups: [LinkGroup]?
     public let header: SimpleLink?

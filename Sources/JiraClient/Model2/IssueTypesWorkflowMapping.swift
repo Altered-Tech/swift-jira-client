@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the mapping between issue types and a workflow. */
 
-public struct IssueTypesWorkflowMapping: Codable {
+public struct IssueTypesWorkflowMapping {
 
     /** Whether the workflow is the default workflow for the workflow scheme. */
     public var defaultMapping: Bool?

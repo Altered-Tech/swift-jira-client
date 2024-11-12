@@ -10,7 +10,7 @@ import Foundation
 
 /** A screen. */
 
-public struct Screen: Codable {
+public struct Screen {
 
     /** The description of the screen. */
     public var _description: String?

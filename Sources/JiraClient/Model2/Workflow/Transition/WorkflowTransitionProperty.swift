@@ -10,7 +10,7 @@ import Foundation
 
 /** Details about the server Jira is running on. */
 
-public struct WorkflowTransitionProperty: Codable {
+public struct WorkflowTransitionProperty {
 
 
 
