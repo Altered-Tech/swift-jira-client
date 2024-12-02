@@ -13,26 +13,26 @@ import Foundation
 public struct ProjectCategory {
 
     /** The description of the project category. */
-    public var _description: String?
+    public let description: String?
     /** The ID of the project category. */
-    public var _id: String?
+    public let id: String?
     /** The name of the project category. Required on create, optional on update. */
-    public var name: String?
+    public let name: String?
     /** The URL of the project category. */
-    public var _self: String?
+    public let _self: String?
 
-    public init(_description: String? = nil, _id: String? = nil, name: String? = nil, _self: String? = nil) {
-        self._description = _description
-        self._id = _id
+    public init(description: String? = nil, id: String? = nil, name: String? = nil, _self: String? = nil) {
+        self.description = description
+        self.id = id
         self.name = name
         self._self = _self
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case _id = "id"
-        case name
-        case _self = "self"
+    
+    internal init(client: Components.Schemas.ProjectCategory?) {
+        self.description = client?.description
+        self.id = client?.id
+        self.name = client?.name
+        self._self = client?._self
     }
 
 }

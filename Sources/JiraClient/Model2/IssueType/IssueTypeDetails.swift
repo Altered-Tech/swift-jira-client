@@ -15,15 +15,15 @@ public struct IssueTypeDetails {
     /** The ID of the issue type&#x27;s avatar. */
     public var avatarId: Int64?
     /** The description of the issue type. */
-    public var _description: String?
+    public var description: String?
     /** Unique ID for next-gen projects. */
-    public var entityId: UUID?
+    public var entityId: String?
     /** Hierarchy level of the issue type. */
-    public var hierarchyLevel: Int?
+    public var hierarchyLevel: Int32?
     /** The URL of the issue type&#x27;s avatar. */
     public var iconUrl: String?
     /** The ID of the issue type. */
-    public var _id: String?
+    public var id: String?
     /** The name of the issue type. */
     public var name: String?
     /** Details of the next-gen projects the issue type is available in. */
@@ -35,13 +35,13 @@ public struct IssueTypeDetails {
     /** Untranslated name of the issue from original creator */
     public var untranslatedName: String?
 
-    public init(avatarId: Int64? = nil, _description: String? = nil, entityId: UUID? = nil, hierarchyLevel: Int? = nil, iconUrl: String? = nil, _id: String? = nil, name: String? = nil, scope: AllOfIssueTypeDetailsScope? = nil, _self: String? = nil, subtask: Bool? = nil, untranslatedName: String? = nil) {
+    public init(avatarId: Int64? = nil, description: String? = nil, entityId: String? = nil, hierarchyLevel: Int32? = nil, iconUrl: String? = nil, id: String? = nil, name: String? = nil, scope: AllOfIssueTypeDetailsScope? = nil, _self: String? = nil, subtask: Bool? = nil, untranslatedName: String? = nil) {
         self.avatarId = avatarId
-        self._description = _description
+        self.description = description
         self.entityId = entityId
         self.hierarchyLevel = hierarchyLevel
         self.iconUrl = iconUrl
-        self._id = _id
+        self.id = id
         self.name = name
         self.scope = scope
         self._self = _self
@@ -49,4 +49,16 @@ public struct IssueTypeDetails {
         self.untranslatedName = untranslatedName
     }
 
+    internal init(client: Components.Schemas.IssueTypeDetails?) {
+        self.avatarId = client?.avatarId
+        self.description = client?.description
+        self.entityId = client?.entityId
+        self.hierarchyLevel = client?.hierarchyLevel
+        self.iconUrl = client?.iconUrl
+        self.id = client?.id
+        self.name = client?.name
+        self._self = client?._self
+        self.subtask = client?.subtask
+        self.untranslatedName = client?.untranslatedName
+    }
 }

@@ -137,13 +137,13 @@ Returned if:
         }
     }
     
-    public func comments(for key: String, expand: String? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) async throws -> [Components.Schemas.Comment]? {
+    public func comments(for key: String, expand: String? = nil, startAt: Int64? = nil, maxResults: Int32? = nil) async throws -> [Comment]? {
         let query = Operations.getComments.Input.Query(startAt: startAt, maxResults: maxResults, expand: expand)
         let result = try await underlyingClient.getComments(path: .init(issueIdOrKey: key), query: query)
         switch result {
             
         case .ok(let value):
-            return try value.body.json.comments
+                return try value.body.json.comments?.map{ Comment(client: $0) }
         case .badRequest(_):
             throw JiraErrors.badRequest()
         case .unauthorized(_):
@@ -155,12 +155,12 @@ Returned if:
         }
     }
     
-    public func comment(for key: String, with id: String) async throws -> Components.Schemas.Comment? {
+    public func comment(for key: String, with id: String) async throws -> Comment? {
         let result = try await underlyingClient.getComment(path: .init(issueIdOrKey: key, id: id))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+                return Comment(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -170,12 +170,12 @@ Returned if:
         }
     }
     
-    public func addComment(to key: String, with message: String) async throws -> Components.Schemas.Comment? {
+    public func addComment(to key: String, with message: String) async throws -> Comment? {
         let result = try await underlyingClient.addComment(path: .init(issueIdOrKey: key), body: .json(.init(body: message)))
         switch result {
             
         case .created(let value):
-            return try value.body.json
+                return Comment(client: try value.body.json)
         case .badRequest(_):
             throw JiraErrors.badRequest()
         case .unauthorized(_):
@@ -262,7 +262,7 @@ Returned if a per-issue limit has been breached for one of the following fields:
         }
     }
     
-    public func createIssue(fields: [String: Any]) async throws -> Components.Schemas.CreatedIssue {
+    public func createIssue(fields: [String: Any]) async throws -> Issue? {
         
         let updatedFields: [String: Sendable] = try await processFields(fields: fields)
         
@@ -274,7 +274,12 @@ Returned if a per-issue limit has been breached for one of the following fields:
         switch result {
             
         case .created(let value):
-            return try value.body.json
+            let createdIssue: CreatedIssue = CreatedIssue(client: try value.body.json)
+            guard let id = createdIssue.id else {
+                throw JiraDataIssue.missingData(message: "Unable to get issue id when creating issue")
+            }
+            let issue: Issue = try await self.findIssue(key: id)
+            return issue
         case .badRequest(let error):
             throw JiraErrors.badRequest(message: """
 Returned if the request:
@@ -298,12 +303,12 @@ Returned if the request:
         }
     }
     
-    public func issueTypes() async throws -> [Components.Schemas.IssueTypeDetails] {
+    public func issueTypes() async throws -> [IssueTypeDetails] {
         let result = try await underlyingClient.getIssueAllTypes()
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+                return try value.body.json.map{ IssueTypeDetails(client: $0) }
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .undocumented(statusCode: let statusCode, _):
@@ -311,19 +316,19 @@ Returned if the request:
         }
     }
     
-    public func issueType(with name: String) async throws -> Components.Schemas.IssueTypeDetails? {
+    public func issueType(with name: String) async throws -> IssueTypeDetails? {
         let issueTypes = try await self.issueTypes()
         let issueType = issueTypes.first(where: { $0.name == name })
         guard let issueType else { return nil }
         return issueType
     }
     
-    public func issueType(with id: Int) async throws -> Components.Schemas.IssueTypeDetails {
+    public func issueType(with id: Int) async throws -> IssueTypeDetails {
         let result = try await underlyingClient.getIssueType(.init(path: .init(id: String(id))))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+                return IssueTypeDetails(client: try value.body.json)
         case .badRequest(_):
             throw JiraErrors.badRequest(message: "Returned if the issue type ID is invalid.")
         case .unauthorized(_):
@@ -340,12 +345,12 @@ Returned if:
         }
     }
     
-    public func project(with name: String) async throws -> Components.Schemas.Project {
+    public func project(with name: String) async throws -> Project {
         let result = try await underlyingClient.getProject(path: .init(projectIdOrKey: name))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+                return Project(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -355,12 +360,12 @@ Returned if:
         }
     }
     
-    public func project(with id: Int) async throws -> Components.Schemas.Project {
+    public func project(with id: Int) async throws -> Project {
         let result = try await underlyingClient.getProject(path: .init(projectIdOrKey: String(id)))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+                return Project(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):

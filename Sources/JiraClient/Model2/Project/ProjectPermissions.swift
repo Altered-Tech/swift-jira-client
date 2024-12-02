@@ -13,11 +13,13 @@ import Foundation
 public struct ProjectPermissions {
 
     /** Whether the logged user can edit the project. */
-    public var canEdit: Bool?
+    public let canEdit: Bool?
 
     public init(canEdit: Bool? = nil) {
         self.canEdit = canEdit
     }
 
-
+    internal init(client: Components.Schemas.ProjectPermissions?) {
+        self.canEdit = client?.canEdit
+    }
 }

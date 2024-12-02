@@ -58,4 +58,5 @@ public struct Issue {
         self.transitions = client?.transitions?.map{ IssueTransition(client: $0) }
         
     }
+    
 }

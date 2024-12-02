@@ -13,16 +13,20 @@ import Foundation
 public struct ErrorCollection {
 
     /** The list of error messages produced by this operation. For example, \&quot;input parameter &#x27;key&#x27; must be provided\&quot; */
-    public var errorMessages: [String]?
+    public let errorMessages: [String]?
     /** The list of errors by parameter returned by the operation. For example,\&quot;projectKey\&quot;: \&quot;Project keys must start with an uppercase letter, followed by one or more uppercase alphanumeric characters.\&quot; */
-    public var errors: [String:String]?
-    public var status: Int?
+    public let errors: [String:String]?
+    public let status: Int32?
 
-    public init(errorMessages: [String]? = nil, errors: [String:String]? = nil, status: Int? = nil) {
+    public init(errorMessages: [String]? = nil, errors: [String:String]? = nil, status: Int32? = nil) {
         self.errorMessages = errorMessages
         self.errors = errors
         self.status = status
     }
 
-
+    internal init(client: Components.Schemas.ErrorCollection?) {
+        self.errorMessages = client?.errorMessages
+        self.errors = client?.errors?.additionalProperties
+        self.status = client?.status
+    }
 }

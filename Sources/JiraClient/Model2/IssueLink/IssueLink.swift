@@ -13,30 +13,33 @@ import Foundation
 public struct IssueLink {
 
     /** The ID of the issue link. */
-    public var _id: String?
+    public let id: String?
     /** Provides details about the linked issue. If presenting this link in a user interface, use the &#x60;inward&#x60; field of the issue link type to label the link. */
-    public var inwardIssue: AllOfIssueLinkInwardIssue
+    public let inwardIssue: LinkedIssue
     /** Provides details about the linked issue. If presenting this link in a user interface, use the &#x60;outward&#x60; field of the issue link type to label the link. */
-    public var outwardIssue: AllOfIssueLinkOutwardIssue
+    public let outwardIssue: LinkedIssue
     /** The URL of the issue link. */
-    public var _self: String?
+    public let _self: String?
     /** The type of link between the issues. */
-    public var type: AllOfIssueLinkModelType
+    public let type: IssueLinkType
 
-    public init(_id: String? = nil, inwardIssue: AllOfIssueLinkInwardIssue, outwardIssue: AllOfIssueLinkOutwardIssue, _self: String? = nil, type: AllOfIssueLinkModelType) {
-        self._id = _id
+    public init(
+        id: String? = nil,
+        inwardIssue: LinkedIssue,
+        outwardIssue: LinkedIssue,
+        _self: String? = nil,
+        type: IssueLinkType
+    ) {
+        self.id = id
         self.inwardIssue = inwardIssue
         self.outwardIssue = outwardIssue
         self._self = _self
         self.type = type
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case _id = "id"
-        case inwardIssue
-        case outwardIssue
-        case _self = "self"
-        case type
+    
+    internal init(client: Components.Schemas.IssueLink?) {
+        self.id = client?.id
+        self.inwardIssue = client?.inwardIssue.
     }
 
 }

@@ -11,17 +11,17 @@ import Foundation
 
 public struct ProjectLandingPageInfo {
 
-    public var attributes: [String:String]?
-    public var boardId: Int64?
-    public var boardName: String?
-    public var projectKey: String?
-    public var projectType: String?
-    public var queueCategory: String?
-    public var queueId: Int64?
-    public var queueName: String?
-    public var simpleBoard: Bool?
-    public var simplified: Bool?
-    public var url: String?
+    public let attributes: [String:String]?
+    public let boardId: Int64?
+    public let boardName: String?
+    public let projectKey: String?
+    public let projectType: String?
+    public let queueCategory: String?
+    public let queueId: Int64?
+    public let queueName: String?
+    public let simpleBoard: Bool?
+    public let simplified: Bool?
+    public let url: String?
 
     public init(attributes: [String:String]? = nil, boardId: Int64? = nil, boardName: String? = nil, projectKey: String? = nil, projectType: String? = nil, queueCategory: String? = nil, queueId: Int64? = nil, queueName: String? = nil, simpleBoard: Bool? = nil, simplified: Bool? = nil, url: String? = nil) {
         self.attributes = attributes
@@ -37,5 +37,17 @@ public struct ProjectLandingPageInfo {
         self.url = url
     }
 
-
+    internal init(client: Components.Schemas.ProjectLandingPageInfo?) {
+        self.attributes = client?.attributes?.additionalProperties
+        self.boardId = client?.boardId
+        self.boardName = client?.boardName
+        self.projectKey = client?.projectKey
+        self.projectType = client?.projectType
+        self.queueCategory = client?.queueCategory
+        self.queueId = client?.queueId
+        self.queueName = client?.queueName
+        self.simpleBoard = client?.simpleBoard
+        self.simplified = client?.simplified
+        self.url = client?.url
+    }
 }

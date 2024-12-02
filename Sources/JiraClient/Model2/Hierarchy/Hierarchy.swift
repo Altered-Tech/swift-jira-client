@@ -21,6 +21,10 @@ public struct Hierarchy {
         self.baseLevelId = baseLevelId
         self.levels = levels
     }
-
+    
+    internal init(client: Components.Schemas.Hierarchy?) {
+        self.baseLevelId = client?.baseLevelId
+        self.levels = client?.levels?.map{ SimplifiedHierarchyLevel(client: $0) }
+    }
 
 }

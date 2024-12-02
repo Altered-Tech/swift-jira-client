@@ -13,14 +13,17 @@ import Foundation
 public struct ProjectInsight {
 
     /** The last issue update time. */
-    public var lastIssueUpdateTime: Date?
+    public let lastIssueUpdateTime: Date?
     /** Total issue count. */
-    public var totalIssueCount: Int64?
+    public let totalIssueCount: Int64?
 
     public init(lastIssueUpdateTime: Date? = nil, totalIssueCount: Int64? = nil) {
         self.lastIssueUpdateTime = lastIssueUpdateTime
         self.totalIssueCount = totalIssueCount
     }
 
-
+    internal init(client: Components.Schemas.ProjectInsight?) {
+        self.lastIssueUpdateTime = client?.lastIssueUpdateTime
+        self.totalIssueCount = client?.totalIssueCount
+    }
 }

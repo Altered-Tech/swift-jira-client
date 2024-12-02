@@ -12,89 +12,111 @@ import Foundation
 
 public struct Project {
 
-    public enum AssigneeType: String {
-        case projectLead = "PROJECT_LEAD"
-        case unassigned = "UNASSIGNED"
-    }
-    public enum ProjectTypeKey: String {
-        case software = "software"
-        case serviceDesk = "service_desk"
-        case business = "business"
-    }
-    public enum Style: String { 
-        case classic = "classic"
-        case nextGen = "next-gen"
-    }
     /** Whether the project is archived. */
-    public var archived: Bool?
+    public let archived: Bool?
     /** The user who archived the project. */
-    public var archivedBy: AllOfProjectArchivedBy?
+    public let archivedBy: User?
     /** The date when the project was archived. */
-    public var archivedDate: Date?
+    public let archivedDate: Date?
     /** The default assignee when creating issues for this project. */
-    public var assigneeType: AssigneeType?
+    public let assigneeType: AssigneeType?
     /** The URLs of the project&#x27;s avatars. */
-    public var avatarUrls: AllOfProjectAvatarUrls?
+    public let avatarUrls: UserAvatarUrls?
     /** List of the components contained in the project. */
-    public var components: [ProjectComponent]?
+    public let components: [ProjectComponent]?
     /** Whether the project is marked as deleted. */
-    public var deleted: Bool?
+    public let deleted: Bool?
     /** The user who marked the project as deleted. */
-    public var deletedBy: AllOfProjectDeletedBy?
+    public let deletedBy: User?
     /** The date when the project was marked as deleted. */
-    public var deletedDate: Date?
+    public let deletedDate: Date?
     /** A brief description of the project. */
-    public var _description: String?
+    public let description: String?
     /** An email address associated with the project. */
-    public var email: String?
+    public let email: String?
     /** Expand options that include additional project details in the response. */
-    public var expand: String?
+    public let expand: String?
     /** Whether the project is selected as a favorite. */
-    public var favourite: Bool?
+    public let favourite: Bool?
     /** The ID of the project. */
-    public var _id: String?
+    public let id: String?
     /** Insights about the project. */
-    public var insight: AllOfProjectInsight?
+    public let insight: ProjectInsight?
     /** Whether the project is private from the user&#x27;s perspective. This means the user can&#x27;t see the project or any associated issues. */
-    public var isPrivate: Bool?
+    public let isPrivate: Bool?
     /** The issue type hierarchy for the project. */
-    public var issueTypeHierarchy: AllOfProjectIssueTypeHierarchy?
+    public let issueTypeHierarchy: Hierarchy?
     /** List of the issue types available in the project. */
-    public var issueTypes: [IssueTypeDetails]?
+    public let issueTypes: [IssueTypeDetails]?
     /** The key of the project. */
-    public var key: String?
+    public let key: String?
     /** The project landing page info. */
-    public var landingPageInfo: AllOfProjectLandingPageInfo?
+    public let landingPageInfo: ProjectLandingPageInfo?
     /** The username of the project lead. */
-    public var lead: AllOfProjectLead?
+    public let lead: User?
     /** The name of the project. */
-    public var name: String?
+    public let name: String?
     /** User permissions on the project */
-    public var permissions: AllOfProjectPermissions?
+    public let permissions: ProjectPermissions?
     /** The category the project belongs to. */
-    public var projectCategory: AllOfProjectProjectCategory?
+    public let projectCategory: ProjectCategory?
     /** The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes) of the project. */
-    public var projectTypeKey: ProjectTypeKey?
+    public let projectTypeKey: ProjectTypeKey?
     /** Map of project properties */
-    public var properties: [String:Any]?
+//    public let properties: [String:Any]?
     /** The date when the project is deleted permanently. */
-    public var retentionTillDate: Date?
+    public let retentionTillDate: Date?
     /** The name and self URL for each role defined in the project. For more information, see [Create project role](#api-rest-api-2-role-post). */
-    public var roles: [String:String]?
+    public let roles: [String:String]?
     /** The URL of the project details. */
-    public var _self: String?
+    public let _self: String?
     /** Whether the project is simplified. */
-    public var simplified: Bool?
+    public let simplified: Bool?
     /** The type of the project. */
-    public var style: Style?
+    public let style: Style?
     /** A link to information about this project, such as project documentation. */
-    public var url: String?
+    public let url: String?
     /** Unique ID for next-gen projects. */
-    public var uuid: UUID?
+    public let uuid: String?
     /** The versions defined in the project. For more information, see [Create version](#api-rest-api-2-version-post). */
-    public var versions: [Version]?
+    public let versions: [Version]?
 
-    public init(archived: Bool? = nil, archivedBy: AllOfProjectArchivedBy? = nil, archivedDate: Date? = nil, assigneeType: AssigneeType? = nil, avatarUrls: AllOfProjectAvatarUrls? = nil, components: [ProjectComponent]? = nil, deleted: Bool? = nil, deletedBy: AllOfProjectDeletedBy? = nil, deletedDate: Date? = nil, _description: String? = nil, email: String? = nil, expand: String? = nil, favourite: Bool? = nil, _id: String? = nil, insight: AllOfProjectInsight? = nil, isPrivate: Bool? = nil, issueTypeHierarchy: AllOfProjectIssueTypeHierarchy? = nil, issueTypes: [IssueTypeDetails]? = nil, key: String? = nil, landingPageInfo: AllOfProjectLandingPageInfo? = nil, lead: AllOfProjectLead? = nil, name: String? = nil, permissions: AllOfProjectPermissions? = nil, projectCategory: AllOfProjectProjectCategory? = nil, projectTypeKey: ProjectTypeKey? = nil, properties: [String:Any]? = nil, retentionTillDate: Date? = nil, roles: [String:String]? = nil, _self: String? = nil, simplified: Bool? = nil, style: Style? = nil, url: String? = nil, uuid: UUID? = nil, versions: [Version]? = nil) {
+    public init(
+        archived: Bool? = nil,
+        archivedBy: User? = nil,
+        archivedDate: Date? = nil,
+        assigneeType: AssigneeType? = nil,
+        avatarUrls: UserAvatarUrls? = nil,
+        components: [ProjectComponent]? = nil,
+        deleted: Bool? = nil,
+        deletedBy: User? = nil,
+        deletedDate: Date? = nil,
+        description: String? = nil,
+        email: String? = nil,
+        expand: String? = nil,
+        favourite: Bool? = nil,
+        id: String? = nil,
+        insight: ProjectInsight? = nil,
+        isPrivate: Bool? = nil,
+        issueTypeHierarchy: Hierarchy? = nil,
+        issueTypes: [IssueTypeDetails]? = nil,
+        key: String? = nil,
+        landingPageInfo: ProjectLandingPageInfo? = nil,
+        lead: User? = nil,
+        name: String? = nil,
+        permissions: ProjectPermissions? = nil,
+        projectCategory: ProjectCategory? = nil,
+        projectTypeKey: ProjectTypeKey? = nil,
+//        properties: [String:Any]? = nil,
+        retentionTillDate: Date? = nil,
+        roles: [String:String]? = nil,
+        _self: String? = nil,
+        simplified: Bool? = nil,
+        style: Style? = nil,
+        url: String? = nil,
+        uuid: String? = nil,
+        versions: [Version]? = nil
+    ) {
         self.archived = archived
         self.archivedBy = archivedBy
         self.archivedDate = archivedDate
@@ -104,11 +126,11 @@ public struct Project {
         self.deleted = deleted
         self.deletedBy = deletedBy
         self.deletedDate = deletedDate
-        self._description = _description
+        self.description = description
         self.email = email
         self.expand = expand
         self.favourite = favourite
-        self._id = _id
+        self.id = id
         self.insight = insight
         self.isPrivate = isPrivate
         self.issueTypeHierarchy = issueTypeHierarchy
@@ -120,7 +142,7 @@ public struct Project {
         self.permissions = permissions
         self.projectCategory = projectCategory
         self.projectTypeKey = projectTypeKey
-        self.properties = properties
+//        self.properties = properties
         self.retentionTillDate = retentionTillDate
         self.roles = roles
         self._self = _self
@@ -130,42 +152,42 @@ public struct Project {
         self.uuid = uuid
         self.versions = versions
     }
-
-    public enum CodingKeys: String, CodingKey { 
-        case archived
-        case archivedBy
-        case archivedDate
-        case assigneeType
-        case avatarUrls
-        case components
-        case deleted
-        case deletedBy
-        case deletedDate
-        case _description = "description"
-        case email
-        case expand
-        case favourite
-        case _id = "id"
-        case insight
-        case isPrivate
-        case issueTypeHierarchy
-        case issueTypes
-        case key
-        case landingPageInfo
-        case lead
-        case name
-        case permissions
-        case projectCategory
-        case projectTypeKey
-        case properties
-        case retentionTillDate
-        case roles
-        case _self = "self"
-        case simplified
-        case style
-        case url
-        case uuid
-        case versions
+    
+    internal init(client: Components.Schemas.Project?) {
+        self.archived = client?.archived
+        self.archivedBy = User(client: client?.archivedBy?.value1)
+        self.archivedDate = client?.archivedDate
+        self.assigneeType = AssigneeType(client: client?.assigneeType)
+        self.avatarUrls = UserAvatarUrls(client: client?.avatarUrls?.value1)
+        self.components = client?.components?.map{ ProjectComponent(client: $0) }
+        self.deleted = client?.deleted
+        self.deletedBy = User(client: client?.deletedBy?.value1)
+        self.deletedDate = client?.deletedDate
+        self.description = client?.description
+        self.email = client?.email
+        self.expand = client?.expand
+        self.favourite = client?.favourite
+        self.id = client?.id
+        self.insight = ProjectInsight(client: client?.insight?.value1)
+        self.isPrivate = client?.isPrivate
+        self.issueTypeHierarchy = Hierarchy(client: client?.issueTypeHierarchy?.value1)
+        self.issueTypes = client?.issueTypes?.map{ IssueTypeDetails(client: $0) }
+        self.key = client?.key
+        self.landingPageInfo = ProjectLandingPageInfo(client: client?.landingPageInfo?.value1)
+        self.lead = User(client: client?.lead?.value1)
+        self.name = client?.name
+        self.permissions = ProjectPermissions(client: client?.permissions?.value1)
+        self.projectCategory = ProjectCategory(client: client?.projectCategory?.value1)
+        self.projectTypeKey = ProjectTypeKey(client: client?.projectTypeKey)
+//        self.properties = client?.properties.
+        self.retentionTillDate = client?.retentionTillDate
+        self.roles = client?.roles?.additionalProperties
+        self._self = client?._self
+        self.simplified = client?.simplified
+        self.style = Style(client: client?.style)
+        self.url = client?.url
+        self.uuid = client?.uuid
+        self.versions = client?.versions?.map{ Version(client: $0) }
     }
 
 }

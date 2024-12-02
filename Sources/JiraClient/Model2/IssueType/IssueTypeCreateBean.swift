@@ -21,21 +21,12 @@ public struct IssueTypeCreateBean {
     public var hierarchyLevel: Int?
     /** The unique name for the issue type. The maximum length is 60 characters. */
     public var name: String
-    /** Deprecated. Use &#x60;hierarchyLevel&#x60; instead. See the [deprecation notice](https://community.developer.atlassian.com/t/deprecation-of-the-epic-link-parent-link-and-other-related-fields-in-rest-apis-and-webhooks/54048) for details.  Whether the issue type is &#x60;subtype&#x60; or &#x60;standard&#x60;. Defaults to &#x60;standard&#x60;. */
-    public var type: ModelType?
 
-    public init(_description: String? = nil, hierarchyLevel: Int? = nil, name: String, type: ModelType? = nil) {
+    public init(_description: String? = nil, hierarchyLevel: Int? = nil, name: String) {
         self._description = _description
         self.hierarchyLevel = hierarchyLevel
         self.name = name
-        self.type = type
     }
 
-    public enum CodingKeys: String, CodingKey { 
-        case _description = "description"
-        case hierarchyLevel
-        case name
-        case type
-    }
-
+    internal init(client: Components.Schemas.IssueTypeCreateBean)
 }

@@ -17,5 +17,7 @@ public struct WarningCollection {
         self.warnings = warnings
     }
 
-
+    internal init(client: Components.Schemas.WarningCollection?) {
+        self.warnings = client?.warnings
+    }
 }

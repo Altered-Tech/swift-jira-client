@@ -12,57 +12,45 @@ import Foundation
 
 public struct ProjectComponent {
 
-    public enum AssigneeType: String, Codable { 
-        case projectDefault = "PROJECT_DEFAULT"
-        case componentLead = "COMPONENT_LEAD"
-        case projectLead = "PROJECT_LEAD"
-        case unassigned = "UNASSIGNED"
-    }
-    public enum RealAssigneeType: String, Codable { 
-        case projectDefault = "PROJECT_DEFAULT"
-        case componentLead = "COMPONENT_LEAD"
-        case projectLead = "PROJECT_LEAD"
-        case unassigned = "UNASSIGNED"
-    }
     /** Compass component&#x27;s ID. Can&#x27;t be updated. Not required for creating a Project Component. */
-    public var ari: String?
+    public let ari: String?
     /** The details of the user associated with &#x60;assigneeType&#x60;, if any. See &#x60;realAssignee&#x60; for details of the user assigned to issues created with this component. */
-    public var assignee: AllOfProjectComponentAssignee?
+    public let assignee: User?
     /** The nominal user type used to determine the assignee for issues created with this component. See &#x60;realAssigneeType&#x60; for details on how the type of the user, and hence the user, assigned to issues is determined. Can take the following values:   *  &#x60;PROJECT_LEAD&#x60; the assignee to any issues created with this component is nominally the lead for the project the component is in.  *  &#x60;COMPONENT_LEAD&#x60; the assignee to any issues created with this component is nominally the lead for the component.  *  &#x60;UNASSIGNED&#x60; an assignee is not set for issues created with this component.  *  &#x60;PROJECT_DEFAULT&#x60; the assignee to any issues created with this component is nominally the default assignee for the project that the component is in.  Default value: &#x60;PROJECT_DEFAULT&#x60;.   Optional when creating or updating a component. */
-    public var assigneeType: AssigneeType?
+    public let assigneeType: AssigneeType?
     /** The description for the component. Optional when creating or updating a component. */
-    public var _description: String?
+    public let description: String?
     /** The unique identifier for the component. */
-    public var _id: String?
+    public let id: String?
     /** Whether a user is associated with &#x60;assigneeType&#x60;. For example, if the &#x60;assigneeType&#x60; is set to &#x60;COMPONENT_LEAD&#x60; but the component lead is not set, then &#x60;false&#x60; is returned. */
-    public var isAssigneeTypeValid: Bool?
+    public let isAssigneeTypeValid: Bool?
     /** The user details for the component&#x27;s lead user. */
-    public var lead: AllOfProjectComponentLead?
+    public let lead: User?
     /** The accountId of the component&#x27;s lead user. The accountId uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*. */
-    public var leadAccountId: String?
+    public let leadAccountId: String?
     /** This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details. */
-    public var leadUserName: String?
+    public let leadUserName: String?
     /** Compass component&#x27;s metadata. Can&#x27;t be updated. Not required for creating a Project Component. */
-    public var metadata: [String:String]?
+    public let metadata: [String:String]?
     /** The unique name for the component in the project. Required when creating a component. Optional when updating a component. The maximum length is 255 characters. */
-    public var name: String?
+    public let name: String?
     /** The key of the project the component is assigned to. Required when creating a component. Can&#x27;t be updated. */
-    public var project: String?
+    public let project: String?
     /** The ID of the project the component is assigned to. */
-    public var projectId: Int64?
+    public let projectId: Int64?
     /** The user assigned to issues created with this component, when &#x60;assigneeType&#x60; does not identify a valid assignee. */
-    public var realAssignee: AllOfProjectComponentRealAssignee?
+    public let realAssignee: User?
     /** The type of the assignee that is assigned to issues created with this component, when an assignee cannot be set from the &#x60;assigneeType&#x60;. For example, &#x60;assigneeType&#x60; is set to &#x60;COMPONENT_LEAD&#x60; but no component lead is set. This property is set to one of the following values:   *  &#x60;PROJECT_LEAD&#x60; when &#x60;assigneeType&#x60; is &#x60;PROJECT_LEAD&#x60; and the project lead has permission to be assigned issues in the project that the component is in.  *  &#x60;COMPONENT_LEAD&#x60; when &#x60;assignee&#x60;Type is &#x60;COMPONENT_LEAD&#x60; and the component lead has permission to be assigned issues in the project that the component is in.  *  &#x60;UNASSIGNED&#x60; when &#x60;assigneeType&#x60; is &#x60;UNASSIGNED&#x60; and Jira is configured to allow unassigned issues.  *  &#x60;PROJECT_DEFAULT&#x60; when none of the preceding cases are true. */
-    public var realAssigneeType: RealAssigneeType?
+    public let realAssigneeType: AssigneeType?
     /** The URL of the component. */
-    public var _self: String?
+    public let _self: String?
 
-    public init(ari: String? = nil, assignee: AllOfProjectComponentAssignee? = nil, assigneeType: AssigneeType? = nil, _description: String? = nil, _id: String? = nil, isAssigneeTypeValid: Bool? = nil, lead: AllOfProjectComponentLead? = nil, leadAccountId: String? = nil, leadUserName: String? = nil, metadata: [String:String]? = nil, name: String? = nil, project: String? = nil, projectId: Int64? = nil, realAssignee: AllOfProjectComponentRealAssignee? = nil, realAssigneeType: RealAssigneeType? = nil, _self: String? = nil) {
+    public init(ari: String? = nil, assignee: User? = nil, assigneeType: AssigneeType? = nil, description: String? = nil, id: String? = nil, isAssigneeTypeValid: Bool? = nil, lead: User? = nil, leadAccountId: String? = nil, leadUserName: String? = nil, metadata: [String:String]? = nil, name: String? = nil, project: String? = nil, projectId: Int64? = nil, realAssignee: User? = nil, realAssigneeType: AssigneeType? = nil, _self: String? = nil) {
         self.ari = ari
         self.assignee = assignee
         self.assigneeType = assigneeType
-        self._description = _description
-        self._id = _id
+        self.description = description
+        self.id = id
         self.isAssigneeTypeValid = isAssigneeTypeValid
         self.lead = lead
         self.leadAccountId = leadAccountId
@@ -75,5 +63,23 @@ public struct ProjectComponent {
         self.realAssigneeType = realAssigneeType
         self._self = _self
     }
-
+    
+    internal init(client: Components.Schemas.ProjectComponent?) {
+        self.ari = client?.ari
+        self.assignee = User(client: client?.assignee?.value1)
+        self.assigneeType = AssigneeType(client: client?.assigneeType)
+        self.description = client?.description
+        self.id = client?.id
+        self.isAssigneeTypeValid = client?.isAssigneeTypeValid
+        self.lead = User(client: client?.lead?.value1)
+        self.leadAccountId = client?.leadAccountId
+        self.leadUserName = client?.leadUserName
+        self.metadata = client?.metadata?.additionalProperties
+        self.name = client?.name
+        self.project = client?.project
+        self.projectId = client?.projectId
+        self.realAssignee = User(client: client?.realAssignee?.value1)
+        self.realAssigneeType = AssigneeType(client: client?.realAssigneeType)
+        self._self = client?._self
+    }
 }
