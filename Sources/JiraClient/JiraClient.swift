@@ -375,13 +375,13 @@ Returned if:
         }
     }
     
-    public func issueLinkTypes() async throws -> [Components.Schemas.IssueLinkType]? {
+    public func issueLinkTypes() async throws -> [IssueLinkType]? {
         let result = try await underlyingClient.getIssueLinkTypes(.init())
         
         switch result {
             
         case .ok(let value):
-            return try value.body.json.issueLinkTypes
+            return try value.body.json.issueLinkTypes?.map{ IssueLinkType(client: $0)}
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .notFound(_):
@@ -391,13 +391,13 @@ Returned if:
         }
     }
     
-    public func issueLinkType(with id: String) async throws -> Components.Schemas.IssueLinkType {
+    public func issueLinkType(with id: String) async throws -> IssueLinkType {
         let result = try await underlyingClient.getIssueLinkType(.init(path: .init(issueLinkTypeId: id)))
         
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+            return IssueLinkType(client: try value.body.json)
         case .badRequest(_):
             throw JiraErrors.badRequest()
         case .unauthorized(_):
@@ -420,7 +420,7 @@ Returned if:
         let inwardIssue: Issue = try await self.findIssue(key: inward)
         let outwardIssue: Issue = try await self.findIssue(key: outward)
         
-        guard let issueLinks: [Components.Schemas.IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
+        guard let issueLinks: [IssueLinkType] = try await self.issueLinkTypes() else { throw JiraDataIssue.missingData(message: "Missing issue link types") }
         guard let issueLinkType = issueLinks.first(where: { $0.name == linkType || $0.id == linkType || $0.inward == linkType || $0.outward == linkType }) else { throw JiraDataIssue.missingData(message: "Missing issue link type: \(linkType)")}
         
         let body: Operations.linkIssues.Input.Body
@@ -430,13 +430,13 @@ Returned if:
                 comment: .init(body: comment),
                 inwardIssue: .init(id: outwardIssue.id),
                 outwardIssue: .init(id: inwardIssue.id),
-                _type: issueLinkType))
+                _type: Components.Schemas.IssueLinkType(id: issueLinkType.id, inward: issueLinkType.inward, name: issueLinkType.name, outward: issueLinkType.outward, _self: issueLinkType._self)))
         } else {
             body = .json(.init(
                 comment: .init(body: comment),
                 inwardIssue: .init(id: inwardIssue.id),
                 outwardIssue: .init(id: outwardIssue.id),
-                _type: issueLinkType))
+                _type: Components.Schemas.IssueLinkType(id: issueLinkType.id, inward: issueLinkType.inward, name: issueLinkType.name, outward: issueLinkType.outward, _self: issueLinkType._self)))
         }
         
         let result = try await underlyingClient.linkIssues(body: body)
@@ -504,12 +504,12 @@ Returned if:\n
         }
     }
     
-    public func getEditabelFields(for issue: String) async throws -> Components.Schemas.IssueUpdateMetadata {
+    public func getEditabelFields(for issue: String) async throws -> IssueUpdateMetadata {
         let result = try await underlyingClient.getEditIssueMeta(.init(path: .init(issueIdOrKey: issue)))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+            return IssueUpdateMetadata(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .forbidden(_):
@@ -521,12 +521,12 @@ Returned if:\n
         }
     }
     
-    public func myself(expand: [String]? = nil) async throws -> Components.Schemas.User {
+    public func myself(expand: [String]? = nil) async throws -> User {
         let result = try await underlyingClient.getCurrentUser(.init(query: .init(expand: expand?.joined(separator: ","))))
         switch result {
             
         case .ok(let value):
-            return try value.body.json
+            return User(client: try value.body.json)
         case .unauthorized(_):
             throw JiraErrors.unauthorized()
         case .undocumented(statusCode: let statusCode, _):
@@ -574,11 +574,11 @@ Returned if:
         }
     }
     
-    enum JiraFieldType {
+    internal enum JiraFieldType {
         case project, issueType
     }
     
-    func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
+    internal func handleField(_ field: Any, fieldType: JiraFieldType) async throws -> [String: String] {
         var resultKey: [String: String] = [:]
         
         switch field {
@@ -612,7 +612,7 @@ Returned if:
         return resultKey
     }
     
-    func processFields(fields: [String: Any]) async throws -> [String: Sendable] {
+    internal func processFields(fields: [String: Any]) async throws -> [String: Sendable] {
         guard let project = fields["project"] else {
             throw JiraDataIssue.missingData(message: "Project field is missing")
         }
